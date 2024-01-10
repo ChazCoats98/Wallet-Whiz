@@ -43,6 +43,7 @@ const RegisterForm = () => {
         } catch (err) {
             setErrorMessage('Error with registration!');
             setShowError(true);
+            console.log(err);
         }
 
         setUserFormData({

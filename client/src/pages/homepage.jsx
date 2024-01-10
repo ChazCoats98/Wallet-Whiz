@@ -3,10 +3,11 @@ import Button from '@mui/material/Button';
 import LoginForm from '../components/LoginForm';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
+import laptop from '../assets/laptop.png'
 
 function homepage() {
     return (
-        <div className="container pageBox">
+        <div className="pageBox">
             <div className="container pageInner">
                 <div className="container pageTextBox">
                     <h2 className="headerText">Why use WalletWhiz?</h2>
@@ -17,22 +18,7 @@ function homepage() {
                         your finances, so you can spend more time on what matters
                     </p>
                 </div>
-                <div className="container loginBoxesContainer">
-                    <div className="formBoxAlign">
-                        <h3 className="tagline">Already a user?</h3>
-                        <div className="cards" id="loginBox">
-                            <h3 className="formBoxHeader">Login</h3>
-                            <LoginForm />
-                        </div>
-                        <div className="registerButtonBox">
-                            <h3 className="registerHeader">Not yet managing your money? Register here</h3>
-                            {Auth.loggedIn() ? (null) : (
-                            <Link to='/register'>
-                            <Button variant="contained" disableElevation>Register</Button>
-                            </Link>)}
-                        </div>
-                    </div>
-                </div>
+                    <img src={laptop}></img>
             </div>
         </div>
     );

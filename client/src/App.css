@@ -3,6 +3,7 @@
 
 .navbar {
     background-color: #46709d50;
+    position: relative;
     color: #fff;
     display: flex;
     justify-content: space-between;
