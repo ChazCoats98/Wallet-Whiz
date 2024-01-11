@@ -36,6 +36,9 @@ function homepage() {
                     </p>
                 </div>
             </div>
+            <div className='about2'>
+
+            </div>
         </div>
     );
 }
