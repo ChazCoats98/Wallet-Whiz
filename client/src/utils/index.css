@@ -12,9 +12,7 @@ html, body {
 
 .laptop {
     display: flex;
-    width: 100px;
-    height: 50px;
-    background-image: url('../assets/laptop.png');
+    height: 400px;
 }
 
 .upperContainer {
@@ -31,18 +29,42 @@ html, body {
 
 .pageBox {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    background-color: white;
+    justify-content: flex-start;
+    position: relative;
     width: 100%;
 }
 
-.container {
-    padding: 2rem;
-    border-radius: .3rem;
-    background: white;
+.pageTextBox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.blackText {
+    color: black;
+}
+
+.framer {
+    display: flex;
+    width: 70%;
+}
+
+.about1 {
+    display: flex;
+    margin-top: 150px;
+    height: 300px;
 }
 
 .spendingChart {
@@ -61,8 +83,9 @@ html, body {
 
 .headerText {
     font-family: 'kanit', sans-serif;
-    color: black;
     text-align: center;
+    font-weight: 800;
+    font-size: 64px;
 }
 
 .dashboardHeader {
@@ -121,10 +144,8 @@ input:-webkit-autofill,
 }
 
 .descriptionSubText {
-    color: black;
     font-family: 'oswald', 'sans-serif';
     letter-spacing: 1.4px;
-    margin: 1rem;
     text-align: center;
 }
 

@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 2px -2px rgb(17, 13, 13);
     width: 100%;
     padding: 1rem;
 }
