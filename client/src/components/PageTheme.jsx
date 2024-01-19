@@ -31,6 +31,9 @@ export const PageTheme = createTheme({
                 root: {
                     width: '100%',
                     fontFamily: 'kanit, sans-serif;',
+                    '& .css-11b3ww9-MuiPaper-root-MuiAppBar-root': {
+                        backgroundColor: '#404b9d'
+                    },
                     '& .MuiInputBase-root': {
                         '& fieldset': {
                             borderColor: '#fff',

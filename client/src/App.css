@@ -3,7 +3,7 @@
 
 .navbar {
     background-color: #46709d50;
-    position: relative;
+    position: sticky;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -29,8 +29,7 @@
 .headerLogo {
     display: flex;
     height: 30px;
-    margin-left: 10%;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .nav-links {
