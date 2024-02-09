@@ -2,13 +2,11 @@
 
 
 .navbar {
-    background-color: #46709d50;
-    position: sticky;
+    position: fixed;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 2px -2px rgb(88, 82, 82);
     width: 100%;
     padding: 1rem;
 }

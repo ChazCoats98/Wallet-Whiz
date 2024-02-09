@@ -22,7 +22,7 @@ html, body {
 .pageContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }
@@ -46,7 +46,8 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 300px;
+    padding-top: 120px;
+    height: 500px;
     width: 100%;
     background-color: #fff;
 }
