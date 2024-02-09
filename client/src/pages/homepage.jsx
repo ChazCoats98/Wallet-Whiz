@@ -1,13 +1,58 @@
-import React from 'react';
+import { React, useRef } from 'react';
 import Button from '@mui/material/Button';
 import LoginForm from '../components/LoginForm';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import laptop from '../assets/laptop.png'
+import ResponsiveAppBar from '../components/nav';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-function homepage() {
+function Homepage() {
+    const navRef = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: navRef,
+        offset: ["end", "start"],
+    });
+
+    const slideUp = useTransform(scrollYProgress, [0, 1], ['50px', '0px'])
+    const height = useTransform(scrollYProgress, [0, 1], ['200px', '85px'])
+    const boxShadow = useTransform(scrollYProgress, [0, 1], ["none", "0px 8px 18px -6px rgba(0, 0, 0, 0.2)"]);
+    const opacity = useTransform(scrollYProgress, [.3, .5], [0, 1]);
+
     return (
         <div className="pageBox">
+            <motion.div
+      id="nav-bg"
+      style={{ height: height }}
+      transition={{
+        ease: "easeIn"
+      }}
+      >
+        <motion.div 
+        className="contacts-top-box"
+        style={{ y: slideUp }}
+        transition={{
+          ease: "easeIn"
+        }}
+        >
+        </motion.div>
+        <motion.nav
+        style={{ y: slideUp }}
+        transition={{
+          ease: "easeIn"
+        }}
+        >
+        <ResponsiveAppBar />
+        </motion.nav>
+      </motion.div>
+      <motion.div
+      className="fade-bg"
+      style={{ opacity: opacity,
+      height: height,
+      boxShadow: boxShadow,
+      }}
+      ></motion.div>
             <div className="pageInner">
                 <div className="framer">
                 <div className="pageTextBox">
@@ -25,7 +70,7 @@ function homepage() {
                     <img className='laptop' src={laptop}></img>
             </div>
                 </div>
-            <div className='about1'>
+            <div className='about1' ref={navRef}>
                 <div className='framer'>
                 <div className='pageTextBox'>
                     <h2 className="headerText">Stay on top of your spending.</h2>
@@ -66,4 +111,4 @@ function homepage() {
     );
 }
 
-export default homepage;
+export default Homepage;

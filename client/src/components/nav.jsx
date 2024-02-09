@@ -16,7 +16,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { motion } from 'framer-motion';
+import { motion, useTransform } from 'framer-motion';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -45,6 +45,24 @@ function ResponsiveAppBar() {
     <Toolbar disableGutters  className="mini-nav-box">
   <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {xs: 'space-between', md: 'none'} }}>
     <img className='headerLogo' src={Logo}/>
+    <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              fontFamily: 'Kanit, sans-serif',
+              fontWeight: 800,
+              letterSpacing: '.2rem',
+              fontSize: '42px',
+              color: '#404b9d',
+              textDecoration: 'none',
+            }}
+          >
+            Wallet<span style={{ color: 'black', marginRight: "100px"}}>Whiz</span>
+          </Typography>
     <IconButton
       size="large"
       aria-label="account of current user"
@@ -81,8 +99,28 @@ function ResponsiveAppBar() {
       ))}
     </Menu>
   </Box>
-  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
-  <img className='headerLogo' src={Logo}/>
+  <div className='logo-box'>
+    <img className='headerLogo' src={Logo}/>
+    <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'Kanit, sans-serif',
+              fontWeight: 800,
+              letterSpacing: '.2rem',
+              fontSize: '42px',
+              color: '#404b9d',
+              textDecoration: 'none',
+            }}
+          >
+            Wallet<span style={{ color: 'black' }}>Whiz</span>
+    </Typography>
+  </div>
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
     {pages.map((page) => (
       <Button
         key={page}

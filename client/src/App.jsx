@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/nav';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -36,7 +36,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider  theme={PageTheme}>
-        <Navbar />
         <Outlet />
       </ThemeProvider>
     </ApolloProvider>
