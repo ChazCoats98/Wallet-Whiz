@@ -4,6 +4,7 @@ import LoginForm from '../components/LoginForm';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import laptop from '../assets/laptop.png'
+import laptop2 from '../assets/laptop-2.png'
 import ResponsiveAppBar from '../components/nav';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -67,7 +68,7 @@ function Homepage() {
                     <Button variant='contained' disableElevation type='submit'>Register</Button>
                     </Link>
                 </div>
-                    <img className='laptop' src={laptop}></img>
+                    <img className='laptop' src={laptop2}></img>
             </div>
                 </div>
             <div className='about1' ref={navRef}>
