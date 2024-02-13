@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
 
+.nav-slider {
+    position: fixed;
+    display: flex;
+    width: 100%;
+}
 
 .navbar {
-    background-color: #46709d50;
-    position: sticky;
+    position: fixed;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 2px -2px rgb(88, 82, 82);
     width: 100%;
-    padding: 1rem;
+    padding: 0;
 }
 
 .header {
@@ -49,8 +52,9 @@
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
     color: white;
-    letter-spacing: 1.6px;
-    font-size: 16px;
+    letter-spacing: 1.3px;
+    font-weight: 800;
+    font-size: 24px;
 }
 
 .listText:hover {
@@ -73,6 +77,14 @@
 .listText:hover::after {
     transform: scaleX(1);
 }
+
+#nav-bg {
+    position: fixed;
+    height: 5em;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+  }
 
 /* Media query for mobile responsiveness */
 @media (max-width: 768px) {

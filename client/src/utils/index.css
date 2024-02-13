@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
 
+*{
+    padding: 0;
+    margin: 0;
+}
 
 html, body {
     justify-content: center;
@@ -8,6 +12,12 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .laptop {
@@ -22,7 +32,7 @@ html, body {
 .pageContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }
@@ -46,7 +56,8 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 300px;
+    padding-top: 200px;
+    height: 500px;
     width: 100%;
     background-color: #fff;
 }
@@ -54,6 +65,15 @@ html, body {
 .blackText {
     color: black;
 }
+
+.fade-bg {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 120px;
+    z-index: 2;
+    background-color: white;
+  }
 
 .framer {
     display: flex;
