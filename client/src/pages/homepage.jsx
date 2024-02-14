@@ -2,6 +2,7 @@ import { React, useRef } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import laptop from '../assets/laptop.png'
+import laptop2 from '../assets/laptop-2.png'
 import ResponsiveAppBar from '../components/nav';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
@@ -70,7 +71,7 @@ function Homepage() {
                     <Button variant='contained' disableElevation type='submit'>Register</Button>
                     </Link>
                 </div>
-                    <img className='laptop' src={laptop} ref={navRef}></img>
+                    <img className='laptop' src={laptop2}></img>
             </div>
                 </div>
             <div className='about1'>

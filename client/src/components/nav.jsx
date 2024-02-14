@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import Logo from '../assets/walletWhiz logo2.png';
+import Logo2 from '../assets/WalletWhizIconnbg.png'
 import Auth from '../utils/auth'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -44,7 +45,7 @@ function ResponsiveAppBar() {
     <div className="navbar">
     <Toolbar disableGutters  className="mini-nav-box">
   <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {xs: 'space-between', md: 'none'} }}>
-    <img className='headerLogo' src={Logo}/>
+    <img className='headerLogo' src={Logo2}/>
     <Typography
             variant="h6"
             noWrap
@@ -95,7 +96,7 @@ function ResponsiveAppBar() {
     </Menu>
   </Box>
   <div className='logo-box'>
-    <img className='headerLogo' src={Logo}/>
+    <img className='headerLogo' src={Logo2}/>
     <Typography
             variant="h6"
             noWrap
