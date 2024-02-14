@@ -50,15 +50,10 @@ function ResponsiveAppBar() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
+            className='header-title'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
-              fontFamily: 'Kanit, sans-serif',
-              fontWeight: 800,
-              letterSpacing: '.2rem',
-              fontSize: '42px',
-              color: '#404b9d',
-              textDecoration: 'none',
             }}
           >
             Wallet<span style={{ color: 'black', marginRight: "100px"}}>Whiz</span>
@@ -106,18 +101,13 @@ function ResponsiveAppBar() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
+            className='header-title'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'Kanit, sans-serif',
-              fontWeight: 800,
-              letterSpacing: '.2rem',
-              fontSize: '42px',
-              color: '#404b9d',
-              textDecoration: 'none',
             }}
           >
-            Wallet<span style={{ color: 'black' }}>Whiz</span>
+            Wallet<span style={{ color: 'black', marginRight: "60px" }}>Whiz</span>
     </Typography>
   </div>
   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
