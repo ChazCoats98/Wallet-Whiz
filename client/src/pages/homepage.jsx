@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import Cellphone from '../assets/cellphone.png';
 
 function Homepage() {
     const navRef = useRef(null);
@@ -150,10 +151,12 @@ function Homepage() {
                 </div>
             <div className='about2'>
                 <div className='framer'>
-                    <div className='demo-box'></div>
+                    <div className='demo-box'>
+                        <img src={Cellphone} className='cellphone'/>
+                    </div>
             <div className='pageTextBox'>
-                    <h2 className="headerText blackText">Plan for the future.</h2>
-                    <p className="descriptionSubText blackText">
+                    <h2 className="aboutText blackText">Who are we?</h2>
+                    <p className="aboutSubText blackText">
                         We get that your future is important to you, Thats why WalletWhiz<br />
                         Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
                         WalletWhiz gives you the tools to manage your money with ease <br />
