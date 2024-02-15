@@ -69,7 +69,7 @@ function Homepage() {
                         so you can spend time on what really matters. 
                     </p>
                     <Link to='/register'>
-                    <Button variant='contained' disableElevation type='submit'>Register</Button>
+                    <Button variant='contained' disableElevation type='submit' className='register-button'>Register</Button>
                     </Link>
                 </div>
                     <img className='laptop' src={laptop2}></img>
@@ -162,19 +162,20 @@ function Homepage() {
                 </div>
                 </div>
             </div>
-            <div className='about1'>
+            <footer className='footer'>
             <div className='pageTextBox'>
-                        <h2 className="headerText blackText">Plan for the future.</h2>
-                        <p className="descriptionSubText blackText">
+                        <h2 className="headerText">Plan for the future.</h2>
+                        <p className="descriptionSubText">
                             We get that your future is important to you, Thats why WalletWhiz<br />
                             Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
                             WalletWhiz gives you the tools to manage your money with ease <br />
                             so you can spend time on what really matters. 
                         </p>
                     </div>
+            </footer>
                 </div>
             </div>
-        </div>
+        
     );
 }
 

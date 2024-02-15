@@ -19,7 +19,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { motion, useTransform } from 'framer-motion';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Features', 'About us', 'contributors'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
 
   return (
     <div className="navbar">
-    <Toolbar disableGutters  className="mini-nav-box">
+    <Toolbar disableGutters  className="nav-box">
   <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {xs: 'space-between', md: 'none'} }}>
     <img className='headerLogo' src={Logo2}/>
     <Typography
@@ -95,7 +95,10 @@ function ResponsiveAppBar() {
       ))}
     </Menu>
   </Box>
-  <div className='logo-box'>
+  <Box className='logo-box' sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+            }}>
     <img className='headerLogo' src={Logo2}/>
     <Typography
             variant="h6"
@@ -108,10 +111,10 @@ function ResponsiveAppBar() {
               display: { xs: 'none', md: 'flex' },
             }}
           >
-            Wallet<span style={{ color: 'black', marginRight: "60px" }}>Whiz</span>
+            Wallet<span style={{ color: 'black' }}>Whiz</span>
     </Typography>
-  </div>
-  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+  </Box>
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center'}}>
     {pages.map((page) => (
       <Button
         key={page}
@@ -123,6 +126,14 @@ function ResponsiveAppBar() {
         </motion.span>
       </Button>
     ))}
+  </Box>
+  <Box className='btn-box' sx={{ display: { xs: 'none', md: 'flex'}}}>
+    <div className='btn-align separate'>
+      <Button variant='contained' disableElevation className='login-button'>Login</Button>
+    </div>
+    <div className='btn-align'>
+      <Button variant='contained' disableElevation className='register-button'>Register</Button>
+    </div>
   </Box>
 </Toolbar>
   </div>

@@ -3,12 +3,6 @@
     --light-violet: rgb(242, 236, 255);
     --medium-violet: rgb(194, 184, 217);
     --dark-violet: rgb(139, 127, 166);
-}   
-
-
-*{
-    padding: 0;
-    margin: 0;
 }
 
 html, body {
@@ -29,6 +23,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px !important;
 }
 
 .laptop {
@@ -69,8 +64,9 @@ h1, h2, h3, h4, h5, h6, p {
 .pageTextBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 50%;
+    margin-left: 20px;
 }
 
 .pageInner {
@@ -227,6 +223,10 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     max-width: 1200px;
     max-height: 800px;
+}
+
+.footer {
+    background-color: var(--dark-violet);
 }
 
 #spendingContainer {
