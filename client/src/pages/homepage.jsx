@@ -1,4 +1,4 @@
-import { React, useRef } from 'react';
+import { React, useRef, useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import laptop from '../assets/laptop.png'
@@ -11,7 +11,7 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 
 function Homepage() {
     const navRef = useRef(null);
-    const aboutCards = document.querySelector('.about-card');
+
 
     const { scrollYProgress } = useScroll({
         target: navRef,
@@ -22,6 +22,7 @@ function Homepage() {
     const height = useTransform(scrollYProgress, [0, .1], ['200px', '85px'])
     const boxShadow = useTransform(scrollYProgress, [0, .1], ["none", "0px 8px 18px -6px rgba(0, 0, 0, 0.2)"]);
     const opacity = useTransform(scrollYProgress, [0, .1], [0, 1]);
+
 
     return (
         <div className="pageBox">
@@ -77,23 +78,73 @@ function Homepage() {
             <div className='about1'>
                 <h2 className='headerText blackText'>What do we bring to the table?</h2>
                 <div className='grid-box'>
-                    <div className='about-card'>
-                        <CreditCardIcon fontSize='large' className='icons'/>
-                        <h4>Balance Tracking</h4>
-                        <p>See an up-to-date display of your balances across multiple accounts.</p>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <CreditCardIcon fontSize='large' className='icons'/>
+                                <h4>Balance Tracking</h4>
+                                <p>See an up-to-date display of your balances across multiple accounts.</p>
+                            </div>
+                            <div className='back'>
+                                <h4>Balance tracking</h4>
+                                <p>WalletWhiz can connect to multiple accounts at once, 
+                                    allowing you to see live balances across all accounts.
+                                </p>
+                            </div>
                     </div>
-                    <div className='about-card'>
-                        <ShoppingCartIcon fontSize='large' className='icons'/>
-                        <h4>Purchase History</h4>
-                        <p>Track purchases with up-to-date purchase</p>
                     </div>
-                    <div className='about-card'>
-                        <QueryStatsIcon fontSize='large' className='icons'/>
-                        <h4>Analytics</h4>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <ShoppingCartIcon fontSize='large' className='icons'/>
+                                <h4>Purchase History</h4>
+                                <p>Track purchases with up-to-date purchase</p>
+                            </div>
+                            <div className='back'></div>
+                        </div>
                     </div>
-                    <div className='about-card'></div>
-                    <div className='about-card'></div>
-                    <div className='about-card'></div>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                            <   QueryStatsIcon fontSize='large' className='icons'/>
+                                <h4>Analytics</h4>
+                            </div>
+                            <div className='back'>
+                                <QueryStatsIcon fontSize='large' className='icons'/>
+                                <h4>Analytics back</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <CreditCardIcon fontSize='large' className='icons'/>
+                                <h4>Balance Tracking</h4>
+                                <p>See an up-to-date display of your balances across multiple accounts.</p>
+                            </div>
+                            <div className='back'></div>
+                        </div>
+                    </div>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <CreditCardIcon fontSize='large' className='icons'/>
+                                <h4>Balance Tracking</h4>
+                                <p>See an up-to-date display of your balances across multiple accounts.</p>
+                            </div>
+                            <div className='back'></div>
+                        </div>
+                    </div>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <CreditCardIcon fontSize='large' className='icons'/>
+                                <h4>Balance Tracking</h4>
+                                <p>See an up-to-date display of your balances across multiple accounts.</p>
+                            </div>
+                            <div className='back'></div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             <div className='about2'>
