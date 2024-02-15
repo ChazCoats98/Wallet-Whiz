@@ -154,9 +154,9 @@ function Homepage() {
                     <div className='demo-box'>
                         <img src={Cellphone} className='cellphone'/>
                     </div>
-            <div className='pageTextBox'>
-                    <h2 className="aboutText blackText">Who are we?</h2>
-                    <p className="aboutSubText blackText">
+            <div className='aboutTextBox'>
+                    <h2 className="headerText blackText">Who are we?</h2>
+                    <p className="descriptionSubText blackText">
                         We get that your future is important to you, Thats why WalletWhiz<br />
                         Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
                         WalletWhiz gives you the tools to manage your money with ease <br />
