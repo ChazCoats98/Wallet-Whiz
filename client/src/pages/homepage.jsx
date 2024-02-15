@@ -83,7 +83,6 @@ function Homepage() {
                             <div className='front'>
                                 <CreditCardIcon fontSize='large' className='icons'/>
                                 <h4>Balance Tracking</h4>
-                                <p>See an up-to-date display of your balances across multiple accounts.</p>
                             </div>
                             <div className='back'>
                                 <h4>Balance tracking</h4>
@@ -98,9 +97,12 @@ function Homepage() {
                             <div className='front'>
                                 <ShoppingCartIcon fontSize='large' className='icons'/>
                                 <h4>Purchase History</h4>
-                                <p>Track purchases with up-to-date purchase</p>
                             </div>
-                            <div className='back'></div>
+                            <div className='back'>
+                                <h4>Purchase History</h4>
+                                <p> Did you know WalletWhiz can display live purchases? 
+                                    We also categorize your purchases, so you can know what you spend on the most.</p>
+                            </div>
                         </div>
                     </div>
                     <div className='card-wrapper'>
@@ -110,8 +112,10 @@ function Homepage() {
                                 <h4>Analytics</h4>
                             </div>
                             <div className='back'>
-                                <QueryStatsIcon fontSize='large' className='icons'/>
-                                <h4>Analytics back</h4>
+                                <h4>Analytics</h4>
+                                <p>WalletWhiz has a few methods to display your spending data,
+                                    so you can easily track and manage your spending.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -120,17 +124,6 @@ function Homepage() {
                             <div className='front'>
                                 <CreditCardIcon fontSize='large' className='icons'/>
                                 <h4>Balance Tracking</h4>
-                                <p>See an up-to-date display of your balances across multiple accounts.</p>
-                            </div>
-                            <div className='back'></div>
-                        </div>
-                    </div>
-                    <div className='card-wrapper'>
-                        <div className='about-card'>
-                            <div className='front'>
-                                <CreditCardIcon fontSize='large' className='icons'/>
-                                <h4>Balance Tracking</h4>
-                                <p>See an up-to-date display of your balances across multiple accounts.</p>
                             </div>
                             <div className='back'></div>
                         </div>
@@ -140,7 +133,15 @@ function Homepage() {
                             <div className='front'>
                                 <CreditCardIcon fontSize='large' className='icons'/>
                                 <h4>Balance Tracking</h4>
-                                <p>See an up-to-date display of your balances across multiple accounts.</p>
+                            </div>
+                            <div className='back'></div>
+                        </div>
+                    </div>
+                    <div className='card-wrapper'>
+                        <div className='about-card'>
+                            <div className='front'>
+                                <CreditCardIcon fontSize='large' className='icons'/>
+                                <h4>Balance Tracking</h4>
                             </div>
                             <div className='back'></div>
                         </div>

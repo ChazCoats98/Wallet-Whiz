@@ -209,9 +209,10 @@ h1, h2, h3, h4, h5, h6, p {
     color: white;
 }
 
-.back h4 {
+.back h4, .front h4 {
     font-size: 36px;
     text-emphasis: bold;
+    letter-spacing: 1.2px;
 }
 
 .back p {
@@ -220,7 +221,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .icons {
     color: var(--medium-violet);
-    margin-top: 10%;
 }
 
 .spendingChart {
