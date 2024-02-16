@@ -359,6 +359,7 @@ input:-webkit-autofill,
     display: flex;
     flex-direction: column;
     background-color: white;
+    width: 50%;
     padding: 60px;
     border-radius: 15px;
     border: 2px solid var(--medium-violet);
@@ -366,7 +367,9 @@ input:-webkit-autofill,
 }
 
 .formBoxHeader {
-    font-family: 'kanit', sans-serif;
+    font-family: 'oswald', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 800;
     margin-bottom: 1rem;
 }
 
@@ -428,12 +431,27 @@ input:-webkit-autofill,
     margin-top: 20px;
 }
 
+.MuiButtonBase-root {
+    font-family: 'Oswald', sans-serif !important;
+    letter-spacing: 1.2px !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+}
+
+.MuiInputBase-input {
+    color: black !important;
+}
+
 .registerPage {
     background: rgba(255, 255, 255, 0.1);
 }
 
 .registerHeader {
-    font-family: 'kanit', sans-serif;
+    font-family: 'oswald', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 800;
 }
 
 .linkButtonAlign {
@@ -470,6 +488,10 @@ input:-webkit-autofill,
 
 .formInputs {
     margin: 30px auto;
+}
+
+.white-text {
+    color: white;
 }
 
 @media only screen and (max-width: 600px) {

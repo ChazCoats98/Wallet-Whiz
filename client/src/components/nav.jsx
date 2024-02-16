@@ -134,7 +134,9 @@ function ResponsiveAppBar() {
       </Link>
     </div>
     <div className='btn-align'>
-      <Button variant='contained' disableElevation className='register-button'>Register</Button>
+      <Link to='/register'>
+        <Button variant='contained' disableElevation className='register-button'>Register</Button>
+      </Link>
     </div>
   </Box>
 </Toolbar>

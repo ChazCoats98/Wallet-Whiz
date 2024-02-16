@@ -91,6 +91,7 @@ const LoginForm = () => {
                     disableElevation
                     type='submit'
                     disabled={loading}
+                    sx={{ width: '100%'}}
                 >
                     {loading ? 'Logging in' : 'Login'}
                 </Button>

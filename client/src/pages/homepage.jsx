@@ -170,7 +170,7 @@ function Homepage() {
             </div>
             <footer className='footer'>
             <div className='pageTextBox'>
-                        <h2 className="headerText">Contributors</h2>
+                        <h2 className="headerText white-text">Contributors</h2>
                         <ul className='contributors-list'>
                             <li>
                                 <IconButton href='https://github.com/ChazCoats98'>

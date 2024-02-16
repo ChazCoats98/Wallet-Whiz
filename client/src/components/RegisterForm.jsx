@@ -117,8 +117,9 @@ const RegisterForm = () => {
                 variant='contained'
                 disableElevation
                 type='submit'
+                sx={{ width: '100%'}}
             >
-                Submit
+                Register
             </Button>
         </Form>
     );

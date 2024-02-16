@@ -26,9 +26,10 @@ export const PageTheme = createTheme({
         MuiTextField: {
             styleOverrides: {
                 notchedOutline: {
-                    borderColor: '#fff'
+                    borderColor: '#00000'
                 },
                 root: {
+                    color: 'black',
                     width: '100%',
                     fontFamily: 'kanit, sans-serif;',
                     '& .css-11b3ww9-MuiPaper-root-MuiAppBar-root': {

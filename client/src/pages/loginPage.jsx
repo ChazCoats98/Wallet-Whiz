@@ -9,16 +9,18 @@ function LoginPage() {
         <div className="pageBox">
                     <div className="formBoxAlign">
                         <div className='form'>
-                            <div className='logo-box'>
-                                <img className='headerLogo' src={Logo2} />
-                                <h3 className="header-title">Wallet<span style={{ color: 'black'}}>Whiz</span></h3>
-                            </div>
+                            <Link to='/' style={{ textDecoration: 'none' }}>
+                                <div className='logo-box'>
+                                    <img className='headerLogo' src={Logo2} />
+                                    <h3 className="header-title">Wallet<span style={{ color: 'black'}}>Whiz</span></h3>
+                                </div>
+                            </Link>
                             <div className="cards" id="loginBox">
                                 <h3 className="formBoxHeader">Login</h3>
                                 <LoginForm />
                             </div>
                             <div className="registerButtonBox">
-                                <h3 className="registerHeader">Not yet managing your money? Register here</h3>
+                                <h3 className="registerHeader">Not a user yet? Register here</h3>
                                 {Auth.loggedIn() ? (null) : (
                                 <Link to='/register'>
                                 <Button variant="contained" disableElevation>Register</Button>
