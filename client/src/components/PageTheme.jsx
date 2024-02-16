@@ -36,27 +36,29 @@ export const PageTheme = createTheme({
                     },
                     '& .MuiInputBase-root': {
                         '& fieldset': {
-                            borderColor: '#fff',
+                            borderColor: 'rgb(194, 184, 217)',
                         },
                     },
                     "& .MuiOutlinedInput-root.Mui-focused": {
                         "& > fieldset": {
-                            borderColor: "#afafaf"
+                            borderColor: "rgb(139, 127, 166)"
                         }
                     },
                     '& .MuiInputBase-root:hover': {
                         '& fieldset': {
-                            borderColor: '#afafaf',
+                            borderColor: 'rgb(139, 127, 166)',
                         }
                     },
                     '& .MuiFormLabel-root': {
-                        color: '#fff',
+                        color: '#000000',
+                        fontFamily: 'Oswald, sans serif',
+                        letterSpacing: '1.2px',
                     },
                     '& label.Mui-focused': {
                         color: '#afafaf',
                     },
                     '& div': {
-                        color: '#fff'
+                        color: '000000'
                     },
                 },
             },

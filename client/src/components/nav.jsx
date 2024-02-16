@@ -129,7 +129,9 @@ function ResponsiveAppBar() {
   </Box>
   <Box className='btn-box' sx={{ display: { xs: 'none', md: 'flex'}}}>
     <div className='btn-align separate'>
-      <Button variant='contained' disableElevation className='login-button'>Login</Button>
+      <Link to='/login'>
+        <Button variant='contained' disableElevation className='login-button'>Login</Button>
+      </Link>
     </div>
     <div className='btn-align'>
       <Button variant='contained' disableElevation className='register-button'>Register</Button>

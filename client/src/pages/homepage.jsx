@@ -180,25 +180,25 @@ function Homepage() {
                             </li>
                             <li>
                                 <IconButton href='https://github.com/cslunsford'>
-                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Christopher Lunsford" className='github-logo'/>
                                 </IconButton>
                                 <h3>Christopher Lunsford</h3>
                             </li>
                             <li>
-                                <IconButton href=''>
-                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                <IconButton href='https://github.com/DrDanik88'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Danik Therrien" className='github-logo'/>
                                 </IconButton>
                                 <h3>Danik Therrien</h3>
                             </li>
                             <li>
-                                <IconButton href='https://github.com/cslunsford'>
-                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                <IconButton href='https://github.com/Rcurcurato'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Ronald Curcurato" className='github-logo'/>
                                 </IconButton>
                                 <h3>Ronald Curcurato</h3>
                             </li>
                             <li>
-                                <IconButton href=''>
-                                <img src={GitHubLogoWhite} alt="GitHub Link Christopher Lunsford" className='github-logo'/>
+                                <IconButton href='https://github.com/JObengDappah'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Jason OBeng Dappah" className='github-logo'/>
                                 </IconButton>
                                 <h3>Jason Obeng Dappah</h3>
                             </li>
