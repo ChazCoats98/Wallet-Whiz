@@ -9,6 +9,9 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import Cellphone from '../assets/cellphone.png';
+import { IconButton } from '@mui/material';
+import GitHubLogo from '../assets/github-mark.svg';
+import GitHubLogoWhite from '../assets/github-mark-white.svg';
 
 function Homepage() {
     const navRef = useRef(null);
@@ -167,13 +170,39 @@ function Homepage() {
             </div>
             <footer className='footer'>
             <div className='pageTextBox'>
-                        <h2 className="headerText">Plan for the future.</h2>
-                        <p className="descriptionSubText">
-                            We get that your future is important to you, Thats why WalletWhiz<br />
-                            Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
-                            WalletWhiz gives you the tools to manage your money with ease <br />
-                            so you can spend time on what really matters. 
-                        </p>
+                        <h2 className="headerText">Contributors</h2>
+                        <ul className='contributors-list'>
+                            <li>
+                                <IconButton href='https://github.com/ChazCoats98'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                </IconButton>
+                                <h3>Chaz Coats</h3>
+                            </li>
+                            <li>
+                                <IconButton href='https://github.com/cslunsford'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                </IconButton>
+                                <h3>Christopher Lunsford</h3>
+                            </li>
+                            <li>
+                                <IconButton href=''>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                </IconButton>
+                                <h3>Danik Therrien</h3>
+                            </li>
+                            <li>
+                                <IconButton href='https://github.com/cslunsford'>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Chaz Coats" className='github-logo'/>
+                                </IconButton>
+                                <h3>Ronald Curcurato</h3>
+                            </li>
+                            <li>
+                                <IconButton href=''>
+                                <img src={GitHubLogoWhite} alt="GitHub Link Christopher Lunsford" className='github-logo'/>
+                                </IconButton>
+                                <h3>Jason Obeng Dappah</h3>
+                            </li>
+                        </ul>
                     </div>
             </footer>
                 </div>

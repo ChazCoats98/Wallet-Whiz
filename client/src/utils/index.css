@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background-color: rgb(246 243 240);
 }
 
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
     width: 50%;
-    height: 50%;
+    height: 70%;
     border-radius: 10px;
     background-color: var(--medium-violet);
     overflow: hidden;
@@ -242,7 +242,33 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    padding: 20px;
+    justify-content: baseline ;
     background-color: var(--dark-violet);
+}
+
+.contributors-list {
+    list-style: none;
+}
+
+.contributors-list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contributors-list li h3 {
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.github-logo {
+    width: 40px;
+    color: white;
 }
 
 #spendingContainer {
@@ -515,63 +541,6 @@ body {
     /* Default text color set to white for all child elements */
 }
 
-footer {
-    position: relative;
-    width: 80%;
-    /* Changed to 80% of the viewport width */
-    padding: 2rem;
-    background: rgba(47, 62, 158, 0.9);
-    /* Semi-transparent background */
-    border-radius: 8px;
-    /* Rounded corners for the footer */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    /* Space between sections */
-}
-
-
-footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    /* Changed to space-around for even spacing */
-    flex-wrap: wrap;
-}
-
-
-footer .sec {
-    flex: 1;
-    /* Each section will take equal space */
-    min-width: 250px;
-    /* Minimum width for each section */
-}
-
-footer .sec h2 {
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-footer .sec h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 50px;
-    height: 2px;
-    background: #fff;
-}
-
-footer p {
-    color: #fff;
-    line-height: 1.6;
-}
-
 .sci {
     margin-top: 20px;
     display: flex;
@@ -634,18 +603,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    footer  {
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    footer .sec {
-        width: 100%;
-        text-align: center;
-        /* Center text for mobile */
-    }
-
     .sci {
         justify-content: center;
     }
