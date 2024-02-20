@@ -20,6 +20,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { motion, useTransform } from 'framer-motion';
 
 const pages = ['Features', 'About us', 'contributors'];
+const pagesLI = ['Dashboard', 'Account']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -114,6 +115,32 @@ function ResponsiveAppBar() {
             Wallet<span style={{ color: 'black' }}>Whiz</span>
     </Typography>
   </Box>
+    {Auth.loggedIn() ? (
+    <>
+    <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', marginRight: '20px', marginLeft: '20px'}}>
+    {pagesLI.map((page) => (
+      <Link to={`/ ${page}`} key={page}>
+      <Button
+        key={page}
+        onClick={handleCloseNavMenu}
+        sx={{ my: 2, color: 'white', display: 'block' }}
+      >
+        <motion.span style={{ color: "black" }} className='listText'>
+        {page}
+        </motion.span>
+      </Button>
+      </Link>
+    ))}
+  </Box>
+  <Box className='btn-box' sx={{ display: { xs: 'none', md: 'flex'}}}>
+    <div className='btn-align separate'>
+        <Button variant='contained' disableElevation className='login-button' onClick={Auth.logout}>Logout</Button>
+    </div>
+  </Box>
+    </>
+    ) : (
+      <>
+      
   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center'}}>
     {pages.map((page) => (
       <Button
@@ -139,6 +166,10 @@ function ResponsiveAppBar() {
       </Link>
     </div>
   </Box>
+    </>
+
+
+    )}
 </Toolbar>
   </div>
   );

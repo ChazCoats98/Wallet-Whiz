@@ -20,6 +20,16 @@
     width: 55%;
 }
 
+.nav-no-animation {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0px 8px 18px -6px rgba(0, 0, 0, 0.2);
+    height: 5em;
+    width: 100vw;
+    z-index: 3;
+    top: 0;
+}
+
 .separate {
     border-left: 2px solid var(--medium-violet);
 }
@@ -119,6 +129,10 @@
 
 .listText:hover::after {
     transform: scaleX(1);
+}
+
+.list-text:last-child {
+    margin-right: 20px;
 }
 
 #nav-bg {
