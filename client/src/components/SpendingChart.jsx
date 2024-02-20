@@ -51,7 +51,7 @@ const SpendingChart = () => {
         datasets: [
             {
                 data: amount,
-                fontColor: "#fff",
+                fontColor: "black",
                 backgroundColor: [
                     '#b36bb6',
                     '#5568be',

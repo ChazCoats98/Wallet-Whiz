@@ -15,7 +15,7 @@ const PlaidTransactions = () => {
     return (
         <div>
             {data.transactions.map((transaction) => (
-                <div className='container transactionContainer' key={transaction._id}>
+                <div className='map-container transactions' key={transaction._id}>
                     <div className='transactionInner'>
                         <div>
                     <h2>{transaction.merchantName}</h2>
@@ -23,7 +23,6 @@ const PlaidTransactions = () => {
                         </div>
                     <p>{moment(transaction.date).format('MMMM Do YYYY')}</p>
                     </div>
-                    <Divider/>
                 </div>
             ))}
         </div>

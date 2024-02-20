@@ -13,11 +13,10 @@ const PlaidAccounts = () => {
     return (
         <div>
             {data.accounts.map((account) => (
-                <div className='balance-container' key={account._id}>
-                    <h4 className='balance-header' id='savingsHeader'>{account.accountName}</h4>
+                <div className='map-container balances' key={account._id}>
+                    <h4 className='balance-header'>{account.accountName}</h4>
                     <CurrencyFormat className='account-balance' displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={account.balance}/>
-                    <Divider />
-                    </div>
+                </div>
             ))}
         </div>
     );

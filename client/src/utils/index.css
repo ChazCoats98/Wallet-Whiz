@@ -724,19 +724,34 @@ body {
     letter-spacing: 1.2px;
 }
 
-.balance-container {
+.map-container {
     display: flex;
     flex-direction: column;
     margin: 40px;
+    border-bottom: 1px solid var(--light-violet);
+}
+
+.transactions {
+    padding-bottom: 20px;
+}
+
+.transactions span {
+    font-family: 'oswald', sans-serif;
+}
+
+.balances {
+    padding: 20px;
 }
 
 .balance-header {
-    font-family: 'kanit', sans-serif;
+    font-family: 'oswald', sans-serif;
     color: black;
+    letter-spacing: 1.2px;
 }
 
 .account-balance {
     text-align: center;
+    font-family: 'oswald', sans-serif;
     font-size: 42px;
     color: black;
 }
@@ -744,11 +759,10 @@ body {
 .transactions-grid-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: white;
     padding: 40px;
     grid-column: 6/13;
-    grid-row: 2/7;
+    grid-row: 2/9;
     box-shadow: 0px 0px 8px var(--medium-violet);
 }
 
@@ -757,7 +771,7 @@ body {
     flex-direction: column;
     background-color: white;
     grid-column: 1/6;
-    grid-row: 5/12;
+    grid-row: 5/10;
     box-shadow: 0px 0px 8px var(--medium-violet);
 }
 
