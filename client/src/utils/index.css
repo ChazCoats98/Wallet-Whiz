@@ -296,6 +296,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .dashboardHeader {
     font-size: 48px;
+    color: white;
 }
 
 input:-webkit-autofill,
@@ -665,6 +666,7 @@ body {
 .dashboard-container {
     display: flex;
     width: 100vw;
+    height: 250vh;
     padding: 40px;
     padding-top: 120px;
 }
@@ -678,13 +680,38 @@ body {
     grid-row-gap: 20px;
 }
 
+.header-grid-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: var(--dark-violet);
+    grid-column: 1/13;
+}
+
+.header-greeting {
+    display: flex;
+    align-items: center;
+}
+
+.placeholder-img {
+    display: flex;
+    height: 100px;
+    padding-right: 20px;
+}
+
+.dashboard-header {
+    font-size: 48px;
+    color: white;
+}
+
 .balance-grid-box {
     display: flex;
     flex-direction: column;
     background-color: #fff;
     padding: 40px;
     grid-column: 1/6;
-    grid-row: 1/6;
+    grid-row: 2/5;
 }
 
 .balance-container {
@@ -711,7 +738,7 @@ body {
     background-color: white;
     padding: 40px;
     grid-column: 6/13;
-    grid-row: 1/6;
+    grid-row: 2/8;
 }
 
 .chart-grid-box {
@@ -719,7 +746,7 @@ body {
     flex-direction: column;
     background-color: white;
     grid-column: 1/6;
-    grid-row: 6/12;
+    grid-row: 5/12;
 }
 
 #contact {

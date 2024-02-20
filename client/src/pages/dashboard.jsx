@@ -3,10 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'; 
 import { useQuery } from '@apollo/client';
 import { USER } from '../utils/queries';
+import { ACCOUNTS } from '../utils/queries';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
 import ResponsiveAppBar from '../components/nav';
+import BalanceTotal from '../components/balanceTotal';
+import userPlaceholder from '../assets/user-placeholder.png';
 
 function Dashboard() {
   const { loading, error, data } = useQuery(USER);
@@ -22,8 +25,17 @@ function Dashboard() {
             </div>
       <div className='dashboard-container'>
         <div className="dashboard-grid">
+          <div className='header-grid-box'>
+            <div className='header-greeting'>
+              <img className='placeholder-img' src={userPlaceholder} />
+              <h2 className="headerText dashboard-header">Welcome back, {user.username || user.email}!</h2>
+            </div>
+            <div>
+              <h2 className='headerText dashboard-header'>Total Balance</h2>
+              <BalanceTotal />
+            </div>
+          </div>
           <div className="balance-grid-box">
-          <h2 className="headerText dashboardHeader">Hello {user.username || user.email}!</h2>
             <div className="container">
               <h3 className="headerText" id="accountsHeader">
                 ACCOUNTS
