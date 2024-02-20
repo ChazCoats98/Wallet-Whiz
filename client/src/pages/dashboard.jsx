@@ -36,23 +36,27 @@ function Dashboard() {
             </div>
           </div>
           <div className="balance-grid-box">
-            <div className="container">
-              <h3 className="headerText" id="accountsHeader">
+            <div className='header-box'>
+              <h3 className="headerText sub-header" id="accountsHeader">
                 ACCOUNTS
               </h3>             
-              <PlaidAccounts />
             </div>
+              <PlaidAccounts />
           </div>
             <div className="transactions-grid-box">
-              <h2 className="headerText">
-                TRANSACTION HISTORY
-              </h2>
+              <div className='header-box'>
+                <h2 className="headerText sub-header">
+                  TRANSACTION HISTORY
+                </h2>
+              </div>
                 <PlaidTransactions />
             </div>
           <div className='chart-grid-box'>
-          <h2 className="headerText" id="spending">
+            <div className='header-box'>
+              <h2 className="headerText sub-header" id="spending">
                 MONTHLY SPENDING
               </h2>
+            </div>
                 <SpendingChart />
             </div>
           </div>
