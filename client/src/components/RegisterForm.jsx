@@ -65,7 +65,7 @@ const RegisterForm = () => {
                     type='username'
                     name='username'
                     onChange={handleInputChange}
-                    value={userFormData.username}
+                    value={userFormData.username || ''}
                     required
                 />
                 <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
@@ -78,7 +78,7 @@ const RegisterForm = () => {
                     type='email'
                     name='email'
                     onChange={handleInputChange}
-                    value={userFormData.email}
+                    value={userFormData.email || ''}
                     required
                 />
                 <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
@@ -92,7 +92,7 @@ const RegisterForm = () => {
                     type='password'
                     name='password'
                     onChange={handleInputChange}
-                    value={userFormData.password}
+                    value={userFormData.password || ''}
                     required
                 />
                 <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
@@ -106,14 +106,13 @@ const RegisterForm = () => {
                     type='password'
                     name='confirmPassword'
                     onChange={handleInputChange}
-                    value={userFormData.confirmPassword}
+                    value={userFormData.confirmPassword || ''}
                     required
                 />
                 <Form.Control.Feedback type='invalid'>Passwords must match!</Form.Control.Feedback>
             </Form.Group>
 
             <Button
-                disabled={(!userFormData.email && userFormData.password && userFormData.confirmPassword)}
                 variant='contained'
                 disableElevation
                 type='submit'

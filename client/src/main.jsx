@@ -10,12 +10,13 @@ import Homepage from './pages/homepage';
 import User from './pages/user';
 import Register from './pages/RegisterPage.jsx';
 import Login from './pages/loginPage.jsx';
+import ErrorPage from './pages/errorPage.jsx';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
-        errorElement: <h1>Wrong page!</h1>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,

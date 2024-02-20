@@ -414,6 +414,33 @@ input:-webkit-autofill,
     color: #fff;
 }
 
+.error-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.error-body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 75vh;
+    padding: 150px;
+}
+
+.error-body h1 {
+    font-family: 'kanit', sans-serif;
+    font-size: 100px;
+    color: var(--dark-violet);
+}
+
+.error-body p {
+    font-family: 'kanit', sans-serif;
+    font-size: 80px;
+}
+
 .accountBalance {
     text-align: center;
     font-size: 42px;
@@ -576,7 +603,7 @@ input:-webkit-autofill {
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #2F3E9E 0%, #7F2596 100%);
+    background: var(--light-violet);
     padding: 0;
     color: #fff;
     width: 100vw;

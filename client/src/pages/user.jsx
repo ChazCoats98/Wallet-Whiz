@@ -12,7 +12,7 @@ function User() {
 
     return (
         <div className="container upperContainer">
-            <div className='container'>
+            <div className='form'>
                 <div className="container registerPage">
                     <UserAccounts />
                         <AccountButton />

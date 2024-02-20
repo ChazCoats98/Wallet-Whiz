@@ -36,6 +36,7 @@ const LoginForm = () => {
             const { data } = await login({
                 variables: { ...userFormData }
             });
+            console.log(data);
 
             if (!data) {
                 setErrorMessage('Something went wrong!');
@@ -46,6 +47,7 @@ const LoginForm = () => {
         } catch (err) {
             setErrorMessage("Email and password don't match. Please try again!");
             setShowError(true);
+            console.log(err);
         }
 
         setUserFormData({
