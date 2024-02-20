@@ -20,7 +20,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { motion, useTransform } from 'framer-motion';
 
 const pages = ['Features', 'About us', 'contributors'];
-const pagesLI = ['Dashboard', 'Account']
+const pagesLI = ['dashboard', 'account']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -96,16 +96,18 @@ function ResponsiveAppBar() {
       ))}
     </Menu>
   </Box>
-  <Box className='logo-box' sx={{
+    {Auth.loggedIn() ? (
+    <>
+    <Link to='/dashboard' style={{ textDecoration: 'none'}}>
+      <Box className='logo-box' sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
             }}>
-    <img className='headerLogo' src={Logo2}/>
-    <Typography
+        <img className='headerLogo' src={Logo2}/>
+        <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             className='header-title'
             sx={{
               mr: 2,
@@ -113,13 +115,12 @@ function ResponsiveAppBar() {
             }}
           >
             Wallet<span style={{ color: 'black' }}>Whiz</span>
-    </Typography>
-  </Box>
-    {Auth.loggedIn() ? (
-    <>
+        </Typography>
+      </Box>
+    </Link>
     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', marginRight: '20px', marginLeft: '20px'}}>
     {pagesLI.map((page) => (
-      <Link to={`/ ${page}`} key={page}>
+      <Link to={`/${page}`} key={page}>
       <Button
         key={page}
         onClick={handleCloseNavMenu}
@@ -140,7 +141,26 @@ function ResponsiveAppBar() {
     </>
     ) : (
       <>
-      
+      <Link to='/' style={{ textDecoration: 'none'}}>
+      <Box className='logo-box' sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+            }}>
+        <img className='headerLogo' src={Logo2}/>
+        <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            className='header-title'
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+            }}
+          >
+            Wallet<span style={{ color: 'black' }}>Whiz</span>
+        </Typography>
+      </Box>
+    </Link>
   <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center'}}>
     {pages.map((page) => (
       <Button
@@ -167,8 +187,6 @@ function ResponsiveAppBar() {
     </div>
   </Box>
     </>
-
-
     )}
 </Toolbar>
   </div>

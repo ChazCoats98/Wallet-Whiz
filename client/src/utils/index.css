@@ -403,17 +403,6 @@ input:-webkit-autofill,
     align-items: center;
 }
 
-.balanceContainer {
-    display: flex;
-    flex-direction: column;
-    margin: 40px;
-}
-
-.balanceHeader {
-    font-family: 'kanit', sans-serif;
-    color: #fff;
-}
-
 .error-box {
     display: flex;
     flex-direction: column;
@@ -439,11 +428,6 @@ input:-webkit-autofill,
 .error-body p {
     font-family: 'kanit', sans-serif;
     font-size: 80px;
-}
-
-.accountBalance {
-    text-align: center;
-    font-size: 42px;
 }
 
 .taglineBig {
@@ -675,6 +659,67 @@ body {
     .sci {
         justify-content: center;
     }
+}
+
+/*Dashboard page*/
+.dashboard-container {
+    display: flex;
+    width: 100vw;
+    padding: 40px;
+    padding-top: 120px;
+}
+
+.dashboard-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.balance-grid-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 40px;
+    grid-column: 1/6;
+    grid-row: 1/6;
+}
+
+.balance-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.balance-header {
+    font-family: 'kanit', sans-serif;
+    color: black;
+}
+
+.account-balance {
+    text-align: center;
+    font-size: 42px;
+    color: black;
+}
+
+.transactions-grid-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+    grid-column: 6/13;
+    grid-row: 1/6;
+}
+
+.chart-grid-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    grid-column: 1/6;
+    grid-row: 6/12;
 }
 
 #contact {

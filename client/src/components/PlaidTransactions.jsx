@@ -19,7 +19,7 @@ const PlaidTransactions = () => {
                     <div className='transactionInner'>
                         <div>
                     <h2>{transaction.merchantName}</h2>
-                    <CurrencyFormat displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount}/>
+                    <CurrencyFormat className='blackText' displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount}/>
                         </div>
                     <p>{moment(transaction.date).format('MMMM Do YYYY')}</p>
                     </div>

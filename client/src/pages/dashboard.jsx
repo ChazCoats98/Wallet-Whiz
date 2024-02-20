@@ -6,6 +6,7 @@ import { USER } from '../utils/queries';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
+import ResponsiveAppBar from '../components/nav';
 
 function Dashboard() {
   const { loading, error, data } = useQuery(USER);
@@ -15,10 +16,13 @@ function Dashboard() {
 
   const user = data.user;
   return (
-    <div>
-      <div className="container" id='pageBox'>
-        <div key={user._id} className="container pageInner">
-          <div className="container balanceAlign">
+    <div className='pageBox'>
+      <div className="nav-no-animation">
+                <ResponsiveAppBar />
+            </div>
+      <div className='dashboard-container'>
+        <div className="dashboard-grid">
+          <div className="balance-grid-box">
           <h2 className="headerText dashboardHeader">Hello {user.username || user.email}!</h2>
             <div className="container">
               <h3 className="headerText" id="accountsHeader">
@@ -27,23 +31,21 @@ function Dashboard() {
               <PlaidAccounts />
             </div>
           </div>
-          <div className="container">
+            <div className="transactions-grid-box">
               <h2 className="headerText">
                 TRANSACTION HISTORY
               </h2>
                 <PlaidTransactions />
-          </div>
-        </div>
-        <div className='container' id='spendingOuter'>
-        <div className='container' id='spendingContainer'>
-        <h2 className="headerText" id="spending">
+            </div>
+          <div className='chart-grid-box'>
+          <h2 className="headerText" id="spending">
                 MONTHLY SPENDING
               </h2>
                 <SpendingChart />
-        </div>
-        </div>
+            </div>
+          </div>
       </div>
-      </div>
+    </div>
   );
 }
 
