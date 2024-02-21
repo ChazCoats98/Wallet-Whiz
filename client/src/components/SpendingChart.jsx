@@ -1,10 +1,11 @@
 import React from "react";
-import { Chart, registerables } from "chart.js/auto";
+import { Chart, registerables, ArcElement, Tooltip, Legend, Title } from "chart.js/auto";
 import { useQuery } from "@apollo/client";
 import { TRANSACTIONS } from "../utils/queries";
 import { Doughnut } from "react-chartjs-2";
 
 Chart.register(...registerables);
+Chart.defaults.plugins.legend.title.font = 'Oswald';
 
 const SpendingChart = () => {
     const { loading, error, data } = useQuery(TRANSACTIONS);
@@ -26,11 +27,20 @@ const SpendingChart = () => {
     const amount = Object.values(categoryAmount);
     const totalSum = amount.reduce((sum, value) => sum + value, 0);
 
+    const categoriesFormatted = [];
+
+    categories.forEach((category) => {
+        const categoryFormat = category.replaceAll('_', ' ').toLowerCase();
+        categoriesFormatted.push(categoryFormat);
+    })
+    console.log(categoriesFormatted);
+
     const Options = {
         plugins: {
             legend: {
                 labels: {
-                    color: "white",
+                    color: "black",
+                    fontFamily: "'oswald', sans-serif",
                 },
             },
             tooltip: {
@@ -47,16 +57,16 @@ const SpendingChart = () => {
     };
 
     const chartData = {
-        labels: categories,
+        labels: categoriesFormatted,
         datasets: [
             {
                 data: amount,
                 fontColor: "black",
                 backgroundColor: [
-                    '#b36bb6',
-                    '#5568be',
-                    'rgb(218, 137, 221)',
-                    '#e0e087',
+                    'rgb(194, 184, 217)',
+                    'rgb(217, 207, 184)',
+                    'rgb(139, 127, 166)',
+                    'rgb(166, 127, 139)',
                 ],
             },
         ],
@@ -64,7 +74,7 @@ const SpendingChart = () => {
 
     return (
         <div className="container spendingChart">
-            <Doughnut data={chartData} options={Options} />
+            <Doughnut data={chartData} options={Options} updateMode="resize" />
         </div>
     );
 };
