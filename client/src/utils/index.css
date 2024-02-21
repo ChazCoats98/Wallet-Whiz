@@ -271,14 +271,6 @@ h1, h2, h3, h4, h5, h6, p {
     color: white;
 }
 
-#spendingContainer {
-    width: fit-content;
-}
-
-#spendingOuter {
-    width: fit-content;
-}
-
 .headerText {
     font-family: 'kanit', sans-serif;
     text-align: start;
@@ -718,6 +710,11 @@ body {
     border-bottom: 1px solid rgba(169, 168, 168, 0.714);
 }
 
+.dashboard-list-text {
+    font-family: 'oswald', sans-serif;
+    color: black;
+}
+
 .sub-header {
     font-size: 36px;
     color: black;
@@ -736,7 +733,15 @@ body {
 }
 
 .income-text {
+    font-family: 'oswald', sans-serif;
+    font-size: 20px;
     color: rgb(76, 218, 119);
+}
+
+.expense-text {
+    font-family: 'oswald', sans-serif;
+    font-size: 20px;
+    color: rgb(222, 34, 34);
 }
 
 .display-left {
@@ -792,6 +797,31 @@ body {
     grid-column: 1/6;
     grid-row: 5/10;
     box-shadow: 0px 0px 8px var(--medium-violet);
+}
+
+.chart-align {
+    display: flex;
+    margin-top: 40px;
+}
+
+/*account page*/
+.user-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--light-violet);
+}
+
+.user-box-left {
+    display: flex;
+    align-items: center;
+}
+
+.user-details-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
 }
 
 #contact {

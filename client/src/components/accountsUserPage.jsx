@@ -51,16 +51,18 @@ const UserAccounts = () => {
 
     return (
         <div key={user._id}>
-            <h3 className="tagline">{user.username || user.email}&apos;s Profile</h3>
+            <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
             <div className="container">
-                <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Username:' secondary={user.username} />
+                <div className='user-details-container'>
+                    <div className='user-box-left'>
+                        <Avatar />
+                        <div className='user-details-box'>
+                            <h3>Username: </h3>
+                            <p>{user.username}</p>
+                        </div>
+                    </div>
                     <Button variant='contained' disableElevation onClick={() => handleUpdateClick('username')}>Change Username</Button>
-                </ListItem>
+                </div>
                 {updateField === 'username' && (
                     <ListItem>
                     <TextField
@@ -72,16 +74,16 @@ const UserAccounts = () => {
                             <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
                         </ListItem>
                 )}
-                <Divider variant="inset" />
-                <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                            <AlternateEmailIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Email:' secondary={user.email} />
+                <div className='user-details-container'>
+                    <div className='user-box-left'>
+                        <AlternateEmailIcon className='transaction-icons' />
+                        <div className='user-details-box'>
+                            <h3>Email: </h3>
+                            <p>{user.email}</p>
+                        </div>
+                    </div>
                     <Button variant='contained' disableElevation onClick={() => handleUpdateClick('email')}>Change Email</Button>
-                </ListItem>
+                    </div>
                 {updateField === 'email' && (
                     <ListItem>
                     <TextField
@@ -93,15 +95,15 @@ const UserAccounts = () => {
                             <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
                         </ListItem>
                 )}
-                <Divider variant="inset" />
-                <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                            <AccessTimeIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Account Created:" secondary={user.createdAt} />
-                </ListItem>
+                <div className='user-details-container'>
+                    <div className='user-box-left'>
+                            <AccessTimeIcon className='transaction-icons'/>
+                            <div className='user-details-box'>
+                            <h3>Account created: </h3>
+                            <p>{user.createdAt}</p>
+                        </div>
+                    </div>
+                </div>
                 <Divider variant="inset" />
                 <ListItem>
                     <ListItemAvatar>

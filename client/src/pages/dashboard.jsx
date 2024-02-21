@@ -53,11 +53,13 @@ function Dashboard() {
             </div>
           <div className='chart-grid-box'>
             <div className='header-box'>
-              <h2 className="headerText sub-header" id="spending">
+              <h2 className="headerText sub-header">
                 MONTHLY SPENDING
               </h2>
             </div>
+            <div className='chart-align'>
                 <SpendingChart />
+            </div>
             </div>
           </div>
       </div>
