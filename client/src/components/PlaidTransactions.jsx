@@ -6,30 +6,50 @@ import '../App.css';
 import Divider from '@mui/material/Divider';
 import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
-import TransactionIcon from './TransactionIcons';
+import PlaidIcon from './PlaidIcons';
 
 const PlaidTransactions = () => {
     const { loading, error, data } = useQuery(TRANSACTIONS);
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error.message}</p>
-    console.log(data);
-
 
 
     return (
         <div>
-            {data.transactions.map((transaction) => (
-                <div className='map-container transactions' key={transaction._id}>
+            {data.transactions.map((transaction) => {
+                if (transaction.amount > 0) {
+                    return (
+                        <div className='map-container transactions' key={transaction._id}>
                     <div className='transactionInner'>
-                        <div>
-                            <TransactionIcon category={transaction.category} />
-                            <h2>{transaction.merchantName}</h2>
-                            <CurrencyFormat className='blackText' displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount}/>
+                        <div className='display-left'>
+                            <PlaidIcon className='transaction-icons' data={transaction.category} />
+                            <div>
+                                <h2>{transaction.merchantName}</h2>
+                                <CurrencyFormat className='blackText' displayType={'text'} thousandSeparator={true} prefix={'$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount * -1}/>
+                            </div>
                         </div>
                     <p>{moment(transaction.date).format('MMMM Do YYYY')}</p>
                     </div>
                 </div>
-            ))}
+                    )
+                } else if (transaction.amount < 0) {
+                    return (
+                        <div className='map-container transactions' key={transaction._id}>
+                        <div className='transactionInner'>
+                            <div className='display-left'>
+                                <PlaidIcon className='income-icons' data={transaction.category} />
+                                <div>
+                                    <h2 className='income-text'>{transaction.merchantName}</h2>
+                                    <CurrencyFormat className='income-text' displayType={'text'} thousandSeparator={true} prefix={'+$'} decimalSeparator='.' decimalScale={2} fixedDecimalScale={true} value={transaction.amount * -1}/>
+                                </div>
+                            </div>
+                        <p>{moment(transaction.date).format('MMMM Do YYYY')}</p>
+                        </div>
+                    </div>
+                    )
+                }
+            }
+            )}
         </div>
     );
 };

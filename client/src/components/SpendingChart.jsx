@@ -38,10 +38,7 @@ const SpendingChart = () => {
     const Options = {
         plugins: {
             legend: {
-                labels: {
-                    color: "black",
-                    fontFamily: "'oswald', sans-serif",
-                },
+                display: false,
             },
             tooltip: {
                 callbacks: {

@@ -735,6 +735,24 @@ body {
     padding-bottom: 20px;
 }
 
+.income-text {
+    color: rgb(76, 218, 119);
+}
+
+.display-left {
+    display: flex;
+}
+
+.transaction-icons {
+    color: black;
+    margin-right: 20px;
+}
+
+.income-icons {
+    color: rgb(53, 193, 107);
+    margin-right: 20px;
+}
+
 .transactions span {
     font-family: 'oswald', sans-serif;
 }
@@ -770,6 +788,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    padding: 40px;
     grid-column: 1/6;
     grid-row: 5/10;
     box-shadow: 0px 0px 8px var(--medium-violet);
