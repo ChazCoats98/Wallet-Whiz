@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    optimizeDeps: {
+      exclude: ['react-icon']
+    },
     proxy: {
       '/graphql': {
         target: 'http://localhost:3001',
