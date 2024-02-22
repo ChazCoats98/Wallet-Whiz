@@ -1,0 +1,12 @@
+projects:
+  walletwhiz:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/utils
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src

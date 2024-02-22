@@ -5,7 +5,8 @@ import userPlaceholder from '../assets/user-placeholder.png';
 import Dropzone from 'react-dropzone';
 import { UPDATE_PHOTO } from '../utils/mutations';
 import { USER } from '../utils/queries';
-import multer from 'multer'
+import { generateClient } from 'aws-amplify/api';
+import { uploadData, getUrl } from 'aws-amplify/storage';
 
 const UserAvatar = () => {
     const editor = useRef(null)
@@ -22,10 +23,12 @@ const UserAvatar = () => {
         height: 330,
     })
 
-    const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
-    const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
-
+    const client = generateClient();
     const [updatePhoto] = useMutation(UPDATE_PHOTO);
+    
+    const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
+    const user = userData.user;
+    
 
     const handleSubmit = async () => {
         if (editor) {

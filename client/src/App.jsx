@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import { Amplify } from 'aws-amplify';
+import awsmobile from '../../src/aws-exports'
+
+Amplify.configure(awsmobile);
 
 import {
   ApolloClient,

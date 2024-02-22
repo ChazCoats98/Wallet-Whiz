@@ -10,6 +10,17 @@
       "StackName": "amplify-walletwhiz-dev-105523",
       "StackId": "arn:aws:cloudformation:us-east-1:590184075942:stack/amplify-walletwhiz-dev-105523/ca7db9b0-d19a-11ee-9421-1274e23328a7",
       "AmplifyAppId": "d14t26y3zzdi2o"
+    },
+    "categories": {
+      "auth": {
+        "walletwhiza5e3d6f8": {}
+      },
+      "storage": {
+        "gqls3": {}
+      },
+      "api": {
+        "walletwhiz": {}
+      }
     }
   }
 }
