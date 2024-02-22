@@ -19,6 +19,7 @@
     "axios": "^1.6.1",
     "dotenv": "^8.6.0",
     "framer-motion": "^11.0.5",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "react-avatar-editor": "^13.0.2"
   }
 }
