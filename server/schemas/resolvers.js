@@ -7,7 +7,7 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                return User.findById(context.user._id).select('username email createdAt plaidAccessToken');
+                return User.findById(context.user._id).select('username email image createdAt plaidAccessToken');
             } else {
                 throw AuthenticationError;
             }

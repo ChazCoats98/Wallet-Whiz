@@ -43,12 +43,21 @@ export const UPDATE_EMAIL = gql`
     }
 `;
 
+export const UPDATE_PHOTO = gql`
+    mutation updatePhoto($userId: ID!, $photo: String) {
+        updateEmail(userId: $userId, photo: $photo) {
+            _id
+            photo
+        }
+    }
+`;
+
 export const EXCHANGE_PUBLIC_TOKEN = gql`
     mutation ExchangePublicToken($publicToken: String!) {
-     exchangePublicToken(publicToken: $publicToken) {
-     access_token
-  }
-}
+        exchangePublicToken(publicToken: $publicToken) {
+            access_token
+        }
+    }
 `;
 
 export const FETCH_PLAID_DATA = gql`

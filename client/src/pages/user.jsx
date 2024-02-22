@@ -17,7 +17,7 @@ function User() {
                 <ResponsiveAppBar />
             </div>
             <div className="formBoxAlign">
-                <div className="form">
+                <div className="form user-container">
                     <UserAccounts />
                         <AccountButton />
                     {data && data.user && !data.user.plaidAccessToken && (
