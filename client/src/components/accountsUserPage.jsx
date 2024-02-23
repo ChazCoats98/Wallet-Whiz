@@ -13,7 +13,6 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import userPlaceholder from '../assets/user-placeholder.png';
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
@@ -52,7 +51,6 @@ const UserAccounts = () => {
 
     return (
         <div key={user._id}>
-            <img src={userPlaceholder} />
             <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
             <div className="container">
                 <div className='user-details-container'>
@@ -99,26 +97,25 @@ const UserAccounts = () => {
                 )}
                 <div className='user-details-container'>
                     <div className='user-box-left'>
-                        <AccessTimeIcon className='transaction-icons'/>
-                        <div className='user-details-box'>
+                            <AccessTimeIcon className='transaction-icons'/>
+                            <div className='user-details-box'>
                             <h3>Account created: </h3>
                             <p>{user.createdAt}</p>
                         </div>
                     </div>
                 </div>
-                <div className='user-detailsContainer'>
-                    <div className='user-box-left'>
-                            <AccountBalanceIcon className='transaction-icons'/>
-                            <div className='user-details-box'>
-                                <h3>Linked banks: </h3>
-                                <div className='accounts-map-box'>
-                                    {accounts.map((account) => (
-                                        <p  key={account._id}>{account.accountName}</p>
-                                    ))}
-                                </div>
-                            </div>
-                    </div>
-                </div>
+                <Divider variant="inset" />
+                <ListItem>
+                    <ListItemAvatar>
+                        <Avatar>
+                            <AccountBalanceIcon />
+                        </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText primary="Linked Banks:" />
+                    {accounts.map((account) => (
+                        <ListItemText secondary={account.accountName} key={account._id} />
+                    ))}
+                </ListItem>
                 <Divider variant="inset" />
                 {updateField && (
                     <Button variant='contained' disableElevation onClick={handleSave}>Save</Button>
