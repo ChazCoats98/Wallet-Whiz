@@ -832,6 +832,16 @@ body {
     margin-right: 40px;
 }
 
+.profile-image { 
+    width: 100px;
+}
+
+.update-picture-icon {
+    position: relative;
+    left: -45px;
+    top: -20px;
+}
+
 #contact {
     background-color: #2f3e9e0b;
     color: white;

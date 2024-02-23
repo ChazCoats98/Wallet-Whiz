@@ -13,7 +13,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import userPlaceholder from '../assets/user-placeholder.png';
+import UserImage from './UserImage';
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
@@ -52,7 +52,7 @@ const UserAccounts = () => {
 
     return (
         <div key={user._id}>
-            <img src={userPlaceholder} />
+            <UserImage />
             <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
             <div className="container">
                 <div className='user-details-container'>
