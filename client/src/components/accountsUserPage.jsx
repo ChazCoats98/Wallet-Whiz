@@ -52,8 +52,10 @@ const UserAccounts = () => {
 
     return (
         <div key={user._id}>
-            <UserImage />
-            <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
+            <div className='user-header'>
+                <UserImage />
+                <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
+            </div>
             <div className="container">
                 <div className='user-details-container'>
                     <div className='user-box-left'>

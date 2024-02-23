@@ -1,10 +1,12 @@
 const Modal = (props) => {
+    console.log(props);
     const { show, onClose, children, title } = props;
     if (!show) {
         return null;
     }   
     
     const RenderModal = () => {
+        return (
         <div className="modal-wrapper">
             <div className="modal-header">
                 <h3>{title}</h3>
@@ -16,6 +18,7 @@ const Modal = (props) => {
                     {children}
             </div>                         
         </div>
+        )
     };
 
     return (

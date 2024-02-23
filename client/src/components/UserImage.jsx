@@ -42,6 +42,14 @@ const UserImage = () => {
         }
     }
 
+    const handleChange = (event) => {
+        const files = Array.from(event.target.files);
+        const [file] = files;
+      };
+
+      const ref = useRef();
+    
+
     const RenderProfileImage = () => {
         const profileImage = imageData.userProfileImage ? 
                                 imageData.userProfileImage : 
@@ -49,10 +57,15 @@ const UserImage = () => {
 
         return(
             <div>
-                <img className='profile-image' src={profileImage} alt='user-logo' />
-                <IconButton onClick={toggleModal} className='update-picture-icon'>
-                <EditIcon className='transaction-icons'/>  
-                </IconButton>
+                <img className='profile-image'src={profileImage} alt='user-logo' />
+                    <label htmlFor="photo-upload" className="update-picture-icon">
+                        <div className="img-wrap img-upload" >
+                            <EditIcon className='transaction-icons' for="photo-upload" src={userPlaceholder}/>
+                        </div>
+                            <input id="photo-upload" type="file" style={{display:'none'}} 
+                            onChange={onImageFileChangeHandler}
+                            /> 
+                    </label>
             </div>
         )
     }

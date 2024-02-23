@@ -39,9 +39,8 @@ const ImageCrop = (props) => {
             </div>
             <div>
                 <Button
-                    onClick ={onImageCrop}
-                    title   ='Crop'                
-                />
+                    onClick ={onImageCrop}                
+                >Crop</Button>
             </div>
         </div>
         )
