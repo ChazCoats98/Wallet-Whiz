@@ -3,8 +3,6 @@ import { useQuery, useMutation } from '@apollo/client';
 import AvatarEditor from 'react-avatar-editor'
 import userPlaceholder from '../assets/user-placeholder.png';
 import Dropzone from 'react-dropzone';
-import { UPDATE_PHOTO } from '../utils/mutations';
-import { USER } from '../utils/queries';
 import { generateClient } from 'aws-amplify/api';
 import { uploadData, getUrl } from 'aws-amplify/storage';
 

@@ -1,23 +1,28 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import '../App.css'; 
-import { useQuery } from '@apollo/client';
-import { USER } from '../utils/queries';
-import { ACCOUNTS } from '../utils/queries';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
 import ResponsiveAppBar from '../components/nav';
 import BalanceTotal from '../components/balanceTotal';
 import userPlaceholder from '../assets/user-placeholder.png';
+import { getCurrentUser } from 'aws-amplify/auth';
 
-function Dashboard() {
-  const { loading, error, data } = useQuery(USER);
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
+async function currentAuthenticatedUser() {
+  try {
+    const { username, userId, signInDetails } = await getCurrentUser();
+    console.log(`The username: ${username}`);
+    console.log(`The userId: ${userId}`);
+    console.log(`The signInDetails: ${signInDetails}`);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-  const user = data.user;
+function Dashboard(props) {
+  console.log(props);
   return (
     <div className='pageBox'>
       <div className="nav-no-animation">
@@ -28,11 +33,10 @@ function Dashboard() {
           <div className='header-grid-box'>
             <div className='header-greeting'>
               <img className='placeholder-img' src={userPlaceholder} />
-              <h2 className="headerText dashboard-header">Welcome back, {user.username || user.email}!</h2>
+              <h2 className="headerText dashboard-header">Welcome back,  </h2>
             </div>
             <div>
               <h2 className='headerText dashboard-header'>Total Balance</h2>
-              <BalanceTotal />
             </div>
           </div>
           <div className="balance-grid-box">
@@ -41,7 +45,6 @@ function Dashboard() {
                 ACCOUNTS
               </h3>             
             </div>
-              <PlaidAccounts />
           </div>
             <div className="transactions-grid-box">
               <div className='header-box'>
@@ -49,7 +52,6 @@ function Dashboard() {
                   TRANSACTION HISTORY
                 </h2>
               </div>
-                <PlaidTransactions />
             </div>
           <div className='chart-grid-box'>
             <div className='header-box'>
@@ -58,7 +60,6 @@ function Dashboard() {
               </h2>
             </div>
             <div className='chart-align'>
-                <SpendingChart />
             </div>
             </div>
           </div>

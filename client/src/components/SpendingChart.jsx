@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart, registerables, ArcElement, Tooltip, Legend, Title } from "chart.js/auto";
 import { useQuery } from "@apollo/client";
-import { TRANSACTIONS } from "../utils/queries";
+import { TRANSACTIONS } from "../../src/utils/queries";
 import { Doughnut } from "react-chartjs-2";
 
 Chart.register(...registerables);

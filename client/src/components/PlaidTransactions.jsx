@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { TRANSACTIONS } from '../utils/queries';
+import { TRANSACTIONS } from '../../src/utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Divider from '@mui/material/Divider';

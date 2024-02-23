@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import Logo2 from '../assets/WalletWhizIconnbg.png'
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
-import { Authenticator, View, Image, Text, Heading, useTheme, useAuthenticator} from '@aws-amplify/ui-react';
+import { Authenticator, View, Text, Heading, useTheme, useAuthenticator} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsmobile from '../../../src/aws-exports';
 Amplify.configure(awsmobile);
+import Dashboard from './dashboard';
 
 const components = {
     Header() {
@@ -15,10 +16,10 @@ const components = {
   
       return (
         <View textAlign="center" padding={tokens.space.large}>
-          <Image
-            alt="Amplify logo"
-            src="https://docs.amplify.aws/assets/logo-dark.svg"
-          />
+            <div className='logo-box'>
+                <img className='headerLogo' src={Logo2} />
+                <h3 className="header-title">Wallet<span style={{ color: 'black'}}>Whiz</span></h3>
+            </div>
         </View>
       );
     },
@@ -236,10 +237,10 @@ const components = {
     },
   };
   
-  export default function LoginPage() {
+  export default function LoginPage(user) {
         return (
-            <Authenticator formFields={formFields} components={components}>
-            {({ signOut }) => <button onClick={signOut}>Sign out</button>}
+            <Authenticator formFields={formFields} components={components} socialProviders={['facebook', 'google']}>
+                <Dashboard props={user}/>
           </Authenticator>
           );
   }
