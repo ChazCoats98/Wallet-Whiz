@@ -1,7 +1,0 @@
-{
-    "AppSyncApiName": "walletwhiz",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": false,
-    "S3DeploymentBucket": "amplify-walletwhiz-dev-105523-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/121b0a1bf5ec83e32d5a53c163684c9faed60189"
-}
