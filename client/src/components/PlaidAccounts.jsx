@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ACCOUNTS } from '../../src/utils/queries';
+import { ACCOUNTS } from '../utils/queries';
 import Divider from '@mui/material/Divider';
 import CurrencyFormat from 'react-currency-format';
 import PlaidIcon from './PlaidIcons';

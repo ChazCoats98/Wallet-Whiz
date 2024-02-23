@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { ACCOUNTS, USER } from '../../src/utils/queries';
-import { UPDATE_USERNAME, UPDATE_EMAIL } from '../../src/utils/mutations';
+import { ACCOUNTS, USER } from '../utils/queries';
+import { UPDATE_USERNAME, UPDATE_EMAIL } from '../utils/mutations';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';

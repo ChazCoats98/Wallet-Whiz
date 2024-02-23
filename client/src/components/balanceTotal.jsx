@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { ACCOUNTS } from '../../src/utils/queries';
+import { ACCOUNTS } from '../utils/queries';
 import CurrencyFormat from 'react-currency-format';
 
 const BalanceTotal = () => {

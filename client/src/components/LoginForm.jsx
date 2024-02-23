@@ -3,6 +3,8 @@ import { useMutation } from '@apollo/client';
 import { Form, Alert } from 'react-bootstrap';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
+import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
@@ -11,6 +13,7 @@ const LoginForm = () => {
     const [showError, setShowError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
+    const [login, { loading }] = useMutation(LOGIN_USER);
     const [isLoggedIn, setIsLoggedIn] = useState(Auth.loggedIn());
 
     const handleInputChange = (event) => {
@@ -29,6 +32,23 @@ const LoginForm = () => {
             return;
         }
 
+        try {
+            const { data } = await login({
+                variables: { ...userFormData }
+            });
+            console.log(data);
+
+            if (!data) {
+                setErrorMessage('Something went wrong!');
+            }
+
+            Auth.login(data.login.token);
+            setIsLoggedIn(true);
+        } catch (err) {
+            setErrorMessage("Email and password don't match. Please try again!");
+            setShowError(true);
+            console.log(err);
+        }
 
         setUserFormData({
             email: '',
