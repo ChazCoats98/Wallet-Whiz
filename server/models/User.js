@@ -3,20 +3,6 @@ const bcrypt = require('bcrypt');
 const accountSchema = require('./Account');
 const transactionSchema = require('./Transactions');
 
-const imageObject = new Schema(
-    {
-        bucket: {
-            type: String,
-        },
-        region: {
-            type: String,
-        },
-        key: {
-            type: String,
-        }
-    }
-)
-
 const userSchema = new Schema(
     {
         username: {
@@ -34,7 +20,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        image: [imageObject],
         createdAt: {
             type: String,
         },

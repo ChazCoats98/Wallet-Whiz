@@ -833,10 +833,6 @@ body {
 }
 
 /*account page*/
-.user-container {
-    margin-top: 100px;
-}
-
 .user-details-container {
     display: flex;
     align-items: center;
@@ -854,10 +850,6 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 40px;
-}
-
-.user-box-top {
-    display: flex;
 }
 
 .accounts-map-box {

@@ -15,16 +15,11 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^6.1.4",
     "@mui/icons-material": "^5.15.10",
-    "aws-amplify": "^6.0.17",
     "axios": "^1.6.1",
     "dotenv": "^8.6.0",
     "framer-motion": "^11.0.5",
     "moment": "^2.29.4",
-    "multer": "^1.4.5-lts.1",
-    "react-avatar-editor": "^13.0.2",
-    "react-dropzone": "^14.2.3",
-    "uuid": "^9.0.1"
+    "react-avatar-editor": "^13.0.2"
   }
 }

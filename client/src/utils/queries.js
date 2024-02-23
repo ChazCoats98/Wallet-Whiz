@@ -6,7 +6,6 @@ export const USER = gql`
             _id
             username
             email
-            image
             createdAt
             plaidAccessToken
         }
