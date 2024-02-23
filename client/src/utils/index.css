@@ -824,6 +824,14 @@ body {
     margin-left: 40px;
 }
 
+.accounts-map-box {
+    display: flex;
+}
+
+.accounts-map-box p {
+    margin-right: 40px;
+}
+
 #contact {
     background-color: #2f3e9e0b;
     color: white;
