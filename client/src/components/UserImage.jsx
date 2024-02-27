@@ -6,6 +6,19 @@ import userPlaceholder from '../assets/user-placeholder.png'
 import Modal from './Modal';
 import { verifyFile } from '../utils/verifyFile';
 import ImageCrop from './ImageCrop';
+import multer from 'multer';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
+import {AdvancedImage} from '@cloudinary/react';
+import {Cloudinary} from "@cloudinary/url-gen";
+
+import { name, cloudSecret, key } from '../../../server/utils/auth'
+
+
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: 'walletwhiz'
+    }
+})
 
 const UserImage = () => {
     const initialState = {
@@ -59,7 +72,7 @@ const UserImage = () => {
             <div>
                 <img className='profile-image'src={profileImage} alt='user-logo' />
                     <label htmlFor="photo-upload" className="update-picture-icon">
-                        <div className="img-wrap img-upload" >
+                        <div className="img-upload" >
                             <EditIcon className='transaction-icons' for="photo-upload" src={userPlaceholder}/>
                         </div>
                             <input id="photo-upload" type="file" style={{display:'none'}} 

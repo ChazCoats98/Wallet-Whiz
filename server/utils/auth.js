@@ -3,6 +3,10 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const secret = `${process.env.SECRET}`;
+const name = `${process.env.CLOUD_NAME}`
+const cloudSecret = `${process.env.CLOUD_SECRET}`
+const key = `${process.env.CLOUD_KEY}`
+
 const expiration = '2h';
 
 module.exports = {

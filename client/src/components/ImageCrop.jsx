@@ -9,6 +9,7 @@ const ImageCrop = (props) => {
 
     const onScaleChange = (e) =>{
         const value = parseFloat( e.target.value);
+        console.log(value);
         setScaleValue(value); 
     }
 
@@ -17,8 +18,9 @@ const ImageCrop = (props) => {
         <div className='editor'>
             <AvatarEditor 
                 image  ={imagefile}
-                border ={5}
-                scale  ={scaleValue}
+                border={50}
+                borderRadius={150}
+                scale  ={scaleValue/1.2}
                 rotate ={0}
                 ref    ={setEditorRef} />
         </div>
