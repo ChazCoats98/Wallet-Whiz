@@ -34,6 +34,7 @@ const typeDefs = `
         user: User
         accounts: [Account]
         transactions: [Transaction]
+        _: Boolean
     }
 
     type Mutation {
@@ -43,6 +44,7 @@ const typeDefs = `
         updateEmail(userId: ID!, email: String!): User
         exchangePublicToken(publicToken: String!): AccessToken
         fetchPlaidData(accessToken: String!): PlaidDataResult
+        uploadPhoto(photo: String): String
     }
 
     type AccessToken {

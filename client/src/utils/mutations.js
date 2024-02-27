@@ -43,6 +43,7 @@ export const UPDATE_EMAIL = gql`
     }
 `;
 
+
 export const EXCHANGE_PUBLIC_TOKEN = gql`
     mutation ExchangePublicToken($publicToken: String!) {
      exchangePublicToken(publicToken: $publicToken) {
