@@ -7,12 +7,15 @@ import Modal from './Modal';
 import { verifyFile } from '../utils/verifyFile';
 import ImageCrop from './ImageCrop';
 
-const UserImage = () => {
+
+const UserImage = (props) => {
     const initialState = {
         userProfileImage: null,
         selectedFile: null,
         editor: null
     };
+
+    console.log(props)
 
     let imageEditor= null;
     const [ imageData, setImageData ] = useState(initialState);

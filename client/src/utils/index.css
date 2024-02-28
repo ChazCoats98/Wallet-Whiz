@@ -915,6 +915,370 @@ body {
 
 }
 
-@media (max-width: 1100px) {
+/* Breakpoints */
+@media (min-width:320px) { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    ul {
+      float: inline-start;
+    }
+  
+    li {
+      padding: 1em;
+    }
+  
+    .contacts-top {
+      width: 100%;
+      padding: 0px 15px 0px 15px;
+    }
+  
+  
+    .tool-box {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .mini-nav-box {
+      width: 60%;
+      justify-content: space-between !important;
+    }
+  
+    .menu-box {
+      margin-left: -8%;
+    }
+  
+    .menu-items {
+      font-size: 12px !important;
+      padding: 0px !important;
+      padding-right: 5px !important;
+    }
     
-}
+    .tag-line h1{
+      font-size: 35px;
+    }
+  
+    .blurb-box {
+      width: 95%;
+      height: 35%;
+      box-shadow: 0px 10px 10px 10px rgba(0,0,0,0.4);
+    }
+  
+    .page-box2 {
+      height: 200vh;
+    }
+  
+    .padding {
+      padding-top: 15%;
+    }
+  
+    .services-grid {
+      width: 95%;
+      grid-template-columns: repeat(3, minmax(0, 1fr)); 
+      grid-template-rows: repeat(6, minmax(0, 1fr)); 
+    }
+  
+    .services-grid h2{
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+  
+    .img1 {
+      grid-column: 1/5;
+      margin-top: 1.3em;
+      border-radius: 10px 10px 0px 0px;
+      box-shadow: 0em .2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+    .desc1 {
+      grid-column: 1/5;
+      grid-row: 2;
+      padding-bottom: 5px;
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: 0em 0.2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+    .img2 {
+      grid-column: 1/5;
+      grid-row: 3;
+      margin-top: 1.3em;
+      border-radius: 10px 10px 0px 0px;
+      box-shadow: 0em .2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+    .desc2 {
+      grid-column: 1/5;
+      grid-row: 4;
+      z-index: 0;
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: 0em 0.2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+    .img3 {
+      grid-column: 1/5;
+      grid-row: 5;
+      margin-top: 1.3em;
+      border-radius: 10px 10px 0px 0px;
+      box-shadow: 0em .2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+    .desc3 {
+      grid-column: 1/5;
+      grid-row: 6;
+      z-index: 0;
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: 0em 0.2em 0.5em rgba(0,0,0,0.3)!important;
+    }
+  
+  
+    .header-padding {
+      padding-top: 5%;
+    }
+  
+    .text-box {
+      width: 95%;
+    }
+  
+    .text-box h2{
+      font-size: 25px;
+      letter-spacing: 1.2px;
+    }
+  
+    .text-box p{
+      font-size: 18px;
+    }
+  
+    .contact h2{
+      font-size: 25px;
+    }
+  
+    .contact-grid {
+      gap: 15px;
+      width: 100%;
+    }
+  
+    .contact-box h3{
+      font-size: 16px;
+    }
+  
+    .contact-box h4{
+      font-size: 14px;
+    }
+  
+    .popup-content {
+      width: 100%;
+    }
+  
+    .form {
+      width: 98%;
+      height: 98%;
+    }
+  }
+  @media (min-width:480px) { 
+    /* smartphones, Android phones, landscape iPhone */  
+    .tag-line {
+      padding-left: 10%;
+    }
+    
+    .blurb-box {
+      width: 95%;
+      height: 40%;
+      box-shadow: 0px 10px 10px 10px rgba(0,0,0,0.4);
+    }
+  
+    .padding {
+      padding-top: 20%;
+    }
+  
+    .menu-items {
+      font-size: 18px !important;
+    }
+  
+    .contact-box h3{
+      font-size: 18px;
+    }
+  
+    .form {
+      height: 80%;
+    }
+  }
+  @media (min-width:600px) { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    .contacts-top {
+      width: 60%;
+    }
+    
+    .blurb-box {
+      width: 85%;
+      height: 45%;
+      box-shadow: 0px 10px 10px 10px rgba(0,0,0,0.4);
+    }
+  
+    .padding {
+      padding-top: 25%;
+    }
+  
+    .services-grid {
+      width: 85%;
+      gap: 8px;
+    }
+  
+    .services-grid h2{
+      font-size: 28px;
+    }
+  
+    .header-padding {
+      padding-top: 2%;
+    }
+  
+    .popup-content {
+      width: 90%;
+    }
+  
+    .form {
+      width: 90%;
+      height: 70%;
+    }
+  }
+  @media (min-width:801px) { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .tag-line {
+      padding-left: 15%;
+    }
+  
+    .tag-line h1{
+      font-size: 55px;
+    }
+  
+    .blurb-box {
+      box-shadow: 0px 39px 40px 10px rgba(0,0,0,0.4);
+      width: 85%;
+      height: 40%;
+    }
+  
+    .padding {
+      padding-top: 18%;
+    }
+  
+    .page-box2 {
+      height: 150vh;
+    }
+  
+    .services-grid {
+      display: grid;
+      gap: 15px;
+      width: 90%;
+      height: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows:  1fr 1fr 1fr;
+    }
+  
+    .services-grid h2{
+      font-size: 32px;
+    }
+  
+    .img1 {
+      grid-column: 1/2;
+      grid-row: 1;
+      border-radius: 15px;
+      margin: 0;
+    }
+  
+    .img2 {
+      grid-column: 3/5;
+      grid-row: 2;
+      border-radius: 15px;
+      margin: 0;
+    }
+  
+    .img3 {
+      grid-column: 1/2;
+      grid-row: 3;
+      border-radius: 15px;
+      margin: 0;
+    }
+  
+    .desc1 {
+      grid-column: 2/5;
+      grid-row: 1;
+      border-radius: 15px;
+      margin: 0;
+    }
+  
+    .desc2 {
+      grid-column: 1/3;
+      grid-row: 2;
+      border-radius: 15px;
+      margin: 0;
+    }
+  
+    .desc3 {
+    grid-column: 2/5;
+    grid-row: 3;
+    border-radius: 15px;
+      margin: 0;
+    }
+  
+    .text-box {
+      width: 85%;
+    }
+  
+    .text-box h2{
+      font-size: 46px;
+    }
+  
+    .text-box p{
+      font-size: 38px;
+    }
+  
+    .contact h2{ 
+      font-size: 46px;
+    }
+  
+    .contact-grid {
+      gap: 15px;
+      width: 85%;
+    }
+  
+    .contact-box h3{
+      font-size: 30px;
+    }
+  
+    .contact-box h4{
+      font-size: 18px;
+    }
+  
+    .form {
+      width: 75%;
+    }
+  }
+  @media (min-width: 900px) {
+    nav {
+      justify-content: center;
+    }
+  
+    .mini-nav-box {
+      justify-content: center !important;
+    }
+  
+    .contacts-num {
+      display: flex;
+    }
+  
+    .logo2 {
+      display: none;
+    }
+  
+    .popup-content {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+  
+   
+  }
+  @media (min-width:1281px) { 
+    /* hi-res laptops and desktops */ 
+
+  }
