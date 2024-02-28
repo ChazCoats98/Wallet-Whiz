@@ -58,7 +58,7 @@ function ResponsiveAppBar() {
               display: { xs: 'flex', md: 'none' },
             }}
           >
-            Wallet<span style={{ color: 'black', marginRight: "100px"}}>Whiz</span>
+            Wallet<span>Whiz</span>
           </Typography>
     <IconButton
       size="large"

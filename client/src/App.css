@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Oswald:wght@200;400&display=swap');
 
-.nav-slider {
-    position: fixed;
-    display: flex;
-    width: 100%;
-}
+
 
 .navbar {
-    position: fixed;
-    color: #fff;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -143,17 +137,46 @@
     top: 0;
   }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+/* Breakpoints */
+@media (min-width:320px) { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .headerLogo {
+        height: 35px;
     }
 
-    .nav-links {
-        margin-top: 1rem;
+    .header-title {
+        font-size: 28px !important;
+    }
+    .header-title span {
+        color: black;
+        margin-right: 20px;
     }
 
-    .listText {
-        margin: 1px 0;
+    #nav-bg {
+        height: 150px;
     }
-}
+  }
+  @media (min-width:480px) { 
+    /* smartphones, Android phones, landscape iPhone */  
+    
+  }
+  @media (min-width:600px) { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    
+  }
+  @media (min-width:801px) { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    
+  }
+  @media (min-width: 900px) {
+
+  }
+  
+  @media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+
+  }
+  @media (min-width:1281px) { 
+    /* hi-res laptops and desktops */ 
+    
+  }

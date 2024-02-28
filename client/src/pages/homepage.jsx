@@ -31,56 +31,49 @@ function Homepage() {
     return (
         <div className="pageBox">
             <motion.div
-    id="nav-bg"
-    style={{ height: height }}
-    transition={{
-        ease: "easeIn"
-    }}
-    >
-        <motion.div 
-        className="contacts-top-box"
-        style={{ y: slideUp }}
-        transition={{
-        ease: "easeIn"
-        }}
-        >
-        </motion.div>
-        <motion.nav
-        style={{ y: slideUp }}
-        transition={{
-        ease: "easeIn"
-        }}
-        >
-        <ResponsiveAppBar />
-        </motion.nav>
-    </motion.div>
-    <motion.div
-    className="fade-bg"
-    style={{ opacity: opacity,
-    height: height,
-    boxShadow: boxShadow,
-    }}
-    ></motion.div>
+                id="nav-bg"
+                style={{ height: height }}
+                transition={{ ease: "easeIn" }}
+            >
+                <motion.nav
+                    style={{ y: slideUp }}
+                    transition={{ ease: "easeIn" }}
+                >
+                    <ResponsiveAppBar />
+                </motion.nav>
+            </motion.div>
+            <motion.div
+                className="fade-bg"
+                style={{ opacity: opacity,
+                height: height,
+                boxShadow: boxShadow,
+                }}
+            ></motion.div>
     <div className='pageBox'>
             <div className="pageInner">
                 <div className="framer">
                 <div className="pageTextBox">
-                    <h2 className="headerText blackText">Why use WalletWhiz?</h2>
-                    <p className="descriptionSubText blackText">
-                    Managing your money can be hard, WalletWhiz makes it easy.<br />
-                        Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
-                        WalletWhiz gives you the tools to manage your money with ease <br />
-                        so you can spend time on what really matters. 
-                    </p>
-                    <Link to='/register'>
-                    <Button variant='contained' disableElevation type='submit' className='register-button'>Register</Button>
-                    </Link>
+                    <h2 className="header-text blackText">Why use WalletWhiz?</h2>
                 </div>
-                    <img className='laptop' src={laptop2}></img>
+                <div className='description-align'>
+                    <div className='mobile-col-1'>
+                        <p className="description-text blackText">
+                        Managing your money can be hard, WalletWhiz makes it easy.<br />
+                            Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
+                            WalletWhiz gives you the tools to manage your money with ease <br />
+                            so you can spend time on what really matters. 
+                        </p>
+                        <Link to='/register'>
+                        <Button variant='contained' disableElevation type='submit' className='register-button'>Register</Button>
+                        </Link>
+                    </div>
+                    <img className='laptop' src={laptop2} />
+                    <img className='cellphone-hide' src={Cellphone} />
+                </div>
             </div>
                 </div>
             <div className='about1'>
-                <h2 className='headerText blackText'>What do we bring to the table?</h2>
+                <h2 className='header-text blackText'>What do we bring to the table?</h2>
                 <div className='grid-box'>
                     <div className='card-wrapper'>
                         <div className='about-card'>
