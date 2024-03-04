@@ -4,9 +4,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useRef, useState } from 'react';
 import userPlaceholder from '../assets/user-placeholder.png'
 import Modal from './Modal';
-import { verifyFile } from '../utils/verifyFile';
+import { verifyFile, uploadFile } from '../utils/verifyFile';
 import ImageCrop from './ImageCrop';
-
+import { Cloudinary } from '@cloudinary/url-gen';
 
 const UserImage = (props) => {
     const initialState = {
@@ -15,7 +15,13 @@ const UserImage = (props) => {
         editor: null
     };
 
-    console.log(props)
+  const cld = new Cloudinary({
+    cloud: {cloudName: 'dffm85wab'
+}});
+
+    const userid = props.props._id;
+
+
 
     let imageEditor= null;
     const [ imageData, setImageData ] = useState(initialState);
@@ -42,6 +48,7 @@ const UserImage = (props) => {
         if( file !== undefined && verifyFile(file, acceptedFileExtensions)){
             setImageData({ selectedFile : file });
             setShowModal(true);
+            uploadFile(file, userid);
         }
     }
 
@@ -57,7 +64,7 @@ const UserImage = (props) => {
                 <img className='profile-image'src={profileImage} alt='user-logo' />
                     <label htmlFor="photo-upload" className="update-picture-icon">
                         <div className="img-upload" >
-                            <EditIcon className='transaction-icons' for="photo-upload" src={userPlaceholder}/>
+                            <EditIcon className='transaction-icons' src={userPlaceholder}/>
                         </div>
                             <input id="photo-upload" type="file" style={{display:'none'}} 
                             onChange={onImageFileChangeHandler}

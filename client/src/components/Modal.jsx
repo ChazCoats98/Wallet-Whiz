@@ -1,5 +1,4 @@
 const Modal = (props) => {
-    console.log(props);
     const { show, onClose, children, title } = props;
     if (!show) {
         return null;
