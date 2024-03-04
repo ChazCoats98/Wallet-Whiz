@@ -184,7 +184,20 @@
   }
   @media (min-width:801px) { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-    
+    .nav-desktop {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .fade-bg {
+        display: flex;
+    }
   }
   @media (min-width: 900px) {
 

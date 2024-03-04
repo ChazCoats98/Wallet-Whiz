@@ -74,7 +74,6 @@ h1, h2, h3, h4, h5, h6, p {
 .about-text-box {
     display: flex;
     flex-direction: column;
-    height: 50%;
 }
 
 .page-inner {
@@ -949,28 +948,79 @@ body {
     .demo-box {
         display: none;
     }
-  }
-  @media (min-width:480px) { 
-    /* smartphones, Android phones, landscape iPhone */  
-    
-  }
-  @media (min-width:600px) { 
-    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
-    
-  }
-  @media (min-width:801px) { 
-    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-    
-  }
-  @media (min-width: 900px) {
 
-  }
-  
-  @media (min-width:1025px) { 
+    .about2 {
+        height: 40vh;
+    }
+
+    .about-text-box {
+        align-items: center;
+        padding: 10px;
+    }
+}
+@media (min-width:480px) { 
+    /* smartphones, Android phones, landscape iPhone */  
+    .header-text {
+        font-size: 30px;
+    }
+
+    .description-text {
+        font-size: 18px;
+    }
+}
+@media (min-width:600px) { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    .header-text {
+        font-size: 36px;
+    }
+
+    .description-text {
+        font-size: 24px;
+    }
+}
+@media (min-width:801px) { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .page-inner {
+        padding-top: 140px;
+    }
+
+    .laptop {
+        display: flex;
+        height: 200px;
+        margin-top: 150px;
+    }
+
+    .cellphone-hide {
+        display: none;
+    }
+
+    .framer {
+        flex-direction: row;
+        width: 98%;
+    }
+
+    .page-inner {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .grid-box {
+        height: 90%;
+        width: 90%;
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+}
+@media (min-width: 900px) {
+
+}
+@media (min-width:1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
 
-  }
-  @media (min-width:1281px) { 
+}
+@media (min-width:1281px) { 
     /* hi-res laptops and desktops */ 
 
-  }
+}

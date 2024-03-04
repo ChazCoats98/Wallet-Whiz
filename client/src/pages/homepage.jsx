@@ -56,15 +56,12 @@ function Homepage() {
     <div className='pageBox'>
             <div className="page-inner">
                 <div className="framer">
-                <div className="page-text-box">
-                    <h2 className="header-text blackText">Why use WalletWhiz?</h2>
-                </div>
-                
                     <div className='mobile-col-1'>
+                    <h2 className="header-text blackText">Why use WalletWhiz?</h2>
                         <p className="description-text blackText">
-                        Managing your money can be hard, WalletWhiz makes it easy.<br />
-                            Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
-                            WalletWhiz gives you the tools to manage your money with ease <br />
+                        Managing your money can be hard, WalletWhiz makes it easy.
+                            Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting
+                            WalletWhiz gives you the tools to manage your money with ease
                             so you can spend time on what really matters. 
                         </p>
                         <Link to='/register'>
@@ -155,9 +152,10 @@ function Homepage() {
                         <img src={Cellphone} className='cellphone'/>
                     </div>
             <div className='about-text-box'>
-                    <h2 className="headerText blackText">Who are we?</h2>
-                    <p className="descriptionSubText blackText">
-                        We get that your future is important to you, Thats why WalletWhiz<br />
+                    <h2 className="header-text blackText">Who are we?</h2>
+                    <p className="description-text blackText">
+                        We get that your finances are important to you, its important to us too!
+                        Thats why we made WalletWhiz<br />
                         Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
                         WalletWhiz gives you the tools to manage your money with ease <br />
                         so you can spend time on what really matters. 
