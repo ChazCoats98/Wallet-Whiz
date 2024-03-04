@@ -61,28 +61,26 @@ h1, h2, h3, h4, h5, h6, p {
     height: 100vh;
 }
 
-.pageTextBox {
+.page-text-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 50%;
+    width: 100%;
     margin-left: 20px;
     padding-left: 40px;
 }
 
-.aboutTextBox {
+.about-text-box {
     display: flex;
     flex-direction: column;
     height: 50%;
-    margin-left: 20px;
-    padding-left: 40px;
 }
 
-.pageInner {
+.page-inner {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 100px;
     height: 75vh;
     width: 100%;
     background-color: var(--light-violet);
@@ -892,8 +890,22 @@ body {
 /* Breakpoints */
 @media (min-width:320px) { 
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .page-inner {
+        padding-top: 70px;
+    }
+    
+    .page-text-box {
+        padding: 0;
+        margin: 0;
+        align-items: start;
+    }
+    
     .header-text {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    .description-text {
+        font-size: 14px;
     }
 
     .laptop {
@@ -902,12 +914,40 @@ body {
 
     .cellphone-hide {
         display: flex;
-        height: 350px;
+        width: 260px;
         margin-top: 20px;
     }
 
     .framer {
         flex-direction: column;
+    }
+
+    .grid-box {
+        height: 90%;
+        width: 90%;
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .about-card .front {
+        padding: 8px;
+    }
+
+    .front h4, .back h4 {
+        font-size: 16px;
+    }
+
+    .back p {
+        font-size: 16px;
+    }
+
+    .about-align {
+        display: flex;
+    }
+
+    .demo-box {
+        display: none;
     }
   }
   @media (min-width:480px) { 

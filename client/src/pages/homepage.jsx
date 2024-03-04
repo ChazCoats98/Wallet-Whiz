@@ -31,6 +31,7 @@ function Homepage() {
     return (
         <div className="pageBox">
             <motion.div
+            className='nav-desktop'
                 id="nav-bg"
                 style={{ height: height }}
                 transition={{ ease: "easeIn" }}
@@ -49,13 +50,16 @@ function Homepage() {
                 boxShadow: boxShadow,
                 }}
             ></motion.div>
+            <div className='nav-mobile'>
+                <ResponsiveAppBar />
+            </div>
     <div className='pageBox'>
-            <div className="pageInner">
+            <div className="page-inner">
                 <div className="framer">
-                <div className="pageTextBox">
+                <div className="page-text-box">
                     <h2 className="header-text blackText">Why use WalletWhiz?</h2>
                 </div>
-                <div className='description-align'>
+                
                     <div className='mobile-col-1'>
                         <p className="description-text blackText">
                         Managing your money can be hard, WalletWhiz makes it easy.<br />
@@ -69,7 +73,7 @@ function Homepage() {
                     </div>
                     <img className='laptop' src={laptop2} />
                     <img className='cellphone-hide' src={Cellphone} />
-                </div>
+                
             </div>
                 </div>
             <div className='about1'>
@@ -146,11 +150,11 @@ function Homepage() {
                 </div>
                 </div>
             <div className='about2'>
-                <div className='framer'>
+                <div className='about-align'>
                     <div className='demo-box'>
                         <img src={Cellphone} className='cellphone'/>
                     </div>
-            <div className='aboutTextBox'>
+            <div className='about-text-box'>
                     <h2 className="headerText blackText">Who are we?</h2>
                     <p className="descriptionSubText blackText">
                         We get that your future is important to you, Thats why WalletWhiz<br />
