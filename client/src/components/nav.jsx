@@ -46,7 +46,7 @@ function ResponsiveAppBar() {
     <div className="navbar">
     <Toolbar disableGutters  className="nav-box">
   <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {xs: 'space-between', md: 'none'} }}>
-    <img className='headerLogo' src={Logo2}/>
+    <img className='header-logo' src={Logo2}/>
     <Typography
             variant="h6"
             noWrap
@@ -103,7 +103,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
             }}>
-        <img className='headerLogo' src={Logo2}/>
+        <img className='header-logo' src={Logo2}/>
         <Typography
             variant="h6"
             noWrap
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: 'white', display: 'block' }}
       >
-        <motion.span style={{ color: "black" }} className='listText'>
+        <motion.span style={{ color: "black" }} className='list-text'>
         {page}
         </motion.span>
       </Button>
@@ -146,7 +146,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
             }}>
-        <img className='headerLogo' src={Logo2}/>
+        <img className='header-logo' src={Logo2}/>
         <Typography
             variant="h6"
             noWrap
@@ -168,7 +168,7 @@ function ResponsiveAppBar() {
         onClick={handleCloseNavMenu}
         sx={{ my: 2, color: 'white', display: 'block' }}
       >
-        <motion.span style={{ color: "black" }} className='listText'>
+        <motion.span style={{ color: "black" }} className='list-text'>
         {page}
         </motion.span>
       </Button>
