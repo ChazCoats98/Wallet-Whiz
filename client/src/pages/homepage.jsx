@@ -1,7 +1,6 @@
 import { React, useRef, useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import laptop from '../assets/laptop.png'
 import laptop2 from '../assets/laptop-2.png'
 import ResponsiveAppBar from '../components/nav';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -10,7 +9,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import Cellphone from '../assets/cellphone.png';
 import { IconButton } from '@mui/material';
-import GitHubLogo from '../assets/github-mark.svg';
 import GitHubLogoWhite from '../assets/github-mark-white.svg';
 
 function Homepage() {
@@ -29,7 +27,7 @@ function Homepage() {
 
 
     return (
-        <div className="pageBox">
+        <div className="page-box">
             <motion.div
             className='nav-desktop'
                 id="nav-bg"
@@ -53,12 +51,12 @@ function Homepage() {
             <div className='nav-mobile'>
                 <ResponsiveAppBar />
             </div>
-    <div className='pageBox'>
+    <div className='page-box'>
             <div className="page-inner">
                 <div className="framer">
                     <div className='mobile-col-1'>
-                    <h2 className="header-text blackText">Why use WalletWhiz?</h2>
-                        <p className="description-text blackText">
+                    <h2 className="header-text black-text">Why use WalletWhiz?</h2>
+                        <p className="description-text black-text">
                         Managing your money can be hard, WalletWhiz makes it easy.
                             Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting
                             WalletWhiz gives you the tools to manage your money with ease
@@ -74,7 +72,7 @@ function Homepage() {
             </div>
                 </div>
             <div className='about1'>
-                <h2 className='header-text blackText'>What do we bring to the table?</h2>
+                <h2 className='header-text black-text'>What do we bring to the table?</h2>
                 <div className='grid-box'>
                     <div className='card-wrapper'>
                         <div className='about-card'>
@@ -152,8 +150,8 @@ function Homepage() {
                         <img src={Cellphone} className='cellphone'/>
                     </div>
             <div className='about-text-box'>
-                    <h2 className="header-text blackText">Who are we?</h2>
-                    <p className="description-text blackText">
+                    <h2 className="header-text black-text">Who are we?</h2>
+                    <p className="description-text black-text">
                         We get that your finances are important to you, its important to us too!
                         Thats why we made WalletWhiz<br />
                         Your time is precious to you, why waste it on hours of book-keeping and stressful budgeting<br />
@@ -164,7 +162,7 @@ function Homepage() {
                 </div>
             </div>
             <footer className='footer'>
-            <div className='pageTextBox'>
+            <div className='page-text-box'>
                         <h2 className="headerText white-text">Contributors</h2>
                         <ul className='contributors-list'>
                             <li>
