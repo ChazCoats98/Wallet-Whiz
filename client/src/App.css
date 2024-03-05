@@ -227,6 +227,10 @@
     .list-text {
         font-size: 20px;
     }
+
+    .header-logo {
+        height: 40px;
+    }
   }
   @media (min-width:1281px) { 
     /* hi-res laptops and desktops */ 
@@ -236,5 +240,9 @@
 
     .list-text {
         font-size: 26px;
+    }
+
+    .header-logo {
+        height: 50px;
     }
   }

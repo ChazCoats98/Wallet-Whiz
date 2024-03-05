@@ -6,21 +6,21 @@ import Logo2 from '../assets/WalletWhizIconnbg.png'
 
 function LoginPage() {
     return (
-        <div className="pageBox">
-                    <div className="formBoxAlign">
+        <div className="page-box">
+                    <div className="form-box-align">
                         <div className='form'>
                             <Link to='/' style={{ textDecoration: 'none' }}>
                                 <div className='logo-box'>
-                                    <img className='headerLogo' src={Logo2} />
+                                    <img className='header-logo' src={Logo2} />
                                     <h3 className="header-title">Wallet<span style={{ color: 'black'}}>Whiz</span></h3>
                                 </div>
                             </Link>
-                            <div className="cards" id="loginBox">
-                                <h3 className="formBoxHeader">Login</h3>
+                            <div className="cards" id="login-box">
+                                <h3 className="form-box-header">Login</h3>
                                 <LoginForm />
                             </div>
-                            <div className="registerButtonBox">
-                                <h3 className="registerHeader">Not a user yet? Register here</h3>
+                            <div className="register-button-box">
+                                <h3 className="register-header">Not a user yet? Register here</h3>
                                 {Auth.loggedIn() ? (null) : (
                                 <Link to='/register'>
                                 <Button variant="contained" disableElevation>Register</Button>

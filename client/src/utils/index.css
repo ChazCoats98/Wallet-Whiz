@@ -300,11 +300,8 @@ input:-webkit-autofill,
 .cards {
     display: flex;
     flex-direction: column;
-    background: transparent;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
-    padding: 2.5rem;
 }
 
 .btn {
@@ -339,7 +336,7 @@ input:-webkit-autofill,
     box-shadow: none;
 }
 
-.formBoxAlign {
+.form-box-align {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -359,7 +356,7 @@ input:-webkit-autofill,
     box-shadow: 0px 0px 8px var(--medium-violet);
 }
 
-.formBoxHeader {
+.form-box-header {
     font-family: 'oswald', sans-serif;
     letter-spacing: 1.2px;
     font-weight: 800;
@@ -372,11 +369,6 @@ input:-webkit-autofill,
     letter-spacing: 1.2px;
     text-align: start;
     color: #646464;
-}
-
-.aboutSubText {
-    font-family: 'oswald', 'sans-serif';
-    letter-spacing: 1.4px;
 }
 
 .tagline {
@@ -427,7 +419,7 @@ input:-webkit-autofill,
     font-size: 40px;
 }
 
-.registerButtonBox {
+.register-button-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -448,25 +440,10 @@ input:-webkit-autofill {
     color: black !important;
 }
 
-.registerPage {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.registerHeader {
+.register-header {
     font-family: 'oswald', sans-serif;
     letter-spacing: 1.2px;
     font-weight: 800;
-}
-
-.linkButtonAlign {
-    text-align: center;
-}
-
-
-.registerPage {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 2rem;
 }
 
 .form-control,
@@ -889,6 +866,7 @@ body {
 /* Breakpoints */
 @media (min-width:320px) { 
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    /* Homepage Styles */
     .page-inner {
         padding-top: 70px;
     }
@@ -957,9 +935,20 @@ body {
         align-items: center;
         padding: 10px;
     }
+
+    /* Login Page Styles */
+    .form {
+        width: 98%;
+        padding: 20px;
+    }
+
+    .register-header {
+        font-size: 18px;
+    }
 }
 @media (min-width:480px) { 
-    /* smartphones, Android phones, landscape iPhone */  
+    /* smartphones, Android phones, landscape iPhone */
+    /* Homepage Styles */
     .header-text {
         font-size: 30px;
     }
@@ -967,9 +956,24 @@ body {
     .description-text {
         font-size: 18px;
     }
+
+    /* Login Page Styles */
+    .form {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .form-box-header {
+        font-size: 26px;
+    }
+
+    .register-header {
+        font-size: 22px;
+    }
 }
 @media (min-width:600px) { 
-    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    /* Homepage Styles */
     .header-text {
         font-size: 36px;
     }
@@ -981,9 +985,24 @@ body {
     .front h4, .back h4 {
         font-size: 20px;
     }
+
+    /* Login Page Styles */
+    .form {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .form-box-header {
+        font-size: 30px;
+    }
+
+    .register-header {
+        font-size: 26px;
+    }
 }
 @media (min-width:801px) { 
-    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    /* Homepage Styles */
     .page-inner {
         padding-top: 140px;
     }
@@ -1031,8 +1050,23 @@ body {
         padding-left: 20px;
     }
 
+    /* Login Page Styles */
+    .form {
+        width: 80%;
+        padding: 40px;
+    }
+
+    .form-box-header {
+        font-size: 32px;
+    }
+
+    .register-header {
+        font-size: 28px;
+    }
+
 }
 @media (min-width: 900px) {
+    /* Homepage Styles */
     .page-inner {
         padding-top: 150px;
     }
@@ -1058,9 +1092,24 @@ body {
     .about-text-box {
         padding: 20px;
     }
+
+    /* Login Page Styles */
+    .form {
+        width: 70%;
+        padding: 50px;
+    }
+
+    .form-box-header {
+        font-size: 32px;
+    }
+
+    .register-header {
+        font-size: 28px;
+    }
 }
 @media (min-width:1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
+    /* Homepage Styles */
     .header-text {
         font-size: 42px;
     }
@@ -1076,9 +1125,24 @@ body {
     .grid-box {
         gap: 25px;
     }
+
+    /* Login Page Styles */
+    .form {
+        width: 65%;
+        padding: 60px;
+    }
+
+    .form-box-header {
+        font-size: 32px;
+    }
+
+    .register-header {
+        font-size: 28px;
+    }
 }
 @media (min-width:1281px) { 
     /* hi-res laptops and desktops */
+    /* Homepage Styles */
     .page-inner {
         padding-top: 210px;
     }
@@ -1098,5 +1162,19 @@ body {
 
     .front h4, .back h4 {
         font-size: 32px;
+    }
+
+    /* Login Page Styles */
+    .form {
+        width: 50%;
+        padding: 60px;
+    }
+
+    .form-box-header {
+        font-size: 36px;
+    }
+
+    .register-header {
+        font-size: 30px;
     }
 }
