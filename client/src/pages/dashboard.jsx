@@ -28,16 +28,16 @@ function Dashboard() {
           <div className='header-grid-box'>
             <div className='header-greeting'>
               <img className='placeholder-img' src={userPlaceholder} />
-              <h2 className="headerText dashboard-header">Welcome back, {user.username || user.email}!</h2>
+              <h2 className="header-text dashboard-header greeting">Welcome back, {user.username || user.email}!</h2>
             </div>
             <div>
-              <h2 className='headerText dashboard-header'>Total Balance</h2>
+              <h2 className='header-text dashboard-header'>Total Balance</h2>
               <BalanceTotal />
             </div>
           </div>
           <div className="balance-grid-box">
             <div className='header-box'>
-              <h3 className="headerText sub-header" id="accountsHeader">
+              <h3 className="header-text sub-header">
                 ACCOUNTS
               </h3>             
             </div>
@@ -45,7 +45,7 @@ function Dashboard() {
           </div>
             <div className="transactions-grid-box">
               <div className='header-box'>
-                <h2 className="headerText sub-header">
+                <h2 className="header-text sub-header">
                   TRANSACTION HISTORY
                 </h2>
               </div>
@@ -53,7 +53,7 @@ function Dashboard() {
             </div>
           <div className='chart-grid-box'>
             <div className='header-box'>
-              <h2 className="headerText sub-header">
+              <h2 className="header-text sub-header">
                 MONTHLY SPENDING
               </h2>
             </div>

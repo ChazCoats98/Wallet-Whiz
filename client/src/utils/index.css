@@ -381,7 +381,7 @@ input:-webkit-autofill,
     margin-top: 20px;
 }
 
-.transactionInner {
+.transaction-inner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -611,8 +611,7 @@ body {
     width: 100%;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    gap: 20px;
 }
 
 .header-grid-box {
@@ -731,6 +730,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    overflow: hidden;
     padding: 40px;
     grid-column: 6/13;
     grid-row: 2/9;
@@ -936,7 +936,7 @@ body {
         padding: 10px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 98%;
         padding: 20px;
@@ -945,6 +945,66 @@ body {
     .register-header {
         font-size: 18px;
     }
+
+    /* Dashboard Styles */
+    .dashboard-container {
+        padding: 5px;
+        padding-top: 85px;
+    }
+
+    .dashboard-grid {
+        gap: 5px;
+    }
+
+    .placeholder-img {
+        height: 70px;
+    }
+
+    .greeting {
+        display: none;
+    }
+
+    .balance-grid-box {
+        grid-column: 1/13;
+        padding: 20px;
+    }
+
+    .map-container {
+        margin: 20px;
+    }
+
+    .display-left div h2{
+        font-size: 16px;
+    }
+
+    .transactions {
+        margin: 10px;
+    }
+
+    .header-box {
+        align-items: center;
+    }
+
+    .transaction-inner {
+        font-size: 14px;
+    }
+
+    .transaction-icons {
+        margin-right: 10px;
+    }
+
+    .transactions-grid-box {
+        grid-row: 5/10;
+        grid-column: 1/13;
+        padding: 20px;
+    }
+
+    .chart-grid-box {
+        grid-row: 10/13;
+        grid-column: 1/13;
+        padding: 20px;
+    }
+
 }
 @media (min-width:480px) { 
     /* smartphones, Android phones, landscape iPhone */
@@ -957,7 +1017,7 @@ body {
         font-size: 18px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 95%;
         padding: 25px;
@@ -969,6 +1029,23 @@ body {
 
     .register-header {
         font-size: 22px;
+    }
+
+    /* Dashboard Styles */
+    .placeholder-img {
+        height: 90px;
+    }
+
+    .balance-grid-box {
+        padding: 30px;
+    }
+
+    .transactions-grid-box {
+        padding: 30px;
+    }
+
+    .chart-grid-box {
+        padding: 30px;
     }
 }
 @media (min-width:600px) { 
@@ -986,7 +1063,7 @@ body {
         font-size: 20px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 90%;
         padding: 30px;
@@ -998,6 +1075,44 @@ body {
 
     .register-header {
         font-size: 26px;
+    }
+
+     /* Dashboard Styles */
+    .dashboard-container {
+        padding: 20px;
+        padding-top: 85px;
+    }
+
+    .dashboard-grid {
+        gap: 10px;
+    }
+
+    .placeholder-img {
+        height: 110px;
+    }
+
+    .balance-grid-box {
+        padding: 40px;
+    }
+
+    .transactions-grid-box {
+        padding: 40px;
+    }
+
+    .map-container {
+        margin: 30px;
+    }
+    
+    .display-left div h2{
+        font-size: 20px;
+    }
+
+    .transaction-inner {
+        font-size: 20px;
+    }
+
+    .chart-grid-box {
+        padding: 40px;
     }
 }
 @media (min-width:801px) { 
@@ -1050,7 +1165,7 @@ body {
         padding-left: 20px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 80%;
         padding: 40px;
@@ -1063,6 +1178,24 @@ body {
     .register-header {
         font-size: 28px;
     }
+
+     /* Dashboard Styles */
+    .balance-grid-box {
+        grid-row: 2/6;
+        grid-column: 1/6;
+    }
+
+    .transactions-grid-box {
+        grid-row: 2/9;
+        grid-column: 6/13;
+        padding: 20px;
+    }
+
+    .chart-grid-box {
+        grid-row: 6/9;
+        grid-column: 1/6;
+    }
+    
 
 }
 @media (min-width: 900px) {
@@ -1093,7 +1226,7 @@ body {
         padding: 20px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 70%;
         padding: 50px;
@@ -1126,7 +1259,7 @@ body {
         gap: 25px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 65%;
         padding: 60px;
@@ -1164,7 +1297,7 @@ body {
         font-size: 32px;
     }
 
-    /* Login Page Styles */
+    /* Login/Register Page Styles */
     .form {
         width: 50%;
         padding: 60px;

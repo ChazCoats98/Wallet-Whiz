@@ -21,7 +21,7 @@ const PlaidTransactions = () => {
                 if (transaction.amount > 0) {
                     return (
                         <div className='map-container transactions' key={transaction._id}>
-                    <div className='transactionInner'>
+                    <div className='transaction-inner'>
                         <div className='display-left'>
                             <PlaidIcon className='transaction-icons' data={transaction.category} />
                             <div>
@@ -36,7 +36,7 @@ const PlaidTransactions = () => {
                 } else if (transaction.amount <= 0) {
                     return (
                         <div className='map-container transactions' key={transaction._id}>
-                        <div className='transactionInner'>
+                        <div className='transaction-inner'>
                             <div className='display-left'>
                                 <PlaidIcon className='transaction-icons' data={transaction.category} />
                                 <div>
