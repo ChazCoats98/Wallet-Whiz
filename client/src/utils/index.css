@@ -760,6 +760,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
     width: 100%;
     border-bottom: 1px solid var(--light-violet);
 }
@@ -811,7 +812,7 @@ body {
 
 .update-container {
     display: flex;
-    position: absolute;
+    position: relative;
     background-color: white;
 }
 
@@ -849,7 +850,8 @@ body {
     left:               42%;
     top:                10%;
     box-sizing:         border-box;
-    animation: popup;
+    transition: all 0.6s ease-in-out; 
+    transform: scale(0.8); 
     border-radius:      10px;
 }
 
@@ -868,16 +870,19 @@ body {
     left:               0;
     top:                0;
     background-color:   rgba(0,0,0,0.5);
-  }
+}
 
-@keyframes popup {
-    from {
-        transform: scale(0%);
-    }
+.edit-containers {
+    overflow: hidden;
+}
 
-    to {
-        transform: scale(100%);
-    }
+.close {
+    transform: translateX(-900px);
+}
+
+.open {
+    transform: translateX(-180px);
+    transition: 400ms;
 }
 
 #contact {
@@ -901,6 +906,10 @@ body {
     font-size: 15px;
     font-weight: 200;
     margin-bottom: 20px;
+}
+
+#email {
+    margin-left: -22px;
 }
 
 /* Breakpoints */
@@ -1088,18 +1097,18 @@ body {
         padding: 15px;
     }
 
-    .username {
-        top: 320px;
-    }
-
-    .email {
-        top: 420px;
-    }
-
     .button-divider {
         padding: 10px;
     }
 
+    .close {
+        transform: translateX(700px);
+    }
+    
+    .open {
+        transform: translateX(100px);
+        transition: 400ms;
+    }
 
 
 }

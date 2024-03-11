@@ -24,12 +24,22 @@ const UserAccounts = () => {
     const [updateField, setUpdateField] = useState(null);
     const [newUsername, setNewUsername] = useState('');
     const [newEmail, setNewEmail] = useState('');
+    const emailForm = document.getElementById('email');
+    const usernameForm = document.getElementById('username');
 
     const handleUpdateClick = (field) => {
+        if (field === 'username') {
+            usernameForm.classList.add('open')
         setUpdateField(field);
+        } else if (field === 'email') {
+            emailForm.classList.add('open')
+            setUpdateField(field);
+        }
     }
 
     const handleCloseClick = () => {
+        usernameForm.classList.remove('open')
+        emailForm.classList.remove('open')
         setUpdateField(null);
     };
     
@@ -64,10 +74,7 @@ const UserAccounts = () => {
                             <p>{user.username}</p>
                         </div>
                     </div>
-                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
-                </div>
-                {updateField === 'username' && (
-                    <div className='update-container username'>
+                    <div className='update-container username close' id='username'>
                     <TextField
                         label='New Username' 
                         value={newUsername}
@@ -81,7 +88,8 @@ const UserAccounts = () => {
                                 <SaveIcon onClick={handleSave} className='save-button' />
                             </div>
                     </div>
-                )}
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
+                </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
                         <EmailIcon className='user-icons' fontSize='large' />
@@ -90,10 +98,7 @@ const UserAccounts = () => {
                             <p>{user.email}</p>
                         </div>
                     </div>
-                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('email')}/>
-                    </div>
-                {updateField === 'email' && (
-                    <div className='update-container email'>
+                    <div className='update-container email close' id='email'>
                     <TextField
                         label='New Email'
                         value={newEmail}
@@ -106,8 +111,9 @@ const UserAccounts = () => {
                             <div className='button-divider'>
                                 <SaveIcon onClick={handleSave} className='save-button' />
                             </div>
-                        </div>
-                )}
+                    </div>
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('email')}/>
+                </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
                             <AccessTimeIcon className='user-icons' fontSize='large'/>
