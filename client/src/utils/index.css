@@ -876,12 +876,19 @@ body {
     overflow: hidden;
 }
 
+.reveal-container {
+    position: absolute;
+    background-color: #333;
+    left: 700px;
+    display: flex;
+}
+
 .close {
-    transform: translateX(-900px);
+    transform: translateX(-200px);
 }
 
 .open {
-    transform: translateX(-180px);
+    transform: translateX(-200px);
     transition: 400ms;
 }
 
@@ -1513,5 +1520,9 @@ body {
     /* User Styles */
     .update-container {
         width: 560px;
+    }
+
+    .user-box-left {
+        margin-right: 200px;
     }
 }

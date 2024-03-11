@@ -24,22 +24,21 @@ const UserAccounts = () => {
     const [updateField, setUpdateField] = useState(null);
     const [newUsername, setNewUsername] = useState('');
     const [newEmail, setNewEmail] = useState('');
-    const emailForm = document.getElementById('email');
-    const usernameForm = document.getElementById('username');
+    const [ Xemail, setXemail ] = useState(500);
+    const [ Xuser, setXuser ] = useState(500);
 
     const handleUpdateClick = (field) => {
         if (field === 'username') {
-            usernameForm.classList.add('open')
+            setXuser(0);
         setUpdateField(field);
         } else if (field === 'email') {
-            emailForm.classList.add('open')
+            setXemail(0);
             setUpdateField(field);
         }
     }
 
     const handleCloseClick = () => {
-        usernameForm.classList.remove('open')
-        emailForm.classList.remove('open')
+        setXemail(500)
         setUpdateField(null);
     };
     
@@ -74,7 +73,8 @@ const UserAccounts = () => {
                             <p>{user.username}</p>
                         </div>
                     </div>
-                    <div className='update-container username close' id='username'>
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
+                    <div className='update-container' id='username'>
                     <TextField
                         label='New Username' 
                         value={newUsername}
@@ -88,7 +88,6 @@ const UserAccounts = () => {
                                 <SaveIcon onClick={handleSave} className='save-button' />
                             </div>
                     </div>
-                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
                 </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
@@ -98,7 +97,8 @@ const UserAccounts = () => {
                             <p>{user.email}</p>
                         </div>
                     </div>
-                    <div className='update-container email close' id='email'>
+                    <EditIcon  transition={{ type: "spring" }} className='edit-icons' onClick={() => handleUpdateClick('email')}/>
+                    <motion.div animate={{ x: Xemail }} className='update-container' id='email'>
                     <TextField
                         label='New Email'
                         value={newEmail}
@@ -111,8 +111,7 @@ const UserAccounts = () => {
                             <div className='button-divider'>
                                 <SaveIcon onClick={handleSave} className='save-button' />
                             </div>
-                    </div>
-                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('email')}/>
+                    </motion.div>
                 </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
