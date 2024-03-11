@@ -8,7 +8,6 @@ import SavingsIcon from '@mui/icons-material/Savings';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 
 const PlaidIcon = (data) => {
-    console.log(data);
     if (data.data == 'TRANSPORTATION') {
         return (
             <DirectionsCarIcon fontSize='large' className={data.className}/>

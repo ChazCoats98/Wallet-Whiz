@@ -16,8 +16,8 @@ const UserImage = (props) => {
     };
 
   const cld = new Cloudinary({
-    cloud: {cloudName: 'dffm85wab'
-}});
+    cloud: {cloudName: 'dffm85wab'}
+});
 
     const userid = props.props._id;
 

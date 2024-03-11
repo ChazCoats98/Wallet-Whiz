@@ -280,7 +280,6 @@ h1, h2, h3, h4, h5, h6, p {
 .header-text {
     font-family: 'kanit', sans-serif;
     text-align: start;
-    text-wrap: nowrap;
     font-weight: 800;
 }
 
@@ -636,6 +635,7 @@ body {
 }
 
 .dashboard-header {
+    font-family: 'oswald', sans-serif;
     font-size: 48px;
     color: white;
 }
@@ -663,15 +663,15 @@ body {
 }
 
 .sub-header {
-    font-size: 36px;
     color: black;
     letter-spacing: 1.2px;
+    text-align: center;
+    width: fit-content;
 }
 
 .map-container {
     display: flex;
     flex-direction: column;
-    margin: 40px;
     border-bottom: 1px solid var(--light-violet);
 }
 
@@ -700,10 +700,6 @@ body {
     margin-right: 20px;
 }
 
-.income-icons {
-    color: rgb(53, 193, 107);
-    margin-right: 20px;
-}
 
 .transactions span {
     font-family: 'oswald', sans-serif;
@@ -779,6 +775,11 @@ body {
     margin-left: 40px;
 }
 
+.account-name-box {
+    display: flex;
+    width: 100%;
+}
+
 .accounts-map-box {
     display: flex;
 }
@@ -804,17 +805,51 @@ body {
     cursor: pointer;
 }
 
+.button-divider:last-child {
+    border-left:1px solid var(--light-violet);
+}
+
+.update-container {
+    display: flex;
+    position: absolute;
+    background-color: white;
+}
+
+.close-button {
+    color: rgb(238, 28, 28);
+}
+
+.save-button {
+    color: rgb(24, 202, 24);
+}
+
+.user-icons {
+    color: #b9b9b9;
+}
+
+.edit-icons {
+    color: #828181;
+}
+
+.edit-icons:hover {
+    color: #515151;
+    cursor: pointer;
+}
+
+.close-button:hover, .save-button:hover {
+    cursor: pointer;
+}
+
 .modal-wrapper {
     position:           fixed;
     z-index:            500;
     background-color:   white;
-    border:             1px solid #ccc;
-    box-shadow:         1px 1px 1px black;
+    border: 2px solid var(--medium-violet);
     padding:            40px 60px 40px 60px;
     left:               42%;
     top:                10%;
     box-sizing:         border-box;
-    transition:         all 0.3s ease-out;
+    animation: popup;
     border-radius:      10px;
 }
 
@@ -834,6 +869,16 @@ body {
     top:                0;
     background-color:   rgba(0,0,0,0.5);
   }
+
+@keyframes popup {
+    from {
+        transform: scale(0%);
+    }
+
+    to {
+        transform: scale(100%);
+    }
+}
 
 #contact {
     background-color: #2f3e9e0b;
@@ -856,11 +901,6 @@ body {
     font-size: 15px;
     font-weight: 200;
     margin-bottom: 20px;
-}
-
-.sec.developers {
-    padding-left: 100px;
-
 }
 
 /* Breakpoints */
@@ -940,6 +980,7 @@ body {
     .form {
         width: 98%;
         padding: 20px;
+        margin-top: 30px;
     }
 
     .register-header {
@@ -1005,6 +1046,62 @@ body {
         padding: 20px;
     }
 
+    /* User Styles */
+    .profile-image {
+        width: 80px;
+        margin-left: 20px;
+    }
+    
+    .update-picture-icon {
+        top: -85px;
+        left: 75px;
+    }
+
+    .user-details-container {
+        padding: 10px;
+    }
+
+    .user-details-box {
+        margin-left: 20px;
+    }
+
+    .user-details-box h3 {
+        font-size: 22px;
+        color: #828181;
+    }
+
+    .user-details-box p {
+        font-size: 18px;
+    }
+
+    .user-buttons {
+        width: 20px !important;
+        font-size: 12px !important;
+    }
+
+    .account-name-box p {
+        padding: 5px;
+    }
+
+    .update-container {
+        width: 280px;
+        padding: 15px;
+    }
+
+    .username {
+        top: 320px;
+    }
+
+    .email {
+        top: 420px;
+    }
+
+    .button-divider {
+        padding: 10px;
+    }
+
+
+
 }
 @media (min-width:480px) { 
     /* smartphones, Android phones, landscape iPhone */
@@ -1046,6 +1143,11 @@ body {
 
     .chart-grid-box {
         padding: 30px;
+    }
+
+    /* User Styles */
+    .update-container {
+        width: 380px;
     }
 }
 @media (min-width:600px) { 
@@ -1114,6 +1216,11 @@ body {
     .chart-grid-box {
         padding: 40px;
     }
+
+    /* User Styles */
+    .update-container {
+        width: 480px;
+    }
 }
 @media (min-width:801px) { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -1180,6 +1287,11 @@ body {
     }
 
      /* Dashboard Styles */
+    .greeting {
+        display: flex;
+        padding: 10px;
+    }
+
     .balance-grid-box {
         grid-row: 2/6;
         grid-column: 1/6;
@@ -1188,7 +1300,6 @@ body {
     .transactions-grid-box {
         grid-row: 2/9;
         grid-column: 6/13;
-        padding: 20px;
     }
 
     .chart-grid-box {
@@ -1196,6 +1307,10 @@ body {
         grid-column: 1/6;
     }
     
+    /* User Styles */
+    .update-container {
+        width: 580px;
+    }
 
 }
 @media (min-width: 900px) {
@@ -1239,6 +1354,24 @@ body {
     .register-header {
         font-size: 28px;
     }
+
+     /* Dashboard Styles */
+    .map-container {
+        margin: 0;
+    }
+
+    .balance-header {
+        font-size: 30px;
+    }
+
+    .transactions {
+        padding: 30px;
+    }
+
+    /* User Styles */
+    .update-container {
+        width: 530px;
+    }
 }
 @media (min-width:1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
@@ -1272,6 +1405,29 @@ body {
     .register-header {
         font-size: 28px;
     }
+
+     /* Dashboard Styles */
+    .display-left div h2{
+        font-size: 24px;
+    }
+
+    .transaction-inner {
+        font-size: 24px;
+    }
+
+    .transactions {
+        padding: 24px;
+    }
+
+    .chart-grid-box {
+        grid-row: 6/10;
+    }
+
+    /* User Styles */
+    .update-container {
+        width: 580px;
+    }
+
 }
 @media (min-width:1281px) { 
     /* hi-res laptops and desktops */
@@ -1309,5 +1465,44 @@ body {
 
     .register-header {
         font-size: 30px;
+    }
+
+    /* Dashboard Styles */
+    .display-left div h2{
+        font-size: 28px;
+    }
+
+    .transaction-inner {
+        font-size: 28px;
+    }
+
+    .transactions {
+        padding: 20px;
+    }
+
+    .balance-header {
+        font-size: 36px;
+    }
+
+    .account-balance {
+        font-size: 50px;
+    }
+
+    .balance-grid-box {
+        padding: 60px;
+    }
+
+    .transactions-grid-box {
+        padding: 60px;
+    }
+
+    .chart-grid-box {
+        padding: 60px;
+        grid-row: 6/11;
+    }
+
+    /* User Styles */
+    .update-container {
+        width: 560px;
     }
 }

@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { ACCOUNTS, USER } from '../utils/queries';
 import { UPDATE_USERNAME, UPDATE_EMAIL } from '../utils/mutations';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar'; 
-import Divider from '@mui/material/Divider';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import UserImage from './UserImage';
+import SaveIcon from '@mui/icons-material/Save';
+import EmailIcon from '@mui/icons-material/Email';
+import { motion } from 'framer-motion';
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
@@ -59,71 +58,78 @@ const UserAccounts = () => {
             <div className="container">
                 <div className='user-details-container'>
                     <div className='user-box-left'>
-                        <Avatar />
+                        <Avatar className='user-icons' />
                         <div className='user-details-box'>
                             <h3>Username: </h3>
                             <p>{user.username}</p>
                         </div>
                     </div>
-                    <Button variant='contained' disableElevation onClick={() => handleUpdateClick('username')}>Change Username</Button>
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
                 </div>
                 {updateField === 'username' && (
-                    <ListItem>
+                    <div className='update-container username'>
                     <TextField
-                        label='New Username'
+                        label='New Username' 
                         value={newUsername}
                         variant='outlined'
                         onChange={(e) => setNewUsername(e.target.value)}
                         />
-                            <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
-                        </ListItem>
+                            <div className='button-divider'>
+                                <CloseIcon onClick={handleCloseClick} className='close-button'/>
+                            </div>
+                            <div className='button-divider'>
+                                <SaveIcon onClick={handleSave} className='save-button' />
+                            </div>
+                    </div>
                 )}
                 <div className='user-details-container'>
                     <div className='user-box-left'>
-                        <AlternateEmailIcon className='transaction-icons' />
+                        <EmailIcon className='user-icons' fontSize='large' />
                         <div className='user-details-box'>
                             <h3>Email: </h3>
                             <p>{user.email}</p>
                         </div>
                     </div>
-                    <Button variant='contained' disableElevation onClick={() => handleUpdateClick('email')}>Change Email</Button>
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('email')}/>
                     </div>
                 {updateField === 'email' && (
-                    <ListItem>
+                    <div className='update-container email'>
                     <TextField
                         label='New Email'
                         value={newEmail}
                         variant='outlined'
                         onChange={(e) => setNewEmail(e.target.value)}
                         />
-                            <CloseIcon color='error' onClick={handleCloseClick} style={{ cursor: 'pointer' }} />
-                        </ListItem>
+                            <div className='button-divider'>
+                                <CloseIcon onClick={handleCloseClick} className='close-button'/>
+                            </div>
+                            <div className='button-divider'>
+                                <SaveIcon onClick={handleSave} className='save-button' />
+                            </div>
+                        </div>
                 )}
                 <div className='user-details-container'>
                     <div className='user-box-left'>
-                            <AccessTimeIcon className='transaction-icons'/>
+                            <AccessTimeIcon className='user-icons' fontSize='large'/>
                             <div className='user-details-box'>
-                            <h3>Account created: </h3>
-                            <p>{user.createdAt}</p>
+                                <h3>Account created: </h3>
+                                <p>{user.createdAt}</p>
+                            </div>
+                    </div>
+                </div>
+                <div className='user-details-container'>
+                    <div className='user-box-left'>
+                        <AccountBalanceIcon className='user-icons' fontSize='large'/>
+                        <div className='user-details-box'>
+                            <h3>Linked Banks: </h3>
+                            <div className='account-name-box'>
+                                {accounts.map((account) => (
+                                    <p key={account._id}>{account.accountName}</p>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <Divider variant="inset" />
-                <ListItem>
-                    <ListItemAvatar>
-                        <Avatar>
-                            <AccountBalanceIcon />
-                        </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Linked Banks:" />
-                    {accounts.map((account) => (
-                        <ListItemText secondary={account.accountName} key={account._id} />
-                    ))}
-                </ListItem>
-                <Divider variant="inset" />
-                {updateField && (
-                    <Button variant='contained' disableElevation onClick={handleSave}>Save</Button>
-                )}
             </div>
         </div>
     );
