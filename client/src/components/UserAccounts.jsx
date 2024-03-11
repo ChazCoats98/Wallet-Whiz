@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
-import { IconButton } from '@mui/material';
+import { Dialog } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import UserImage from './UserImage';
@@ -24,8 +24,8 @@ const UserAccounts = () => {
     const [updateField, setUpdateField] = useState(null);
     const [newUsername, setNewUsername] = useState('');
     const [newEmail, setNewEmail] = useState('');
-    const [ Xemail, setXemail ] = useState(500);
-    const [ Xuser, setXuser ] = useState(500);
+    const [ Xemail, setXemail ] = useState(600);
+    const [ Xuser, setXuser ] = useState(600);
 
     const handleUpdateClick = (field) => {
         if (field === 'username') {
@@ -38,7 +38,8 @@ const UserAccounts = () => {
     }
 
     const handleCloseClick = () => {
-        setXemail(500)
+        setXemail(600);
+        setXuser(600);
         setUpdateField(null);
     };
     
@@ -66,15 +67,17 @@ const UserAccounts = () => {
             </div>
             <div className="container">
                 <div className='user-details-container'>
+                    <div className='user-display'>
                     <div className='user-box-left'>
                         <Avatar className='user-icons' />
                         <div className='user-details-box'>
                             <h3>Username: </h3>
                             <p>{user.username}</p>
                         </div>
-                    </div>
                     <EditIcon className='edit-icons' onClick={() => handleUpdateClick('username')}/>
-                    <div className='update-container' id='username'>
+                    </div>
+                    </div>
+                    <motion.div animate={{ x: Xuser }} className='update-container' id='username'>
                     <TextField
                         label='New Username' 
                         value={newUsername}
@@ -87,7 +90,7 @@ const UserAccounts = () => {
                             <div className='button-divider'>
                                 <SaveIcon onClick={handleSave} className='save-button' />
                             </div>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
@@ -96,8 +99,8 @@ const UserAccounts = () => {
                             <h3>Email: </h3>
                             <p>{user.email}</p>
                         </div>
+                    <EditIcon className='edit-icons' onClick={() => handleUpdateClick('email')}/>
                     </div>
-                    <EditIcon  transition={{ type: "spring" }} className='edit-icons' onClick={() => handleUpdateClick('email')}/>
                     <motion.div animate={{ x: Xemail }} className='update-container' id='email'>
                     <TextField
                         label='New Email'

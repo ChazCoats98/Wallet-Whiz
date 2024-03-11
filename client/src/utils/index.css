@@ -765,6 +765,10 @@ body {
     border-bottom: 1px solid var(--light-violet);
 }
 
+.user-display {
+    display: flex;
+}
+
 .user-box-left {
     display: flex;
     align-items: center;
@@ -1106,15 +1110,6 @@ body {
 
     .button-divider {
         padding: 10px;
-    }
-
-    .close {
-        transform: translateX(700px);
-    }
-    
-    .open {
-        transform: translateX(100px);
-        transition: 400ms;
     }
 
 
@@ -1522,7 +1517,4 @@ body {
         width: 560px;
     }
 
-    .user-box-left {
-        margin-right: 200px;
-    }
 }
