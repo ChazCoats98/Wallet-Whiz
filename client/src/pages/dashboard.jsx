@@ -23,12 +23,12 @@ function Dashboard() {
       <div className="nav-no-animation">
                 <ResponsiveAppBar />
             </div>
-      <div className='dashboard-container'>
-        <div className="dashboard-grid">
+      <div className='main-container'>
+        <div className='main-grid'>
           <div className='header-grid-box'>
             <div className='header-greeting'>
               <img className='placeholder-img' src={userPlaceholder} />
-              <h2 className="header-text dashboard-header greeting">Welcome back, {user.username || user.email}!</h2>
+              <h2 className='header-text dashboard-header greeting'>Welcome back, {user.username || user.email}!</h2>
             </div>
             <div>
               <h2 className='header-text dashboard-header'>Total Balance</h2>

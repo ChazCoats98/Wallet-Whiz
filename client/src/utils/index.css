@@ -597,7 +597,7 @@ body {
 }
 
 /*Dashboard page*/
-.dashboard-container {
+.main-container {
     display: flex;
     width: 100vw;
     height: 250vh;
@@ -605,7 +605,7 @@ body {
     padding-top: 120px;
 }
 
-.dashboard-grid {
+.main-grid {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(12, 1fr);
