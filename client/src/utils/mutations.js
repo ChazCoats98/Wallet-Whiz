@@ -70,3 +70,4 @@ export const FETCH_PLAID_DATA = gql`
         }
     }
 `;
+

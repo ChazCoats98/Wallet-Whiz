@@ -4,6 +4,8 @@ const plaidClient = require('../config/plaid');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
 const cloudinary = require('cloudinary');
 require('dotenv').config();
+const fmpkey = process.env.FMP_KEY;
+const fmp = require('financialmodelingprep')(fmpkey);
 
 const resolvers = {
     Query: {
@@ -29,6 +31,10 @@ const resolvers = {
             } else {
                 throw AuthenticationError;
             }
+        }, 
+        fetchSectorPerformance: async (parent, args, context) => {
+                const sectorPerformance = await fmp.market.sector_performance();
+                return sectorPerformance;
         }
     },
     Mutation: {

@@ -25,6 +25,11 @@ const typeDefs = `
         category: String
     }
 
+    type FetchSectorPerformance {
+        sector: String
+        changesPercentage: Float
+    }
+
     type Auth {
         token: ID
         user: User

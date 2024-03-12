@@ -33,3 +33,11 @@ export const TRANSACTIONS = gql`
         }
     }
 `;
+
+export const SECTORPERFORMANCE = gql`
+query sectorPerformance {
+    fetchSectorPerformance {
+        sector
+        changesPercentage
+    }
+}`

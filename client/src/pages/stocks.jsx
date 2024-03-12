@@ -1,7 +1,12 @@
 import ResponsiveAppBar from "../components/nav";
 import { useEffect, useState } from "react";
 
+
+
+
 const Stocks = () => {
+  
+
     return (
         <div className='page-box'>  
             <div className='nav-no-animation'>
