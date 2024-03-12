@@ -6,13 +6,24 @@ import Avatar from '@mui/material/Avatar';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import TextField from '@mui/material/TextField';
-import { Dialog } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import UserImage from './UserImage';
 import SaveIcon from '@mui/icons-material/Save';
 import EmailIcon from '@mui/icons-material/Email';
 import { motion } from 'framer-motion';
+import { Dialog } from "@mui/material";
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { Button } from "@mui/material";
+import Slide from '@mui/material/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 
 const UserAccounts = () => {
     const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
@@ -21,9 +32,14 @@ const UserAccounts = () => {
     const [updateUsername] = useMutation(UPDATE_USERNAME);
     const [updateEmail] = useMutation(UPDATE_EMAIL);
 
+
+    const [open, setOpen] = useState(false);
+    const [type, setType] = useState(false);
     const [updateField, setUpdateField] = useState(null);
     const [newUsername, setNewUsername] = useState('');
     const [newEmail, setNewEmail] = useState('');
+    const [saveEmail, setSaveEmail] = useState(false);
+    const [saveUsername, setSaveUsername] = useState(false);
     const [ Xemail, setXemail ] = useState(600);
     const [ Xuser, setXuser ] = useState(600);
 
@@ -41,10 +57,22 @@ const UserAccounts = () => {
         setXemail(600);
         setXuser(600);
         setUpdateField(null);
+        setOpen(false);
     };
+
+    const handleConfirm = () => {
+        if (updateField === 'username') {
+            setType(true);
+            setOpen(true);
+        } else if (updateField === 'email') {
+            setType(false);
+            setOpen(true);
+        }
+    }
     
     const handleSave = async () => {
         if (updateField === 'username') {
+            setSaveUsername(true);
             await updateUsername({ variables: { userId: userData.user._id, username: newUsername } });
         } else if (updateField === 'email') {
             await updateEmail({ variables: { userId: userData.user._id, email: newEmail } });
@@ -88,9 +116,27 @@ const UserAccounts = () => {
                                 <CloseIcon onClick={handleCloseClick} className='close-button'/>
                             </div>
                             <div className='button-divider'>
-                                <SaveIcon onClick={handleSave} className='save-button' />
+                                <SaveIcon onClick={handleConfirm} className='save-button' />
                             </div>
                     </motion.div>
+                    <Dialog
+                        open={open}
+                        keepMounted
+                        TransitionComponent={Transition}
+                        onClose={handleCloseClick}
+                        aria-describedby="alert-dialog-slide-description"
+                    >
+                        <DialogTitle>Are you sure you want to update your {updateField}?</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-slide-description">
+                                Are you sure you want to update your {updateField} to {type ? newUsername : newEmail}?
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleCloseClick}>Cancel</Button>
+                            <Button onClick={handleSave}>Confirm</Button>
+                        </DialogActions>
+                    </Dialog>
                 </div>
                 <div className='user-details-container'>
                     <div className='user-box-left'>
@@ -112,7 +158,7 @@ const UserAccounts = () => {
                                 <CloseIcon onClick={handleCloseClick} className='close-button'/>
                             </div>
                             <div className='button-divider'>
-                                <SaveIcon onClick={handleSave} className='save-button' />
+                                <SaveIcon onClick={handleConfirm} className='save-button' />
                             </div>
                     </motion.div>
                 </div>

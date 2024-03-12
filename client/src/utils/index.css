@@ -828,6 +828,15 @@ body {
     color: rgb(24, 202, 24);
 }
 
+.close-button:hover {
+    color: rgb(206, 23, 23);
+}
+
+.save-button:hover {
+    color: rgb(23, 169, 23);
+}
+
+
 .user-icons {
     color: #b9b9b9;
 }

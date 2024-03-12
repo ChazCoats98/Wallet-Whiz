@@ -6,6 +6,7 @@ import './utils/index.css';
 
 import App from './App.jsx';
 import Dashboard from './pages/dashboard';
+import Stocks from './pages/stocks.jsx';
 import Homepage from './pages/homepage';
 import User from './pages/user';
 import Register from './pages/RegisterPage.jsx';
@@ -25,6 +26,9 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <Dashboard />
             }, {
+                path: '/stocks',
+                element: <Stocks />
+            }, {
                 path: '/account',
                 element: <User />
             }, {
@@ -33,7 +37,7 @@ const router = createBrowserRouter([
             }, {
                 path: '/login',
                 element: <Login />
-            }
+            } 
         ]
     }
 ])

@@ -64,7 +64,7 @@ const UserImage = (props) => {
                 <img className='profile-image'src={profileImage} alt='user-logo' />
                     <label htmlFor="photo-upload" className="update-picture-icon">
                         <div className="img-upload" >
-                            <EditIcon className='transaction-icons' src={userPlaceholder}/>
+                            <EditIcon className='edit-icons' src={userPlaceholder}/>
                         </div>
                             <input id="photo-upload" type="file" style={{display:'none'}} 
                             onChange={onImageFileChangeHandler}

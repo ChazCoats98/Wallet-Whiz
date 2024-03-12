@@ -19,7 +19,7 @@ function Dashboard() {
 
   const user = data.user;
   return (
-    <div className='pageBox'>
+    <div className='page-box'>
       <div className="nav-no-animation">
                 <ResponsiveAppBar />
             </div>
