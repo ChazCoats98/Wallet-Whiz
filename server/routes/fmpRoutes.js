@@ -1,6 +1,6 @@
 require('dotenv').config
-const apikey = process.env.FMP_KEY
+const axios = require('axios')
 
-const fmp = require('financialmodelingprep')('KP1v8MgJqu09ri5OrVkNS0kTFynFycot')
 
-fmp.market.sector_performance().then(response => console.log(response));
+axios.get('https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=KP1v8MgJqu09ri5OrVkNS0kTFynFycot')
+                .then((response) => {console.log(response)});

@@ -34,10 +34,13 @@ export const TRANSACTIONS = gql`
     }
 `;
 
-export const SECTORPERFORMANCE = gql`
-query sectorPerformance {
-    fetchSectorPerformance {
-        sector
+export const MARKETGAINERS = gql`
+query fetchMarketIndex {
+    FetchMarketIndex {
+        symbol
+        name
+        change
+        price
         changesPercentage
     }
 }`

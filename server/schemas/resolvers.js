@@ -1,11 +1,12 @@
 const { User, Account, Transaction } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
+const axios = require('axios');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
 const cloudinary = require('cloudinary');
 require('dotenv').config();
 const fmpkey = process.env.FMP_KEY;
-const fmp = require('financialmodelingprep')(fmpkey);
+
 
 const resolvers = {
     Query: {
@@ -32,9 +33,9 @@ const resolvers = {
                 throw AuthenticationError;
             }
         }, 
-        fetchSectorPerformance: async (parent, args, context) => {
-                const sectorPerformance = await fmp.market.sector_performance();
-                return sectorPerformance;
+        fetchMarketGainers: async (parent, args, context) => {
+            const marketGainerData = await axios.get(`https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=KP1v8MgJqu09ri5OrVkNS0kTFynFycot`)
+            return marketGainerData
         }
     },
     Mutation: {

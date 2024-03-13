@@ -25,8 +25,11 @@ const typeDefs = `
         category: String
     }
 
-    type FetchSectorPerformance {
-        sector: String
+    type FetchMarketGainers {
+        symbol: String
+        name: String
+        change: Float
+        price: Float
         changesPercentage: Float
     }
 
@@ -39,6 +42,7 @@ const typeDefs = `
         user: User
         accounts: [Account]
         transactions: [Transaction]
+        fetchMarketGainers: [FetchMarketGainers]
         _: Boolean
     }
 
