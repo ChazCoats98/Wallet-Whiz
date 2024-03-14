@@ -35,8 +35,8 @@ export const TRANSACTIONS = gql`
 `;
 
 export const MARKETGAINERS = gql`
-query fetchMarketIndex {
-    FetchMarketIndex {
+query fetchMarketGainers {
+    FetchMarketGainers {
         symbol
         name
         change

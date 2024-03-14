@@ -5,7 +5,7 @@ const axios = require('axios');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
 const cloudinary = require('cloudinary');
 require('dotenv').config();
-const fmpkey = process.env.FMP_KEY;
+
 
 
 const resolvers = {
@@ -33,9 +33,8 @@ const resolvers = {
                 throw AuthenticationError;
             }
         }, 
-        fetchMarketGainers: async (parent, args, context) => {
-            const marketGainerData = await axios.get(`https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=KP1v8MgJqu09ri5OrVkNS0kTFynFycot`)
-            return marketGainerData
+        fetchMarketGainers: async (_, __, { dataSources }) => {
+            return dataSources.financialModelingAPI.fetchBiggestGainers();
         }
     },
     Mutation: {

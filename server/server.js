@@ -6,6 +6,8 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 const plaidRoutes = require('./routes/plaidRoutes');
+const FinancialModelingAPI = require('./routes/fmpRoutes');
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -16,6 +18,9 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    dataSources: () => ({
+        financialModelingAPI: new FinancialModelingAPI()
+    })
 });
 
 const startApolloServer = async () => {
