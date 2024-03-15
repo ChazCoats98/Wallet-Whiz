@@ -20,7 +20,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { motion, useTransform } from 'framer-motion';
 
 const pages = ['Features', 'About us', 'contributors'];
-const pagesLI = ['dashboard', 'stocks', 'account']
+const pagesLI = ['personal finances', 'stocks', 'account']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
