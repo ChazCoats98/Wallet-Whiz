@@ -1,10 +1,10 @@
 const { User, Account, Transaction } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
-const axios = require('axios');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
 const cloudinary = require('cloudinary');
 require('dotenv').config();
+const { v4: uuidv4 } = require('uuid');
 
 
 
@@ -34,7 +34,16 @@ const resolvers = {
             }
         }, 
         fetchMarketGainers: async (_, __, { dataSources }) => {
-            return dataSources.financialModelingAPI.fetchGainers();
+            const data = await dataSources.financialModelingAPI.fetchGainers();
+            const dataWithId = data.map((data) => ({
+                _id: uuidv4(),
+                symbol: data.symbol,
+                name: data.name,
+                change: data.change,
+                price: data.price,
+                changesPercentage: data.changesPercentage,
+            }))
+            return dataWithId;
         }
     },
     Mutation: {

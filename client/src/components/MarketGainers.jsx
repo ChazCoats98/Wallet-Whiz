@@ -11,7 +11,7 @@ const MarketGainers = () => {
         <div>
             {data.fetchMarketGainers.map((MarketGainers) => {
                 return (
-                <div className='map-container transactions'>
+                <div className='map-container transactions' key={MarketGainers._id}>
                     <h2>{MarketGainers.symbol}</h2>
                 </div>
                 )
