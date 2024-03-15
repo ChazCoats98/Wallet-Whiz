@@ -44,6 +44,18 @@ const resolvers = {
                 changesPercentage: data.changesPercentage,
             }))
             return dataWithId;
+        }, 
+        fetchMarketLosers: async (_, __, { dataSources }) => {
+            const data = await dataSources.financialModelingAPI.fetchLosers();
+            const dataWithId = data.map((data) => ({
+                _id: uuidv4(),
+                symbol: data.symbol,
+                name: data.name,
+                change: data.change,
+                price: data.price,
+                changesPercentage: data.changesPercentage,
+            }))
+            return dataWithId;
         }
     },
     Mutation: {

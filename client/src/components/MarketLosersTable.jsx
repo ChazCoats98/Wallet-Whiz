@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { MARKETGAINERS } from "../utils/queries";
+import { MARKETLOSERS } from "../utils/queries";
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -146,7 +146,7 @@ function EnhancedTableHead(props) {
             id="tableTitle"
             component="div"
           >
-            Todays biggest Gainers
+            Todays biggest Losers
           </Typography>
       </Toolbar>
     );
@@ -156,20 +156,12 @@ function EnhancedTableHead(props) {
     numSelected: PropTypes.number.isRequired,
   };
   
-  export default function EnhancedTable() {
-    const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
-    const { loading, error, data } = useQuery(MARKETGAINERS);
+  export default function MarketLosersTable() {
+    const { loading, error, data } = useQuery(MARKETLOSERS);
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error.message}</p>
 
-    const rows = data.fetchMarketGainers
-  
-    const handleRequestSort = (event, property) => {
-      const isAsc = orderBy === property && order === 'asc';
-      setOrder(isAsc ? 'desc' : 'asc');
-      setOrderBy(property);
-    };
+    const rows = data.fetchMarketLosers
   
     return (
       <Box sx={{ width: '100%' }}>
@@ -181,9 +173,6 @@ function EnhancedTableHead(props) {
               aria-labelledby="tableTitle"
             >
               <EnhancedTableHead
-                order={order}
-                orderBy={orderBy}
-                onRequestSort={handleRequestSort}
                 rowCount={rows.length}
               />
               <TableBody>
@@ -202,9 +191,9 @@ function EnhancedTableHead(props) {
                         {row.name}
                       </TableCell>
                       <TableCell align="right">{row.symbol}</TableCell>
-                      <TableCell align="right"><span className='income-text'>+${Math.round(row.change*100)/100}</span></TableCell>
+                      <TableCell align="right"><span className='expense-text'>-${Math.round((row.change*-1)*100)/100}</span></TableCell>
                       <TableCell align="right">${row.price}</TableCell>
-                      <TableCell align="right"><span className='income-text'>{Math.round(row.changesPercentage*100)/100}%</span></TableCell>
+                      <TableCell align="right"><span className='expense-text'>{Math.round(row.changesPercentage*100)/100}%</span></TableCell>
                     </TableRow>
                   );
                 })}

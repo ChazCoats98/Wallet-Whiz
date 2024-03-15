@@ -45,3 +45,15 @@ query fetchMarketGainers {
         changesPercentage
     }
 }`
+
+export const MARKETLOSERS = gql`
+query fetchMarketLosers {
+    fetchMarketLosers {
+        _id
+        symbol
+        name
+        change
+        price
+        changesPercentage
+    }
+}`

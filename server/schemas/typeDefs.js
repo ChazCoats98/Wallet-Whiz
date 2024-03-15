@@ -34,6 +34,15 @@ const typeDefs = `
         changesPercentage: Float
     }
 
+    type MarketLosers {
+        _id: ID
+        symbol: String
+        name: String
+        change: Float
+        price: Float
+        changesPercentage: Float
+    }
+
     type Auth {
         token: ID
         user: User
@@ -44,6 +53,7 @@ const typeDefs = `
         accounts: [Account]
         transactions: [Transaction]
         fetchMarketGainers: [MarketGainers]
+        fetchMarketLosers: [MarketLosers]
         _: Boolean
     }
 

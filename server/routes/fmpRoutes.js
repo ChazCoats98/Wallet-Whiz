@@ -12,6 +12,11 @@ class FinancialModelingAPI extends RESTDataSource {
         const data = await this.get(`stock_market/gainers?apikey=${process.env.FMP_KEY}`);
         return data;
     }
+
+    async fetchLosers() {
+        const data = await this.get(`stock_market/losers?apikey=${process.env.FMP_KEY}`);
+        return data;
+    }
 }
 
 

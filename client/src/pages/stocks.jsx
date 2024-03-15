@@ -1,6 +1,7 @@
 import ResponsiveAppBar from "../components/nav";
 import { useEffect, useState } from "react";
-import MarketGainers from "../components/MarketGainers";
+import MarketGainersTable from "../components/MarketGainersTable";
+import MarketLosersTable from "../components/MarketLosersTable";
 
 
 
@@ -14,7 +15,8 @@ const Stocks = () => {
                 <ResponsiveAppBar />
             </div>
             <div className='main-container'>
-                <MarketGainers />
+                <MarketGainersTable />
+                <MarketLosersTable />
                 
             </div>
 
