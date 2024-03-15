@@ -25,7 +25,8 @@ const typeDefs = `
         category: String
     }
 
-    type FetchMarketGainers {
+    type MarketGainers {
+        _id: ID
         symbol: String
         name: String
         change: Float
@@ -42,7 +43,7 @@ const typeDefs = `
         user: User
         accounts: [Account]
         transactions: [Transaction]
-        fetchMarketGainers: [FetchMarketGainers]
+        fetchMarketGainers: [MarketGainers]
         _: Boolean
     }
 

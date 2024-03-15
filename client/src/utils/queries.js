@@ -36,7 +36,8 @@ export const TRANSACTIONS = gql`
 
 export const MARKETGAINERS = gql`
 query fetchMarketGainers {
-    FetchMarketGainers {
+    fetchMarketGainers {
+        _id
         symbol
         name
         change
