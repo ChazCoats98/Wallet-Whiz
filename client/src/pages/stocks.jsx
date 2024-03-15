@@ -15,7 +15,7 @@ const Stocks = () => {
             </div>
             <div className='main-container'>
                 <MarketGainers />
-                <div className='main-grid'></div>
+                
             </div>
 
         </div>

@@ -1,9 +1,5 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import { TRANSACTIONS } from '../utils/queries';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import Divider from '@mui/material/Divider';
 import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
 import PlaidIcon from './PlaidIcons';
