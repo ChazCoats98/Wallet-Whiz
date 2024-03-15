@@ -34,7 +34,7 @@ const resolvers = {
             }
         }, 
         fetchMarketGainers: async (_, __, { dataSources }) => {
-            return dataSources.financialModelingAPI.fetchBiggestGainers();
+            return dataSources.financialModelingAPI.fetchGainers();
         }
     },
     Mutation: {

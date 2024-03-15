@@ -1,38 +1,35 @@
-require('dotenv').config({ debug: true });
+require('@dotenvx/dotenvx').config()
+console.log(process.env.FMP_KEY);
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
-const path = require('path');
+const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const plaidRoutes = require('./routes/plaidRoutes');
-const FinancialModelingAPI = require('./routes/fmpRoutes');
-
-
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-
+const FinancialModelingAPI = require('./routes/fmpRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     dataSources: () => ({
-        financialModelingAPI: new FinancialModelingAPI()
-    })
+        financialModelingAPI: new FinancialModelingAPI(),
+    }),
+    context: authMiddleware 
 });
 
-const startApolloServer = async () => {
+async function startServer() {
     await server.start();
+    server.applyMiddleware({ app });
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.use(cors());
-
-    app.use('/graphql', expressMiddleware(server, {
-        context: authMiddleware
-    }));
 
     if (process.env.NODE_ENV === 'production') {
         app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -45,8 +42,8 @@ const startApolloServer = async () => {
     app.use('/api', plaidRoutes);
 
     db.once('open', () => {
-        app.listen(PORT, () => console.log(`Now listenting on localhost:${PORT}`));
+        app.listen(PORT, () => console.log(`Now listening on localhost:${PORT}`));
     });
-};
+}
 
-startApolloServer();
+startServer();
