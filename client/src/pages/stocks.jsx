@@ -22,7 +22,7 @@ const Stocks = () => {
             </div>
             <div className='main-container'>
                 <div className='table-align'>
-                    <ComponentLoader />
+                    <MarketGainersTable data={gainerData}/>
                 </div>
                 <div className='table-align'>
                     <MarketLosersTable data={loserData}/>

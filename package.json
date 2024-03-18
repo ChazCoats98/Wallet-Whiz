@@ -29,6 +29,7 @@
     "dotenv": "^8.6.0",
     "financialmodelingprep": "^1.1.0",
     "framer-motion": "^11.0.5",
+    "ldrs": "^1.0.1",
     "moment": "^2.29.4",
     "react-avatar-editor": "^13.0.2"
   }
