@@ -1,10 +1,10 @@
-import ResponsiveAppBar from "../components/nav";
-import MarketGainersTable from "../components/MarketGainersTable";
-import MarketLosersTable from "../components/MarketLosersTable";
+import ResponsiveAppBar from "../../components/nav";
+import MarketGainersTable from "../../components/MarketGainersTable";
+import MarketLosersTable from "../../components/MarketLosersTable";
 import { useQuery } from "@apollo/client";
-import { MARKETGAINERS } from "../utils/queries";
-import { MARKETLOSERS } from "../utils/queries";
-import ComponentLoader from "../components/ComponentLoader";
+import { MARKETGAINERS } from "../../utils/queries";
+import { MARKETLOSERS } from "../../utils/queries";
+import ComponentLoader from "../../components/ComponentLoader";
 
 
 

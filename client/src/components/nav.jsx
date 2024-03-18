@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useMatch } from 'react-router-dom';
 import '../App.css';
 import Logo2 from '../assets/WalletWhizIconnbg.png'
 import Auth from '../utils/auth'
@@ -10,13 +10,14 @@ import Button from '@mui/material/Button';
 
 const pages = ['Features', 'About us', 'contributors'];
 const pagesLI = ['personal finances', 'stocks', 'account']
-const stockPages = ['Market watch', 'My portfolio']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const stockPages = [{ page: 'Market watch', link: '/stocks'},{ page:'My portfolio', link: '/stocks/portfolio'}]
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-  const [openSubNav, setOpenSubNav] = useState(false);
+
+  const stocks = useMatch('/stocks');
+  const stocksPortfolio = useMatch('/stocks/portfolio');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -33,19 +34,14 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  const handleClick = (page) => {
-    console.log(page);
-    if (page === 'stocks') {
-      setOpenSubNav(true);
-    }
-  };
 
   return (
     <div>
     {Auth.loggedIn() ? (
+      <div>
       <div className="navbar-li">
     <Toolbar disableGutters  className="nav-box">
-    <Link to='/dashboard' style={{ textDecoration: 'none'}}>
+    <Link to='/personal finances' style={{ textDecoration: 'none'}}>
       <Box className='logo-box' sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -67,7 +63,7 @@ function ResponsiveAppBar() {
     </Link>
     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', marginRight: '20px', marginLeft: '20px'}}>
     {pagesLI.map((page) => (
-      <NavLink onClick={() => handleClick(page)} to={`/${page}`} key={page} className={({ isActive, isPending }) =>
+      <NavLink to={`/${page}`} key={page} className={({ isActive, isPending }) =>
       isPending ? "list-text li pending" : isActive ? "active" : "list-text li"
     }>
         {page}
@@ -80,6 +76,18 @@ function ResponsiveAppBar() {
     </div>
   </Box>
     </Toolbar>
+    </div>
+    <div>
+      {stocks || stocksPortfolio ? (
+        <div className='sub-nav'>
+          {stockPages.map((stockPage) => (
+            <NavLink to={stockPage.link} key={stockPage} end className={({ isActive }) =>
+            isActive ? "active" : "list-text li"
+          }>{stockPage.page}</NavLink>
+          ))}
+        </div>
+      ): (null)}
+    </div>
     </div>
     ) : (
           <div className='navbar'>

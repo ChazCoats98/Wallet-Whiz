@@ -920,6 +920,15 @@ body {
     box-shadow: 0px 2px 1px -1px var(--dark-violet), 0px 1px 1px 0px var(--dark-violet), 0px 1px 3px 0px var(--dark-violet) !important;
 }
 
+.MuiTypography-root {
+    font-family: 'kanit', sans-serif !important;
+    font-size: 36px !important;
+}
+
+.MuiTableSortLabel-root {
+    font-size: 20px !important;
+}
+
 #contact {
     background-color: #2f3e9e0b;
     color: white;
@@ -946,6 +955,7 @@ body {
 #email {
     margin-left: -22px;
 }
+
 
 /* Breakpoints */
 @media (min-width:320px) { 

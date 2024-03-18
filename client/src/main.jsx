@@ -6,7 +6,8 @@ import './utils/index.css';
 
 import App from './App.jsx';
 import Dashboard from './pages/dashboard';
-import Stocks from './pages/stocks.jsx';
+import Stocks from './pages/stock-pages/marketWatch.jsx';
+import Portfolio from './pages/stock-pages/portfolio.jsx';
 import Homepage from './pages/homepage';
 import User from './pages/user';
 import Register from './pages/RegisterPage.jsx';
@@ -27,7 +28,15 @@ const router = createBrowserRouter([
                 element: <Dashboard />
             }, {
                 path: '/stocks',
-                element: <Stocks />
+                children: [
+                    {
+                        index: true,
+                        element: <Stocks />
+                    }, {
+                        path: '/stocks/portfolio',
+                        element: <Portfolio />
+                    }
+                ]
             }, {
                 path: '/account',
                 element: <User />
