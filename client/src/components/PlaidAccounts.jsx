@@ -1,14 +1,13 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import { ACCOUNTS } from '../utils/queries';
-import Divider from '@mui/material/Divider';
 import CurrencyFormat from 'react-currency-format';
 import PlaidIcon from './PlaidIcons';
+import ComponentLoader from './ComponentLoader';
 
 const PlaidAccounts = () => {
     const { loading, error, data } = useQuery(ACCOUNTS);
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <ComponentLoader />
     if (error) return <p>Error: {error.message}</p>
 
     return (

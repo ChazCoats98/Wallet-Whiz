@@ -3,10 +3,11 @@ import { TRANSACTIONS } from '../utils/queries';
 import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
 import PlaidIcon from './PlaidIcons';
+import ComponentLoader from './ComponentLoader';
 
 const PlaidTransactions = () => {
     const { loading, error, data } = useQuery(TRANSACTIONS);
-    if (loading) return <p>Loading...</p>
+    if (loading) return <ComponentLoader />
     if (error) return <p>Error: {error.message}</p>
     console.log(data);
 

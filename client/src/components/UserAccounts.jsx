@@ -19,6 +19,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Button } from "@mui/material";
 import Slide from '@mui/material/Slide';
+import ComponentLoader from './ComponentLoader';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -81,7 +82,7 @@ const UserAccounts = () => {
         window.location.reload();
     };
     
-    if (userLoading || accountsLoading) return <p>Loading...</p>
+    if (userLoading || accountsLoading) return <ComponentLoader />
     if (userError || accountsError) return <p>Error: {userError?.message || accountsError?.message}</p>
     
     const user = userData.user;

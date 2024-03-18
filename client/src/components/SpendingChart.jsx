@@ -3,6 +3,7 @@ import { Chart, registerables, ArcElement, Tooltip, Legend, Title } from "chart.
 import { useQuery } from "@apollo/client";
 import { TRANSACTIONS } from "../utils/queries";
 import { Doughnut } from "react-chartjs-2";
+import ComponentLoader from "./ComponentLoader";
 
 Chart.register(...registerables);
 Chart.defaults.plugins.legend.title.font = 'Oswald';
@@ -10,7 +11,7 @@ Chart.defaults.plugins.legend.title.font = 'Oswald';
 const SpendingChart = () => {
     const { loading, error, data } = useQuery(TRANSACTIONS);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <ComponentLoader />;
     if (error) return <p>Error: {error.message}</p>;
 
     const transactionData = data?.transactions || [];
