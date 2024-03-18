@@ -84,7 +84,7 @@
 
 .header-logo-li {
     display: flex;
-    height: 20px;
+    height: 30px;
     margin-right: 20px;
     margin-top: 10px;
 }
@@ -123,26 +123,47 @@
     position: relative;
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
-    color: white;
+    color: black;
+    padding: 10px;
     letter-spacing: 1.2px;
     font-weight: 700;
     font-size: 24px;
+    text-transform: uppercase;
 }
 
-.list-text-li {
+
+.li {
+    font-size: 18px !important;
+}
+
+.active {
     display: inline-block;
     position: relative;
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
-    color: white;
+    color: black;
+    padding: 10px;
     letter-spacing: 1.2px;
     font-weight: 700;
     font-size: 18px;
+    text-transform: uppercase;
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    transform-origin: center;
 }
 
 .list-text:hover {
     cursor: pointer;
 }
+
 
 .list-text::after {
     content: '';

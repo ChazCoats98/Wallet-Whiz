@@ -1,20 +1,13 @@
-import { useQuery } from '@apollo/client';
-import { TRANSACTIONS } from '../utils/queries';
 import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
 import PlaidIcon from './PlaidIcons';
-import ComponentLoader from './ComponentLoader';
 
-const PlaidTransactions = () => {
-    const { loading, error, data } = useQuery(TRANSACTIONS);
-    if (loading) return <ComponentLoader />
-    if (error) return <p>Error: {error.message}</p>
-    console.log(data);
 
+const PlaidTransactions = (data) => {
 
     return (
         <div>
-            {data.transactions.map((transaction) => {
+            {data.data.map((transaction) => {
                 if (transaction.amount > 0) {
                     return (
                         <div className='map-container transactions' key={transaction._id}>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import '../App.css';
 import Logo2 from '../assets/WalletWhizIconnbg.png'
 import Auth from '../utils/auth'
@@ -7,15 +7,16 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { motion, useTransform } from 'framer-motion';
 
 const pages = ['Features', 'About us', 'contributors'];
 const pagesLI = ['personal finances', 'stocks', 'account']
+const stockPages = ['Market watch', 'My portfolio']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [openSubNav, setOpenSubNav] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -30,6 +31,13 @@ function ResponsiveAppBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleClick = (page) => {
+    console.log(page);
+    if (page === 'stocks') {
+      setOpenSubNav(true);
+    }
   };
 
   return (
@@ -59,17 +67,11 @@ function ResponsiveAppBar() {
     </Link>
     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', marginRight: '20px', marginLeft: '20px'}}>
     {pagesLI.map((page) => (
-      <Link to={`/${page}`} key={page}>
-      <Button
-        key={page}
-        onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: 'white', display: 'block' }}
-      >
-        <motion.span style={{ color: "black" }} className='list-text-li'>
+      <NavLink onClick={() => handleClick(page)} to={`/${page}`} key={page} className={({ isActive, isPending }) =>
+      isPending ? "list-text li pending" : isActive ? "active" : "list-text li"
+    }>
         {page}
-        </motion.span>
-      </Button>
-      </Link>
+      </NavLink>
     ))}
   </Box>
   <Box className='btn-box' sx={{ display: { xs: 'none', md: 'flex'}}}>
@@ -104,15 +106,9 @@ function ResponsiveAppBar() {
               </Link>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center'}}>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                <span style={{ color: "black" }} className='list-text'>
+                <span key={page} style={{ color: "black" }} className='list-text'>
                     {page}
                   </span>
-                </Button>
               ))}
             </Box>
             <Box className='btn-box' sx={{ display: { xs: 'none', md: 'flex'}}}>

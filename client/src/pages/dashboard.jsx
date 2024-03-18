@@ -1,7 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import '../App.css'; 
 import { useQuery } from '@apollo/client';
-import { USER, ACCOUNTS } from '../utils/queries';
+import { USER, ACCOUNTS, TRANSACTIONS } from '../utils/queries';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
@@ -13,12 +11,14 @@ import ComponentLoader from '../components/ComponentLoader';
 function Dashboard() {
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
   const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
+  const { loading: transactionsLoading, error: transactionsError, data: transactionsData } = useQuery(TRANSACTIONS);
 
-  if (userLoading || accountsLoading) return <ComponentLoader />
-  if (userError || accountsError) return <p>Error: {userError.message || accountsError.message}</p>
+  if (userLoading || accountsLoading || transactionsLoading) return <ComponentLoader />
+  if (userError || accountsError || transactionsError) return <p>Error: {userError.message || accountsError.message}</p>
 
   const user = userData.user;
   const accounts = accountsData.accounts;
+  const transactions = transactionsData.transactions;
   return (
     <div className='page-box'>
       <div className="nav-no-animation">
@@ -42,7 +42,7 @@ function Dashboard() {
                 ACCOUNTS
               </h3>             
             </div>
-              <PlaidAccounts />
+              <PlaidAccounts data={accounts}/>
           </div>
             <div className="transactions-grid-box">
               <div className='header-box'>
@@ -50,7 +50,7 @@ function Dashboard() {
                   TRANSACTION HISTORY
                 </h2>
               </div>
-                <PlaidTransactions />
+                <PlaidTransactions data={transactions}/>
             </div>
           <div className='chart-grid-box'>
             <div className='header-box'>
@@ -59,7 +59,7 @@ function Dashboard() {
               </h2>
             </div>
             <div className='chart-align'>
-                <SpendingChart />
+                <SpendingChart data={transactions}/>
             </div>
             </div>
           </div>
