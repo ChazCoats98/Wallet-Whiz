@@ -11,6 +11,7 @@ import Portfolio from './pages/stock-pages/portfolio.jsx';
 import Homepage from './pages/homepage';
 import User from './pages/user';
 import Register from './pages/RegisterPage.jsx';
+import RegisterPlaid from './pages/registerPlaid.jsx';
 import Login from './pages/loginPage.jsx';
 import ErrorPage from './pages/errorPage.jsx';
 
@@ -43,6 +44,9 @@ const router = createBrowserRouter([
             }, {
                 path: '/register',
                 element: <Register />
+            },{
+                path: '/register-plaid',
+                element: <RegisterPlaid />
             }, {
                 path: '/login',
                 element: <Login />

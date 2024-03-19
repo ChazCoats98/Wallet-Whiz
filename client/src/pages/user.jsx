@@ -10,6 +10,7 @@ import ResponsiveAppBar from '../components/nav';
 
 function User() {
     const { loading, error, data} = useQuery(USER);
+    console.log(data)
 
     return (
         <div className="page-box">

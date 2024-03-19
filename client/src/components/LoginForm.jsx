@@ -42,6 +42,7 @@ const LoginForm = () => {
                 setErrorMessage('Something went wrong!');
             }
 
+
             Auth.login(data.login.token);
             setIsLoggedIn(true);
         } catch (err) {

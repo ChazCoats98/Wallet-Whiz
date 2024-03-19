@@ -12,6 +12,7 @@ function Dashboard() {
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
   const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
   const { loading: transactionsLoading, error: transactionsError, data: transactionsData } = useQuery(TRANSACTIONS);
+  console.log(transactionsData)
 
   if (userLoading || accountsLoading || transactionsLoading) return <ComponentLoader />
   if (userError || accountsError || transactionsError) return <p>Error: {userError.message || accountsError.message}</p>

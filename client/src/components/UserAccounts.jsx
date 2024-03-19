@@ -87,6 +87,7 @@ const UserAccounts = () => {
     
     const user = userData.user;
     const accounts = accountsData.accounts;
+    console.log(accounts)
 
     return (
         <div key={user._id}>

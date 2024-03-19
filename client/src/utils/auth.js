@@ -1,4 +1,7 @@
 import decode from 'jwt-decode';
+import { useQuery } from '@apollo/client';
+import { USER } from '../utils/queries';
+
 
 class AuthService {
     getProfile() {
@@ -27,7 +30,7 @@ class AuthService {
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/personal finances');
+            window.location.assign('/register-plaid');
     }
 
     logout() {
