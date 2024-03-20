@@ -1,18 +1,26 @@
 import {Link} from 'react-router-dom'
 import { Button } from '@mui/material'
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { USER } from '../utils/queries';
+import { FETCH_PLAID_DATA } from '../utils/mutations';
 import Logo2 from '../assets/WalletWhizIconnbg.png'
 import PlaidButton from '../components/PlaidButton'
 import ComponentLoader from '../components/ComponentLoader';
 
 const RegisterPlaid = () => {
     const { loading, error, data} = useQuery(USER);
+    const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
     if (loading) return <ComponentLoader />
   if (error) return <p>Error: {error}</p>
     console.log(data);
 
     if (data.user.plaidAccessToken) {
+        fetchPlaidData({
+            variables: {
+                    accessToken: data.user.plaidAccessToken
+                }
+        });
+
         window.location.assign('/personal finances');
     } else {
 

@@ -1,19 +1,13 @@
 import { Chart, registerables } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
-import { useQuery } from '@apollo/client';
-import { TRANSACTIONS } from '../utils/queries';
-import ComponentLoader from "./ComponentLoader";
 Chart.register(...registerables);
 Chart.defaults.plugins.legend.title.font = 'Oswald';
 
 const SpendingChart = (data) => {
-    const accessToken = data.accessToken;
-    console.log(data);
-    const { loading: transactionLoading, error: transactionError, data: transactionData } = useQuery(TRANSACTIONS, {variables: {accessToken}});
-    if (transactionLoading) return <ComponentLoader />
-    if (transactionError) return <p>Error: {transactionError.message}</p>
+    console.log(data.data);
+    const transactionData = data.data
 
-    const transactions = transactionData.transactions || [];
+    const transactions = transactionData || [];
 
     const categoryAmount = transactions.reduce((acc, transaction) => {
         const category = transaction.category;

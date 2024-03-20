@@ -7,6 +7,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SavingsIcon from '@mui/icons-material/Savings';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
 const PlaidIcon = (data) => {
     if (data.data == 'TRANSPORTATION') {
@@ -44,6 +45,10 @@ const PlaidIcon = (data) => {
     } else if (data.data == 'OTHER') {
         return (
             <CreditCardIcon fontSize='large' className={data.className} />
+        )
+    } else if (data.data == 'ENTERTAINMENT') {
+        return (
+            <LocalMoviesIcon fontSize='large' className={data.className} />
         )
     }
 }
