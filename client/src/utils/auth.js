@@ -30,7 +30,7 @@ class AuthService {
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-            window.location.assign('/register-plaid');
+        window.location.assign('/register-plaid');
     }
 
     logout() {

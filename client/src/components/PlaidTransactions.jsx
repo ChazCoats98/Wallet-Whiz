@@ -7,7 +7,7 @@ const PlaidTransactions = (data) => {
 
     return (
         <div>
-            {data.data.map((transaction) => {
+            {data.data.slice(0, 8).map((transaction) => {
                 if (transaction.amount > 0) {
                     return (
                         <div className='map-container transactions' key={transaction._id}>

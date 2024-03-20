@@ -5,17 +5,18 @@ import { EXCHANGE_PUBLIC_TOKEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Button from '@mui/material/Button';
 
-axios.defaults.baseURL = 'https://frozen-brushlands-26062-9afa804fc3f2.herokuapp.com/api' || 'http://localhost:3001/api';
+axios.defaults.baseURL = 'http://localhost:3001/api';
 
 function PlaidAuth({ publicToken }) {
   const [exchangePublicToken] = useMutation(EXCHANGE_PUBLIC_TOKEN);
+  console.log(publicToken);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const accessToken = await exchangePublicToken({ variables: { publicToken }});
         console.log('accessToken', accessToken.data);
-        window.location.reload();
+        window.location.assign('/personal finances');
       } catch (error) {
         console.error(error);
       }
@@ -32,6 +33,7 @@ function PlaidButton () {
     async function fetch() {
       try {
         const response = await axios.post('/create_link_token');
+        console.log(response);
         setLinkToken(response.data.link_token);
       } catch (err) {
         console.error(err);

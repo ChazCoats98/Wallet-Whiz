@@ -6,6 +6,7 @@ import FastfoodIcon from '@mui/icons-material/Fastfood';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SavingsIcon from '@mui/icons-material/Savings';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 
 const PlaidIcon = (data) => {
     if (data.data == 'TRANSPORTATION') {
@@ -39,6 +40,10 @@ const PlaidIcon = (data) => {
     } else if (data.data == 'Plaid Checking') {
         return (
             <AccountBalanceWalletIcon fontSize='large' className={data.className} />
+        )
+    } else if (data.data == 'OTHER') {
+        return (
+            <CreditCardIcon fontSize='large' className={data.className} />
         )
     }
 }

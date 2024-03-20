@@ -11,14 +11,14 @@ router.post('/create_link_token', async function (req, res) {
         client_name: 'Plaid Test App',
         products: ['auth'],
         language: 'en',
-        redirect_uri: 'https://frozen-brushlands-26062-9afa804fc3f2.herokuapp.com/api' || 'http://localhost:3001/api',
+        redirect_uri: 'http://localhost:3001/api',
         country_codes: ['US'],
     };
     console.log(plaidRequest);
     try {
         const createTokenResponse = await plaidClient.linkTokenCreate(plaidRequest);
         res.json(createTokenResponse.data);
-        console.log(createTokenResponse.data);
+        console.log('Hello vro');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
