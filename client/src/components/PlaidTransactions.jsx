@@ -4,10 +4,11 @@ import PlaidIcon from './PlaidIcons';
 
 
 const PlaidTransactions = (data) => {
+    const transactions = data.data
 
     return (
         <div>
-            {data.data.slice(0, 8).map((transaction) => {
+            {transactions.slice(0, 8).map((transaction) => {
                 if (transaction.amount > 0) {
                     return (
                         <div className='map-container transactions' key={transaction._id}>

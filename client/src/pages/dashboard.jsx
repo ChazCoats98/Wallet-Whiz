@@ -1,5 +1,7 @@
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { USER, ACCOUNTS, TRANSACTIONS } from '../utils/queries';
+import { useEffect } from 'react';
+import { FETCH_PLAID_DATA } from '../utils/mutations';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
@@ -9,17 +11,29 @@ import userPlaceholder from '../assets/user-placeholder.png';
 import ComponentLoader from '../components/ComponentLoader';
 
 function Dashboard() {
-  const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
-  const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
-  const { loading: transactionsLoading, error: transactionsError, data: transactionsData } = useQuery(TRANSACTIONS);
-  console.log(transactionsData)
+  const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
 
-  if (userLoading || accountsLoading || transactionsLoading) return <ComponentLoader />
-  if (userError || accountsError || transactionsError) return <p>Error: {userError.message || accountsError.message}</p>
+  const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
+    useEffect(() => {
+        if (!userLoading && !userError && userData && userData.user && userData.user.plaidAccessToken) {
+            fetchPlaidData({
+                variables: {
+                    accessToken: userData.user.plaidAccessToken
+                }
+            });
+        }
+    }, [])
+
+
+  const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
+  const { loading: transactionLoading, error: transactionError, data: transactionData } = useQuery(TRANSACTIONS);
+  if (userLoading || accountsLoading || transactionLoading) return <ComponentLoader />
+  if (userError || accountsError || transactionError) return <p>Error: {userError.message || accountsError.message || transactionError.message}</p>
 
   const user = userData.user;
   const accounts = accountsData.accounts;
-  const transactions = transactionsData.transactions;
+  const transactions = transactionData.transactions;
+
   return (
     <div className='page-box'>
       <div className="nav-no-animation">

@@ -18,7 +18,6 @@ router.post('/create_link_token', async function (req, res) {
     try {
         const createTokenResponse = await plaidClient.linkTokenCreate(plaidRequest);
         res.json(createTokenResponse.data);
-        console.log('Hello vro');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
