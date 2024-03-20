@@ -3,6 +3,7 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
 const cloudinary = require('cloudinary');
+const cloudinaryConfig = require('../config/cloudinary');
 require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
 
@@ -87,19 +88,11 @@ const resolvers = {
         updateEmail: async (parent, { userId, email }) => {
             return User.findByIdAndUpdate(userId, { $set: { email } }, { new: true });
         },
-        uploadPhoto: async (_, { photo }) => {
-            cloudinary.config({
-                cloud_name: process.env.CLOUD_NAME,
-                api_key: process.env.CLOUD_KEY,
-                api_secret: process.env.CLOUD_SECRET
-            });
-
+        uploadPhoto: async (_, { photo, userId }) => {
             try {
-                const result = await cloudinary.v2.uploader.upload(photo, {
-                    allowed_formats: ['jpg', 'png'],
-                    public_id: '',
-                    folder: 'walletwhiz'
-                })
+                cloudinary.uploader.upload(photo,
+                { public_id: userId }, 
+                function(error, result) {console.log(result); });
             } catch (error) {
                 return `Image upload failed: ${error.message}`;
             }

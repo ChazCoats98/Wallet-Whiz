@@ -92,7 +92,7 @@ const UserAccounts = () => {
     return (
         <div key={user._id}>
             <div className='user-header'>
-                <UserImage props={user}/>
+                <UserImage data={user}/>
                 <h3 className="headerText sub-header">{user.username || user.email}&apos;s Profile</h3>
             </div>
             <div className="container">

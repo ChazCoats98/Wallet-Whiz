@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
 import UserAccounts from "../components/UserAccounts";
 import ResponsiveAppBar from '../components/nav';
 

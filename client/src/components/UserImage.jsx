@@ -6,20 +6,22 @@ import userPlaceholder from '../assets/user-placeholder.png'
 import Modal from './Modal';
 import { verifyFile, uploadFile } from '../utils/verifyFile';
 import ImageCrop from './ImageCrop';
-import { Cloudinary } from '@cloudinary/url-gen';
+import { useMutation } from '@apollo/client';
+import { UPLOAD_PHOTO } from '../utils/mutations';
 
-const UserImage = (props) => {
+const UserImage = (data) => {
+    console.log(data.data._id);
     const initialState = {
         userProfileImage: null,
         selectedFile: null,
         editor: null
     };
 
-  const cld = new Cloudinary({
-    cloud: {cloudName: 'dffm85wab'}
-});
+    
 
-    const userid = props.props._id;
+
+
+    const userid = data.data._id;
 
 
 
@@ -58,6 +60,7 @@ const UserImage = (props) => {
         const profileImage = imageData.userProfileImage ? 
                                 imageData.userProfileImage : 
                                 userPlaceholder;
+                                console.log(profileImage);
 
         return(
             <div>

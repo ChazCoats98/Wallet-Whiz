@@ -71,3 +71,15 @@ export const FETCH_PLAID_DATA = gql`
     }
 `;
 
+export const UPLOAD_PHOTO = gql`
+mutation UploadPhoto($photo: String!, $userId: ID!) {
+    upload Photo(photo: $photo, userId: $userId) {
+        photo {
+            filename
+            mimetype
+            encoding
+            url
+        }
+    }
+}`
+

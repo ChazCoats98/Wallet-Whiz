@@ -1,7 +1,5 @@
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { USER, ACCOUNTS, TRANSACTIONS } from '../utils/queries';
-import { useEffect } from 'react';
-import { FETCH_PLAID_DATA } from '../utils/mutations';
 import PlaidAccounts from '../components/PlaidAccounts';
 import PlaidTransactions from '../components/PlaidTransactions';
 import SpendingChart from '../components/SpendingChart';
@@ -11,20 +9,7 @@ import userPlaceholder from '../assets/user-placeholder.png';
 import ComponentLoader from '../components/ComponentLoader';
 
 function Dashboard() {
-  const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
-
   const { loading: userLoading, error: userError, data: userData } = useQuery(USER);
-    useEffect(() => {
-        if (!userLoading && !userError && userData && userData.user && userData.user.plaidAccessToken) {
-            fetchPlaidData({
-                variables: {
-                    accessToken: userData.user.plaidAccessToken
-                }
-            });
-        }
-    }, [])
-
-
   const { loading: accountsLoading, error: accountsError, data: accountsData } = useQuery(ACCOUNTS);
   const { loading: transactionLoading, error: transactionError, data: transactionData } = useQuery(TRANSACTIONS);
   if (userLoading || accountsLoading || transactionLoading) return <ComponentLoader />
