@@ -71,6 +71,24 @@ export const FETCH_PLAID_DATA = gql`
     }
 `;
 
+export const FETCH_STOCKS_BY_TICKER = gql`
+mutation FetchStocksByTicker($input: String!) {
+    fetchStocksByTicker(input: $input) {
+        savedStocks {
+            _id
+            symbol
+            price
+            mktCap
+            changes
+            companyName
+            exchange
+            industry
+            sector
+            image
+        }
+    }
+}`
+
 export const UPLOAD_PHOTO = gql`
 mutation UploadPhoto($photo: String!, $userId: ID!) {
     upload Photo(photo: $photo, userId: $userId) {

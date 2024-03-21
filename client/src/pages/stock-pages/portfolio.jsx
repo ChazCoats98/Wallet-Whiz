@@ -1,26 +1,14 @@
 import ResponsiveAppBar from "../../components/nav";
 import { useState } from "react";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { IconButton, Paper, InputBase, Divider } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import { FETCH_STOCK_BY_TICKER } from "../../utils/queries";
+import { FETCH_STOCKS_BY_TICKER } from "../../utils/mutations";
 import ComponentLoader from "../../components/ComponentLoader";
 
 const Portfolio = () => {
-    const {userInput, setUserInput} = useState('AAPL');
-    const {loading, error, data} = useQuery(FETCH_STOCK_BY_TICKER, {variables: {input: "AAPL"}});
-    if (loading) return <ComponentLoader />
-    if (error) return <p>Error: {error.message}</p>
     
-    const getUserValue = (e) => {
-        const value = e.target.value
-        setUserInput(value)
-    }
-
-    const stocks = [];
-    console.log(userInput);
-
-    console.log(data)
+  
     return (
         <div className='page-box'>
             <div className='nav-no-animation'>

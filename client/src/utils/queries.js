@@ -58,9 +58,9 @@ query fetchMarketLosers {
     }
 }`
 
-export const FETCH_STOCK_BY_TICKER = gql`
-query fetchStocksByTicker($input: String!) {
-    fetchStocksByTicker(input: $input) {
+export const GET_STOCKS = gql`
+query fetchStocksByTicker {
+    fetchStocksByTicker {
         _id
         symbol
         price

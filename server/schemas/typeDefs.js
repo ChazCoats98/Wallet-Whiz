@@ -51,7 +51,7 @@ const typeDefs = `
         changesPercentage: Float
     }
 
-    type stock {
+    type Stock {
         _id: ID
         account_id: String
         symbol: String
@@ -76,7 +76,6 @@ const typeDefs = `
         transactions: [Transaction]
         fetchMarketGainers: [MarketGainers]
         fetchMarketLosers: [MarketLosers]
-        fetchStocksByTicker(input: String!): [StocksByTicker]
         _: Boolean
     }
 
@@ -101,7 +100,7 @@ const typeDefs = `
     }
 
     type stockResult {
-        savedStocks: [stock]
+        savedStocks: [Stock]
     }
 
 `;

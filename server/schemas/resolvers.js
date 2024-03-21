@@ -57,23 +57,6 @@ const resolvers = {
                 changesPercentage: data.changesPercentage,
             }))
             return dataWithId;
-        }, 
-        fetchStocksByTicker: async (_, {input}, {dataSources }) => {
-            console.log(input);
-            const data = await dataSources.financialModelingAPI.fetchByTicker(input);
-            const dataWithId = data.map((data) => ({
-                _id: uuidv4(),
-                symbol: data.symbol,
-                price: data.price,
-                mktCap: data.mktCap,
-                changes: data.changes,
-                companyName: data.companyName,
-                exchange: data.exchange,
-                industry: data.industry,
-                sector: data.sector,
-                image: data.image
-            }))
-            return dataWithId;
         }
     },
     Mutation: {
@@ -198,7 +181,7 @@ const resolvers = {
                 throw new Error('Failed to retrieve Plaid data');
             }
         },
-        fetchStocksByTicker: async (parent, {dataSources}, context) => {
+        fetchStocksByTicker: async (parent, {dataSources}, context, {input}) => {
             try {
                 const userId = context.user._id
                 const data = await dataSources.financialModelingAPI.fetchByTicker(context.input);
