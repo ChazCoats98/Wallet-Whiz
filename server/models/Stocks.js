@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 
 const stockSchema = new Schema({
-    _id: {
+   account_id: {
         type: String,
     },
     symbol: {

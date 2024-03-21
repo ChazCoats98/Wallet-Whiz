@@ -1,4 +1,4 @@
-const { User, Account, Transaction } = require('../models');
+const { User, Account, Transaction, Stocks } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const plaidClient = require('../config/plaid');
 const { formattedStartDate, formattedEndDate } = require('../utils/date');
@@ -196,6 +196,40 @@ const resolvers = {
             } catch (err) {
                 console.error(err);
                 throw new Error('Failed to retrieve Plaid data');
+            }
+        },
+        fetchStocksByTicker: async (parent, {dataSources}, context) => {
+            try {
+                const userId = context.user._id
+                const data = await dataSources.financialModelingAPI.fetchByTicker(context.input);
+                const dataWithId = data.map((data) => ({
+                    user_id: userId,
+                    symbol: data.symbol,
+                    price: data.price,
+                    mktCap: data.mktCap,
+                    changes: data.changes,
+                    companyName: data.companyName,
+                    exchange: data.exchange,
+                    industry: data.industry,
+                    sector: data.sector,
+                    image: data.image
+                }))
+                
+                const user = await User.findById(userId);
+                const savedStocks = await Promise.all(dataWithId);
+    
+                user.stocks = [];
+                user.stocks = [...savedStocks];
+    
+                await user.save();
+    
+                return {
+                    user,
+                    savedStocks
+                }
+            } catch (err) {
+                console.error(err);
+                throw new Error(err);
             }
         }
     }

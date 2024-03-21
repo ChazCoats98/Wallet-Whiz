@@ -7,6 +7,7 @@ const typeDefs = `
         plaidAccessToken: String
         accounts: [Account]
         transactions: [Transaction]
+        stocks: [Stock]
     }
 
     type Account {
@@ -50,8 +51,9 @@ const typeDefs = `
         changesPercentage: Float
     }
 
-    type StocksByTicker {
+    type stock {
         _id: ID
+        account_id: String
         symbol: String
         price: Float
         mktCap: Float
@@ -86,6 +88,7 @@ const typeDefs = `
         exchangePublicToken(publicToken: String!): AccessToken
         fetchPlaidData(accessToken: String!): PlaidDataResult
         uploadPhoto(photo: String!, userId: ID!): Photo
+        fetchStocksByTicker(input: String!): stockResult
     }
 
     type AccessToken {
@@ -96,6 +99,11 @@ const typeDefs = `
         savedAccounts: [Account]
         savedTransactions: [Transaction]
     }
+
+    type stockResult {
+        savedStocks: [stock]
+    }
+
 `;
 
 module.exports = typeDefs;
