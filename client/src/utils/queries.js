@@ -57,3 +57,19 @@ query fetchMarketLosers {
         changesPercentage
     }
 }`
+
+export const FETCH_STOCK_BY_TICKER = gql`
+query fetchStocksByTicker($input: String!) {
+    fetchStocksByTicker(input: $input) {
+        _id
+        symbol
+        price
+        mktCap
+        changes
+        companyName
+        exchange
+        industry
+        sector
+        image
+    }
+}`

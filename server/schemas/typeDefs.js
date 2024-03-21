@@ -50,6 +50,19 @@ const typeDefs = `
         changesPercentage: Float
     }
 
+    type StocksByTicker {
+        _id: ID
+        symbol: String
+        price: Float
+        mktCap: Float
+        changes: Float
+        companyName: String
+        exchange: String
+        industry: String
+        sector: String
+        image: String
+    }
+
     type Auth {
         token: ID
         user: User
@@ -61,6 +74,7 @@ const typeDefs = `
         transactions: [Transaction]
         fetchMarketGainers: [MarketGainers]
         fetchMarketLosers: [MarketLosers]
+        fetchStocksByTicker(input: String!): [StocksByTicker]
         _: Boolean
     }
 
