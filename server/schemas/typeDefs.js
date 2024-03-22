@@ -87,7 +87,7 @@ const typeDefs = `
         exchangePublicToken(publicToken: String!): AccessToken
         fetchPlaidData(accessToken: String!): PlaidDataResult
         uploadPhoto(photo: String!, userId: ID!): Photo
-        fetchStocksByTicker(input: String!): stockResult
+        fetchStocksByTicker(input: String!, userId: ID!): stockResult
     }
 
     type AccessToken {

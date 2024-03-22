@@ -58,7 +58,7 @@ query fetchMarketLosers {
     }
 }`
 
-export const GET_STOCKS = gql`
+export const STOCKS = gql`
 query fetchStocksByTicker {
     fetchStocksByTicker {
         _id

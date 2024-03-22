@@ -181,11 +181,13 @@ const resolvers = {
                 throw new Error('Failed to retrieve Plaid data');
             }
         },
-        fetchStocksByTicker: async (parent, {dataSources}, context, {input}) => {
+        fetchStocksByTicker: async (parent, {dataSources}, { userId}, {input}) => {
+            console.log(context.user)
             try {
-                const userId = context.user._id
-                const data = await dataSources.financialModelingAPI.fetchByTicker(context.input);
+                const data = await dataSources.financialModelingAPI.fetchByTicker(input);
+                console.log(data)
                 const dataWithId = data.map((data) => ({
+                    _id: uuidv4(),
                     user_id: userId,
                     symbol: data.symbol,
                     price: data.price,
