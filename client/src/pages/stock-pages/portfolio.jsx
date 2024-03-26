@@ -14,7 +14,7 @@ const Portfolio = () => {
     const [fetchStocks] = useMutation(FETCH_STOCKS_BY_TICKER);
     if (userLoading || stocksLoading) return (<ComponentLoader />)
     if (userError) return (<p>Error: {userError.message}</p>)
-    console.log(userData.user._id)
+    console.log(stocksData)
   if (!userLoading && exit === false) {
       fetchStocks({
           variables: {

@@ -72,8 +72,8 @@ export const FETCH_PLAID_DATA = gql`
 `;
 
 export const FETCH_STOCKS_BY_TICKER = gql`
-mutation FetchStocksByTicker($input: String!, $userID: ID) {
-    fetchStocksByTicker(input: $input, userID: $userID) {
+mutation FetchStocksByTicker($input: String!) {
+    fetchStocksByTicker(input: $input) {
         savedStocks {
             _id
             symbol

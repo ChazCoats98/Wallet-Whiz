@@ -12,6 +12,7 @@ const { v4: uuidv4 } = require('uuid');
 const resolvers = {
     Query: {
         user: async (parent, args, context) => {
+            console.log(context.authMiddleware)
             if (context.user) {
                 return User.findById(context.user._id).select('username email createdAt plaidAccessToken');
             } else {
@@ -61,6 +62,7 @@ const resolvers = {
     },
     Mutation: {
         login: async (parent, { email, password }) => {
+            console.log(email, password);
             const user = await User.findOne({ email });
 
             if (!user) {
@@ -74,7 +76,7 @@ const resolvers = {
             }
 
             const token = signToken(user);
-            return { token, user };
+            return { token };
         },
         register: async (parent, { username, email, password, createdAt }) => {
             const user = await User.create({ username, email, password, createdAt: new Date() });
@@ -98,7 +100,8 @@ const resolvers = {
             }
             console.log(result.url);
         },
-        exchangePublicToken: async (parent, { publicToken }, context) => {
+        exchangePublicToken: async (parent, { publicToken }, contextValue) => {
+            console.log(contextValue);
             if (!context.user) {
                 throw AuthenticationError;
             }
@@ -122,6 +125,7 @@ const resolvers = {
             }
         },
         fetchPlaidData: async (parent, { accessToken }, context) => {
+            console.log(context)
             try {
                 const accountsResponse = await plaidClient.accountsGet({
                     access_token: accessToken
@@ -137,7 +141,7 @@ const resolvers = {
                 const transactions = transactionsResponse.data.transactions;
                 console.log(transactions);
 
-                const user = await User.findById(context.user._id);
+                const user = await User.findById(contextValue.user._id);
 
                 const savedAccounts = await Promise.all(
                     accounts.map(async (account) => {
@@ -181,14 +185,13 @@ const resolvers = {
                 throw new Error('Failed to retrieve Plaid data');
             }
         },
-        fetchStocksByTicker: async (parent, {dataSources}, { userId}, {input}) => {
-            console.log(context.user)
+        fetchStocksByTicker: async ( parent, __, contextValue) => {
+            console.log(contextValue)
             try {
-                const data = await dataSources.financialModelingAPI.fetchByTicker(input);
-                console.log(data)
+                const data = await contextValue.dataSources.financialModelingAPI.fetchByTicker("AAPl");
                 const dataWithId = data.map((data) => ({
                     _id: uuidv4(),
-                    user_id: userId,
+                    account_id: context.user._id,
                     symbol: data.symbol,
                     price: data.price,
                     mktCap: data.mktCap,
@@ -200,7 +203,7 @@ const resolvers = {
                     image: data.image
                 }))
                 
-                const user = await User.findById(userId);
+                const user = await User.findById(context.user._id);
                 const savedStocks = await Promise.all(dataWithId);
     
                 user.stocks = [];

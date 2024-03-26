@@ -13,13 +13,17 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
+
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    dataSources: () => ({
-        financialModelingAPI: new FinancialModelingAPI(),
-    }),
-    context: authMiddleware 
+    context: ({ req }) => ({
+        ...authMiddleware(),
+        dataSources: () => ({
+            financialModelingAPI: new FinancialModelingAPI(),
+        
+        })
+    })
 });
 
 async function startServer() {

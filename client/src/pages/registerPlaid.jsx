@@ -11,8 +11,8 @@ const RegisterPlaid = () => {
     const { loading, error, data} = useQuery(USER);
     const [fetchPlaidData] = useMutation(FETCH_PLAID_DATA);
     if (loading) return <ComponentLoader />
-  if (error) return <p>Error: {error}</p>
-    console.log(data);
+  if (error) return <p>Error: {error.message}</p>
+    console.log(error.message);
 
     if (data.user.plaidAccessToken) {
         fetchPlaidData({
