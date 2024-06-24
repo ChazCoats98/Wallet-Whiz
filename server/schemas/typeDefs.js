@@ -44,20 +44,6 @@ const typeDefs = `
         changesPercentage: Float
     }
 
-    type Stock {
-        _id: ID
-        account_id: String
-        symbol: String
-        price: Float
-        mktCap: Float
-        changes: Float
-        companyName: String
-        exchange: String
-        industry: String
-        sector: String
-        image: String
-    }
-
     type Auth {
         token: ID
         user: User
