@@ -26,13 +26,6 @@ const typeDefs = `
         category: String
     }
 
-    type Photo {
-        filename: String!
-        mimetype: String!
-        encoding: String!
-        url: String!
-    }
-
     type MarketGainers {
         _id: ID
         symbol: String
@@ -86,8 +79,7 @@ const typeDefs = `
         updateEmail(userId: ID!, email: String!): User
         exchangePublicToken(publicToken: String!): AccessToken
         fetchPlaidData(accessToken: String!): PlaidDataResult
-        uploadPhoto(photo: String!, userId: ID!): Photo
-        fetchStocksByTicker(input: String!): stockResult
+        uploadPhoto(photo: String): String
     }
 
     type AccessToken {
