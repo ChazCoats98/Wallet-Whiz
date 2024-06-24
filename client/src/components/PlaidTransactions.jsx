@@ -2,6 +2,11 @@ import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
 import PlaidIcon from './PlaidIcons';
 
+const PlaidTransactions = () => {
+    const { loading, error, data } = useQuery(TRANSACTIONS);
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error: {error.message}</p>
+    console.log(data);
 
 const PlaidTransactions = (data) => {
     const transactions = data.data

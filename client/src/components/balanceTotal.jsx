@@ -1,11 +1,15 @@
+import { useQuery } from '@apollo/client';
+import { ACCOUNTS } from '../utils/queries';
 import CurrencyFormat from 'react-currency-format';
 
-const BalanceTotal = (data) => {
+const BalanceTotal = () => {
+    const { loading, error, data } = useQuery(ACCOUNTS);
     let balance =0;
 
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error: {error.message}</p>
 
-
-    data.data.forEach(account => {
+    data.accounts.forEach(account => {
         balance += account.balance
     });
 

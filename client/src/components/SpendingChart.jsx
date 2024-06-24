@@ -7,7 +7,8 @@ const SpendingChart = (data) => {
     console.log(data.data);
     const transactionData = data.data
 
-    const transactions = transactionData || [];
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
 
     const categoryAmount = transactions.reduce((acc, transaction) => {
         const category = transaction.category;
