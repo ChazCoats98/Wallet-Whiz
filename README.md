@@ -3,7 +3,7 @@
  ![License Badge](https://img.shields.io/badge/License-MIT%20License-blue)
 
 ![GitHub]
- <https://github.com/cslunsford/wallet-whiz-2.0>
+ <(https://github.com/ChazCoats98/Wallet-Whiz)>
 
 ***
 
@@ -93,7 +93,7 @@ All files are in package.json
 
 1. Clone the GitHub repository to your local computer. Click on the following link.
 
-- Repository link: <https://github.com/cslunsford/wallet-wiz-2.0>
+- Repository link: <(https://github.com/ChazCoats98/Wallet-Whiz)>
 
 2. Install the following packages:
 
@@ -144,7 +144,7 @@ Jason Obeng Dappah    Github: JObengDappah
 
 ## Contact
 
-For additional questions, Github page:(<https://github.com/cslunsford/wallet-whiz-2.0>)
+For additional questions, Github page:((https://github.com/ChazCoats98/Wallet-Whiz))
 
 ***
 
