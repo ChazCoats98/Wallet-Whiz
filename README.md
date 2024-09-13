@@ -3,7 +3,7 @@
  ![License Badge](https://img.shields.io/badge/License-MIT%20License-blue)
 
 ![GitHub]
- <(https://github.com/ChazCoats98/Wallet-Whiz)>
+ (https://github.com/ChazCoats98/Wallet-Whiz)
 
 ***
 
@@ -144,7 +144,7 @@ Jason Obeng Dappah    Github: JObengDappah
 
 ## Contact
 
-For additional questions, Github page:((https://github.com/ChazCoats98/Wallet-Whiz))
+For additional questions, Github page:(https://github.com/ChazCoats98/Wallet-Whiz)
 
 ***
 
